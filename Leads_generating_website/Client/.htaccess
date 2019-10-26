@@ -1,0 +1,44 @@
+RewriteEngine On
+RewriteCond %{REQUES_FILENAME} !-d
+RewriteCond %{REQUES_FILENAME} !-f
+
+RewriteRule ^home?$ index.php
+
+RewriteRule ^home/?$ home_pg.php
+RewriteRule ^bankruptcy/?$ adoption.php
+RewriteRule ^change-images/?$ change-images.php
+RewriteRule ^immigiration/?$ child_support.php
+RewriteRule ^fill-form/?$ client_form1.php
+RewriteRule ^contact-us/?$ ContactUs_client.php
+RewriteRule ^estate-planning/?$ custody.php
+RewriteRule ^dashboard/?$ dashboard.php
+RewriteRule ^display-leads/?$ display_leads_lawyer.php
+RewriteRule ^family-law/?$ divorce.php
+RewriteRule ^assign-lawye/([0-9a-zA-Z]+)$ lawyer_assign.php?idhash=$1 [NC,L]
+
+RewriteRule ^assigned_lawyer/([0-9a-zA-Z]+)$ lawyer_democopy.php?idhash=$1 [NC,L]
+
+RewriteRule ^assigned-lawyer/([0-9a-zA-Z]+)$ lawyer_demo.php?idhash=$1 [NC,L]
+
+RewriteRule ^login/?$ lawyer_login2.php
+RewriteRule ^signup/?$ LawyerSignUp.php
+
+RewriteRule ^search-city?$ search_city.php
+
+RewriteRule ^logout/?$ logout.php
+RewriteRule ^request/?$ thankU.php
+RewriteRule ^update-profile/?$ update-profiles.php
+RewriteRule ^services/?$ Services.php
+RewriteRule ^about-us/?$ aboutUs_client_new.php
+RewriteRule ^leads/?$ leads_lawyer.php
+RewriteRule ^purpose/?$ purpose_lawyer.php
+RewriteRule ^lawyer/?$ lawyer_home.php
+RewriteRule ^privacy-policy/?$ privay_client.php
+
+RewriteRule ^about-leads/?$ about_our_leads_lawyer.php
+RewriteRule ^about-Us/?$ aboutUs_lawyer.php
+
+RewriteRule ^terms-of-use/?$ Terms_of_use_client.php
+
+RewriteRule ^thank-you/?$ thankUcopy.php
+RewriteRule ^press-release/?$ press_release.php
