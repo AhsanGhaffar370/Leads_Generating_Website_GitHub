@@ -99,6 +99,27 @@ html{
 
 }
 
+ 
+ 
+ .contactUs_bg{
+	padding-top: 25px !important;
+	padding-bottom: 45px !important;
+	background-image: linear-gradient(rgba(23, 26, 28, 0.7),rgba(20, 21, 21, 0.7)),url(../Image/contactus1.jpg);
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+}
+
+ .contactUs_bg1{
+	padding: 100px 5px 100px 20px !important;
+	background-image: linear-gradient(rgba(23, 26, 28, 0.7),rgba(20, 21, 21, 0.7)),url(../Image/agent.png);
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	border-radius:20px;
+	margin-bottom:2px;
+}
+
 /*used to handle background image of search_city section*/
 
 /*
@@ -269,10 +290,13 @@ html{
 	margin-bottom:140px;
 }
 */
-
-
 .jl_heading{
 	font-size:50px; 
+	font-weight:800;
+}
+
+.jl1_heading{
+	font-size:46px; 
 	font-weight:800;
 }
 
@@ -298,6 +322,11 @@ html{
 
 .xxs_texts{
 	font-size:15px; 
+	font-weight:180;
+}
+
+.xxs1_texts{
+	font-size:11px; 
 	font-weight:180;
 }
 
@@ -369,7 +398,7 @@ html{
 }
 
 	
-.xl_heading,.jl_heading{
+.xl_heading,.jl_heading,.jl1_heading{
 	font-size:36px; 
 	font-weight:600;
 }
@@ -393,6 +422,11 @@ html{
 
 .xxs_texts{
 	font-size:13px; 
+	font-weight:180;
+}
+
+.xxs1_texts{
+	font-size:11px; 
 	font-weight:180;
 }
 
@@ -458,7 +492,7 @@ html{
 }
 
 
-.xl_heading,.jl_heading{
+.xl_heading,.jl_heading,.jl1_heading{
 	font-size:32px; 
 	font-weight:500;
 }
@@ -480,6 +514,11 @@ html{
 
 .xxs_texts{
 	font-size:11px; 
+	font-weight:140;
+}
+
+.xxs1_texts{
+	font-size:10px; 
 	font-weight:140;
 }
 
@@ -550,7 +589,7 @@ html{
 
 
 
-.xl_heading,.jl_heading{
+.xl_heading,.jl_heading,.jl1_heading{
 	font-size:26px; 
 	font-weight:400;
 }
@@ -574,6 +613,10 @@ html{
 
 .xxs_texts{
 	font-size:9px; 
+	font-weight:100;
+}
+.xxs1_texts{
+	font-size:8px; 
 	font-weight:100;
 }
 
@@ -639,7 +682,7 @@ html{
 	display:none;
 }
 
-.xl_heading,.jl_heading{
+.xl_heading,.jl_heading,.jl1_heading{
 	font-size:22px; 
 	font-weight:300;
 }
@@ -665,6 +708,10 @@ html{
 	font-weight:60;
 }
 
+.xxs1_texts{
+	font-size:6px; 
+	font-weight:60;
+}
 
 .buttons{
 	font-size:12px; 
@@ -727,7 +774,7 @@ html{
 	display:none;
 }
 
-.xl_heading,.jl_heading{
+.xl_heading,.jl_heading,.jl1_heading{
 	font-size:20px; 
 	font-weight:300;
 }
@@ -753,6 +800,10 @@ html{
 	font-weight:60;
 }
 
+.xxs1_texts{
+	font-size:5px; 
+	font-weight:60;
+}
 
 .buttons{
 	font-size:10px; 

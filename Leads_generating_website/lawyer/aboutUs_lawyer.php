@@ -9,16 +9,16 @@
 <?php include "libs.php"; ?>
 
 </head>
-<body class="bg-light">
+<body>
     <?php include "lawyer_header.php" ?>
     
 
-<section class="container text-center text-dark">
+<section class="container text-center text-dark ">
     
     <div class="row rowsetting1">
  
         <div class="col-lg-5 col-md-5 col-sm-5 col-12 d-block mb-3">	
-            <div class="card  bg-light border-0">
+            <div class="card border-0">
                 <div class="col-9">
                     <center>
                     <img src="Image/law1.PNG" alt="divorce img" class="card-img-top img-fluid rounded-circle" />
@@ -45,7 +45,7 @@ When he's not working with Unbundled Attorney, Dave can be found on the golf cou
     <div class="row rowsetting1">
  
         <div class="col-lg-5 col-md-5 col-sm-5 col-12 d-block mb-3">	
-            <div class="card  bg-light border-0">
+            <div class="card  border-0">
                 <div class="col-9">
                     <center>
                     <img src="Image/law1.PNG" alt="divorce img" class="card-img-top img-fluid rounded-circle" />
@@ -72,7 +72,7 @@ When he's not working with Unbundled Attorney, Dave can be found on the golf cou
     <div class="row rowsetting1">
  
         <div class="col-lg-5 col-md-5 col-sm-5 col-12 d-block mb-3">	
-            <div class="card  bg-light border-0">
+            <div class="card  border-0">
                 <div class="col-9">
                     <center>
                     <img src="Image/law1.PNG" alt="divorce img" class="card-img-top img-fluid rounded-circle" />
@@ -99,7 +99,7 @@ When he's not working with Unbundled Attorney, Dave can be found on the golf cou
     <div class="row rowsetting1">
  
         <div class="col-lg-5 col-md-5 col-sm-5 col-12 d-block mb-3">	
-            <div class="card  bg-light border-0">
+            <div class="card  border-0">
                 <div class="col-9">
                     <center>
                     <img src="Image/law1.PNG" alt="divorce img" class="card-img-top img-fluid rounded-circle" />
@@ -126,7 +126,7 @@ When he's not working with Unbundled Attorney, Dave can be found on the golf cou
     <div class="row rowsetting1">
  
         <div class="col-lg-5 col-md-5 col-sm-5 col-12 d-block mb-3">	
-            <div class="card  bg-light border-0">
+            <div class="card border-0">
                 <div class="col-9">
                     <center>
                     <img src="Image/law1.PNG" alt="divorce img" class="card-img-top img-fluid rounded-circle" />

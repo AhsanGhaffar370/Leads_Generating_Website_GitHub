@@ -98,8 +98,14 @@ if (isset($_POST['submitform']))
 <section class="container bg-white text-center text-black dash pt-2 mt-5 mb-5 border-light border-right border-left border-top border-bottom">
 <?php include_once"balance_status.php" ?>   
     <h4 class="text-left pl-5 font-weight-bold p-3" style="background-color:#d1ecf1; color:#0c5460;">Add Feature </h4>
+    <div class="alert alert-primary text-left mb-4 xs_texts container font-weight-normal text-secondary">
+        <i class="fas fa-info-circle text-info"> </i>
+        If you want some more features in our lead manger fell free to ask, we will add that.
+    </div>
+    
     <center>
     <div class="col-lg-8 col-md-8 col-sm-8 col-12 d-block mt-5">
+    
     <?php if($error){?>
 				<div class="errorWrap">
 				<strong>ERROR</strong>:
@@ -111,55 +117,26 @@ if (isset($_POST['submitform']))
 				else if($msg){
 					?>
 					<div class="succWrap">
-					<strong>SUCCESS</strong>:
+					<!-- <strong>SUCCESS</strong>: -->
 					<?php echo htmlentities($msg);
 					?> 
 					</div>
 				<?php }?>
                 <form class="contact-form12" method="post" >
-                    <div class="form-group ">
-                        <input type="text" class="form-control p-4" name="fname" id="fname"  placeholder="Full Name"/> 
-                    </div>
                     
-                    <div class="form-group">
+                    <div class="form-group text-left">
+                    <label class="mt-3">Email:</label>
                         <input type="text" class="form-control p-4" name="email" id="email" placeholder="Email Address"/>
                     </div>
-                    
-                    <div class="form-group">
-                        <input type="tel" class="form-control p-4" name="mob" id="mob" placeholder="Phone No"/>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="text" class="form-control p-4" name="lname" id="lname" placeholder="subject"/>
-                    </div>
-                    <div class="form-group">
-                        
+                   
+                    <div class="form-group text-left">
+                        <label class="mt-3">Feature Required:</label>
                         <textarea class="form-control p-4" name="msg" id="msg" placeholder="Message" rows="8" cols="60"></textarea>
                 </div>
                    <hr />
                     <div class="form-group">
                         <center>
-                        <input type="submit" name="submitform" class="btn btn-lg headerbtn buttons" value="Submit Form"  data-target="#modal1" data-toggle="modal"/>
-                         <!-- <div class="modal fade" id="modal1">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header bg-success">
-                                        <h3 class="text-white font-weight-bold m-auto xl_heading">Thank You<br /> For Contacting Us</h3>
-                                    </div>
-                                    
-                                    <div class="modal-body">
-                                        <div class="container ">
-                                            <h6 class="text-black-50 p-4 font-weight-normal heading">One of our representatives will be in contact with you shortly regarding your inquiry. If you ever have any questions that require immediate assistance, please call us at<br /> <b>844 944 5342</b></h6>                      
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="modal-footer bg-light">
-                                        <input type="submit" name="submitbtn" class="btn btn-lg font-weight-normal bg-secondary buttons m-auto" value="Close" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
-                        
+                         <input type="submit" name="submitform" id="submitform" class="btn p-2 btn-sm mb-5 buttons font-weight-bold button_size2" value="Submit" />
                         </center>
                     </div>
                     <br />

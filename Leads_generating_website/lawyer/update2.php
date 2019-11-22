@@ -5,17 +5,17 @@ include_once "config/database.php";
 $database=new Database();
 $db = $database->getConnection();
 $status=$_POST['decision'];
-        $Email=$_POST['id'];
-        echo $id;
+        $ClientID=$_POST['id'];
+        echo $ClientID;
         echo $status;
 
         // $mail="muhammadfaraz00@gmail";
 // Insert Data
 	if (isset($_POST['id'])){
-        $sql="update lawyer_invoice set status=:status where Email=:Email";
+        $sql="update lawyer_invoice set status=:status where ClientID=:ClientID";
 $query = $db->prepare($sql);
 $query->bindParam(':status',$status);
-$query->bindParam(':Email',$Email);
+$query->bindParam(':ClientID',$ClientID);
 
 
 if ($query->execute()){

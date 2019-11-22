@@ -12,9 +12,10 @@
             
             <ul class="navbar-nav ml-auto">
             	<li class="nav-item"> <a class="nav-link text-black-50 font-weight-bold header_hover p-3 mt-1" href="home"> Home</a></li>
+                <li class="nav-item"> <a class="nav-link text-black-50 font-weight-bold header_hover p-3 mt-1 mr-2" href="about-leads"> Our Leads</a></li>
                 <li class="nav-item"> <a class="nav-link text-black-50 font-weight-bold header_hover p-3 mt-1" href="contact"> Contact us</a></li>
                 <li class="nav-item"> <a class="nav-link text-black-50 font-weight-bold header_hover p-3 mt-1" href="about-Us"> About us</a></li>
-                <li class="nav-item"> <a class="nav-link text-black-50 font-weight-bold header_hover p-3 mt-1 mr-2" href="about-leads"> Our Leads</a></li>
+                
                 
                 
                 <li class="nav-item">

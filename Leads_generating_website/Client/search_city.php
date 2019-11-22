@@ -72,18 +72,18 @@ $o=$_SESSION['cato'];
 // echo "$o";
 
 }?>
-
+<center>
 <section class="ser_top" id="fill">
-    <div class="container-fluid text-center"><!--div 0 -->
+    <div class="container-fluid "><!--div 0 -->
     	<br />
-        <h1 class="pt-5 mb-3 search_heading_settings font-weight-normal jl_heading" style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif;">Affordable Legal Help Without Paying Thousands Up Front</h1>
-        <h1 class="mt-2 mb-3 search_heading_settings text-dark xl_heading font-weight-normal">With Affordable Legal Help, You Can Hire A Lawyer to Help<br /> You With Your Case For As Low As $500‑1500.</h1>
+        <h1 class="pt-5 mb-3 search_heading_settings font-weight-normal jl1_heading" style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif;">Affordable Legal Help Without Paying Thousands Up Front</h1>
+        <h1 class="mt-2 mb-3 search_heading_settings text-dark xl_heading font-weight-normal" style="width:80%;">With Affordable Legal Help, You Can Hire A Lawyer to Help You With Your Case For As Low As $500‑1500.</h1>
         <h1 class="mt-5 mb-3 search_heading_settings text-dark xl_heading font-weight-normal">Where Do You Need an Attorney?</h1>
         <h1 class="mb-3 search_heading_settings text-dark heading font-weight-normal"><em>We will instantly connect you with a lawyer for free consultation.</em></h1>
         <?php 
         	if (isset($_POST['submitbtn'])){}
         ?>
-        <center>
+        
         <form class="ser_state mt-5" method="post" ><!--form a -->
         
                 <div class="col-10 pr-0 pl-0"><!--div a -->
@@ -112,7 +112,7 @@ $o=$_SESSION['cato'];
                              if (isset($_POST['submitbtn'])){
                                 $_SESSION['city']=$_POST['country'];
                                 $i=$_SESSION['city'];
-                                echo "<script type='text/javascript'> document.location = 'user-info'; </script>";
+                                echo "<script type='text/javascript'> document.location = 'fill-form'; </script>";
                               }
                              ?>
                         </div>
@@ -127,9 +127,10 @@ $o=$_SESSION['cato'];
                 
                 
         </form><!--form a -->
-         </center>
+         
     </div><!--div 0 -->
 </section>
+</center>
 
 <section class="container-fluid text-center row p-4 ml-0" style="background-color:#e3e3e3;">
 
@@ -237,7 +238,9 @@ $o=$_SESSION['cato'];
             
             <hr />
         </div>
-    
+    	
+        <div class="col-lg-2 col-md-0 col-sm-0 col-12 p-0"></div>
+        
         <div class="col-lg-4 col-md-6 col-sm-12 col-12 d-block m-auto">
             <div class="d-block text-dark m-auto"><i class="fas fa-users fa-4x"></i></div>
             <p class="xl_heading font-weight-normal text-dark">Child Custody</p>
@@ -253,6 +256,8 @@ $o=$_SESSION['cato'];
             
             <hr />
         </div>
+        
+        <div class="col-lg-2 col-md-0 col-sm-0 col-12 p-0"></div>
         
     </div>
      	
@@ -395,18 +400,18 @@ $(document).ready(function(){
 $('#country').keyup(function(){
    
     var query=$(this).val();
-    if (query>=44101 && query<=44199){
-        query="Cleveland,OH";
-    }
-    else if ((query>=45401 &&query<=45406)||(query>=45409 && query<=45417)||(query>=45419 && query<=45420)||(query>=45422 && query<=45424)||(query>=45428 && query<=45435)||(query>=45439 && query<=45441)||(query>=45448 && query<=45449)||(query>=45458 && query<=45459)||(query>=45469 && query<=45470)||(query>=45481 && query<=45482)||query==45490||query==45479||query==45475||query==45437||query==45426||query==45390){
-        query="Dayton,OH";
-    }
-    else if (query>=43201 && query<=43270){
-        query="Columbus,OH";
-    }
-    else if (query>=45201 && query<=45299){
-        query="Cincinnati,OH";
-    }
+    // if (query>=44101 && query<=44199){
+    //     query="Cleveland,OH";
+    // }
+    // else if ((query>=45401 &&query<=45406)||(query>=45409 && query<=45417)||(query>=45419 && query<=45420)||(query>=45422 && query<=45424)||(query>=45428 && query<=45435)||(query>=45439 && query<=45441)||(query>=45448 && query<=45449)||(query>=45458 && query<=45459)||(query>=45469 && query<=45470)||(query>=45481 && query<=45482)||query==45490||query==45479||query==45475||query==45437||query==45426||query==45390){
+    //     query="Dayton,OH";
+    // }
+    // else if (query>=43201 && query<=43270){
+    //     query="Columbus,OH";
+    // }
+    // else if (query>=45201 && query<=45299){
+    //     query="Cincinnati,OH";
+    // }
     if (query !=''){
        $.ajax({
    url:"object/search.php",

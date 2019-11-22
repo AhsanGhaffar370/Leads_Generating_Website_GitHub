@@ -2,7 +2,7 @@
     <div class="container  ">
     	
         <div class=" col-lg-3 col-md-4 col-sm-3 col-6 ">
-        	<img class="logo images" src="Image/attorney.png" alt="Affordable Legal Help" />
+        	<img class="logo images" src="Image/attorney_dashboard.png" alt="Affordable Legal Help" />
         </div>	
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navid">
         	<span class="navbar-toggler-icon"></span>

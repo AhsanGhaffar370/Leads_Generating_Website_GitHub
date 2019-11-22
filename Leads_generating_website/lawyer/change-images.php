@@ -20,7 +20,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Profile image</title>
+    <title>Update Profile</title>
         
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
@@ -92,7 +92,7 @@ $msg="Updated successfully";
 				else if($msg){
 					?>
 					<div class="succWrap">
-					<strong>SUCCESS</strong>:
+					<!-- <strong>SUCCESS</strong>: -->
 					<?php echo htmlentities($msg);
 					?> 
 					</div>
@@ -135,12 +135,21 @@ $msg="Updated successfully";
 						{
 							foreach($results as $result){
 							   $opt=htmlentities($result->Catogory);
+							   $state=htmlentities($result->state);
+							   $city2=htmlentities($result->city2);
+							   $city3=htmlentities($result->city3);
+							   $city4=htmlentities($result->city4);
 							}
 						}
 					?>
                     
                     <div class="form-group text-left">
                         <input type="file" name="img1" required>
+                    </div>
+					<div class="form-group text-left">
+						<label class="mt-3">City: </label>  
+            
+						<label class="mt-3"><?php echo $state .", ".$city2." ".$city3." ".$city4;  ?></label>  
                     </div>
                     <div class="form-group text-left">
                         <label class="mt-3 pb-2">Category:</label><br>

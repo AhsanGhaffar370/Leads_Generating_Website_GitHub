@@ -119,6 +119,26 @@ ul.pagination li.details{
 	 color:#17a2b8 ;
 	 background:#E7F2C7;
  }
+ 
+ 
+ .contactUs_bg{
+	padding-top: 25px !important;
+	padding-bottom: 45px !important;
+	background-image: linear-gradient(rgba(23, 26, 28, 0.7),rgba(20, 21, 21, 0.7)),url(../Image/contactus.jpg);
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+}
+
+ .contactUs_bg1{
+	padding: 100px 5px 100px 20px !important;
+	background-image: linear-gradient(rgba(23, 26, 28, 0.7),rgba(20, 21, 21, 0.7)),url(../Image/agent.png);
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	border-radius:20px;
+	margin-bottom:2px;
+}
 /*used to handle background image of search_city section*/
 
 /*
@@ -590,7 +610,7 @@ tr:nth-child(even) {
 
 
 .buttons{
-	font-size:7px; 
+	font-size:12px; 
 	background-color:#D9534F;
 	color:#FFF;
 	display: inline-block;

@@ -20,7 +20,7 @@ error_reporting(0);
 <script src="client_validate.js"></script>
 <script type="text/javascript">
 	function redirect(){
-		window.location="assigns-lawyer/c51ce410c124a10e0db5e4b97fc2af39";      
+		window.location="assigned-lawyer/c51ce410c124a10e0db5e4b97fc2af39";      
 	}
 </script>
 </head>
@@ -32,7 +32,7 @@ error_reporting(0);
         <div class=" col-lg-7 m-auto d-block p-5">
             <div class=" margin_width mt-5 p-5 bg-light">
                 <center><div class="col-lg-9 col-md-9 col-sm-9 col-12 ">
-                    <a href="home"><img class="logo images" src="Image/alh - Copy.png" alt="Affordable Legal Help" /></a><hr />
+                    <a href="home"><img class="logo images" src="Image/legalHelp.png" alt="Affordable Legal Help" /></a><hr />
                 </div></center>
                 <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 <h4 class="text-dark text-center bg-transparent p-1 mb-3 heading">--Thank You <?php 
@@ -43,7 +43,7 @@ error_reporting(0);
                  
                  	<h4 class="texts mb-3"> Just a moment while we connect you with family law attorney that serve your local area...</h4>
                 
-                    <h6 class="xs_texts mb-5">If the page does not redirect automatically the click<a href="assign-lawyer/c51ce410c124a10e0db5e4b97fc2af39"> here</a> to view profile of your lawyer.</h6>                      
+                    <h6 class="xs_texts mb-5">If the page does not redirect automatically the click<a href="assigned-lawyer/c51ce410c124a10e0db5e4b97fc2af39"> here</a> to view profile of your lawyer.</h6>                      
                 </div>
            </div>
         </div>

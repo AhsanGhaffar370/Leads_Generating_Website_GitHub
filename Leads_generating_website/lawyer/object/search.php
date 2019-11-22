@@ -5,18 +5,18 @@ $request = mysqli_real_escape_string($connect, $_POST["query"]);
 if (isset($_POST["query"]))
 {
     $output = '';
-    $query="SELECT * FROM cities WHERE city LIKE '%".$_POST["query"]."%' OR zipcode like '".$_POST['query']."' LIMIT 4";
+    $query="SELECT Distinct(City),Zipcode,State FROM city WHERE City LIKE '%".$_POST["query"]."%' OR Zipcode = '".$_POST['query']."' Group by City LIMIT 4";
     $result=mysqli_query($connect,$query);
     $output='<ul class="list-unstyled">';
     if (mysqli_num_rows($result)>0)
     {
         while($row=mysqli_fetch_array($result)){
-            $output .='<li>'.$row["city"].'</li>';
+            $output .='<li>'.$row["City"].",".$row['State'].'</li>';
         }
     }
 
 else{
-    $output .='<li>Country Not Found</li>';
+    $output .='<li></li>';
 }
 $output .='</ul>';
 echo $output;

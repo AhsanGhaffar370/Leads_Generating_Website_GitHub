@@ -10,11 +10,12 @@ include_once "config/database.php";
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Lawyer Info</title>
+<title>Assigned lawyer</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+<base href="http://legalhelpservice.com/lawyer_democopy.php">
 
-<base href="http://localhost/Leads_Genrating_Website_Git/Leads_generating_website/Client/lawyer_democopy.php">
+  
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
 
@@ -53,7 +54,7 @@ include_once "config/database.php";
                 {	
             ?>
         <div class="card col-12 col-lg-4 col-md-4 col-sm-12 border-0">
-            <img src="img/Lawyer/<?php echo htmlentities($result->Picture);?>" alt="Family Law img" class="img-fluid images" width="50px" height="100px" />
+            <img src="https://affordableattorneyleads.com/img/Lawyer/<?php echo htmlentities($result->Picture);?>" alt="Family Law img" class="img-fluid images" width="50px" height="100px" />
             <?php 
 					$Name=htmlentities($result->Name);
 					$or=htmlentities($result->Organization);

@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Lawyer Info</title>
+<title>Assigned lawyer</title>
+<base href="http://legalhelpservice.com/lawyer_demo.php">
 
-<base href="http://localhost/Leads_Genrating_Website_Git/Leads_generating_website/Client/lawyer_demo.php">
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
 

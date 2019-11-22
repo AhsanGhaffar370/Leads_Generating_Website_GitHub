@@ -53,18 +53,37 @@ if (isset($_POST['submitbtn1']))
     }
     else
     {
-        echo "<div class='alert alert-danger'>Unable to login.</div>";
+        $msg="Unable to Login";
+        // $msg = "<div class='alert alert-danger'>Unable to login.</div>";
     }
 }
 ?><center>
 <section class="m-auto">
 	<div class=" margin_width container  bg-transparent"><br />
         <div class=" col-lg-7 m-auto d-block">
+        
             <div class=" margin_width mt-5 p-5 bg-light">
                 <div class="col-lg-9 col-md-9 col-sm-9 col-12 ">
+                
                     <a href="home"><img class="logo images" src="Image/attorney.png" alt="Attorney logo" /></a><hr />
                 </div>
                 <h4 class="text-dark text-center font-weight-bold p-3 heading" style="background-color:#d1ecf1;">--LOGIN--</h4><br />
+                <?php if($error){?>
+				<div class="errorWrap">
+				<strong>ERROR</strong>:
+				<?php
+				echo htmlentities($error);
+				?>
+				</div>
+				<?php } 
+				else if($msg){
+					?>
+					<div class="alert alert-danger">
+					<!-- <strong>SUCCESS</strong>: -->
+					<?php echo htmlentities($msg);
+					?> 
+					</div>
+				<?php }?>
                 <form class="lawyer-signIn-form1" method="post" >
                     <div class="form-group text-left">
                         <label><i class="fa fa-user fa-2x"></i> Email</label>
@@ -76,7 +95,7 @@ if (isset($_POST['submitbtn1']))
                         <input type="password" class="form-control p-4" name="pass" id="pass" placeholder="Password"/>
                     </div>
                     <div  class="text-right">
-                    	<!-- // <a href="#">Forget Password?</a> -->
+                    	 <a href="forgot_password.php">Forget Password?</a>
                     </div>
                    <hr />
                     <div class="form-group">

@@ -56,6 +56,24 @@ else{
 
 $database=new Database();
 $db = $database->getConnection();
+$nolead="";
+$Weeks="";
+$sqq ="SELECT * FROM estimate WHERE LawyerID=$LawyerID ORDER BY id DESC LIMIT 1 ";
+    $qu= $db->prepare($sqq);
+    
+    // $qu->bindParam(":LawyerID", $LayerID);
+    $qu->execute();
+    $resultt=$qu->fetchAll(PDO::FETCH_OBJ);
+    $row = $qu->fetch(PDO::FETCH_ASSOC);
+    if($qu->rowCount() > 0)
+    {
+            foreach($resultt as $resu)
+            {
+                $nolead=htmlentities($resu->noleads);
+                $Weeks=htmlentities($resu->Weeks);
+                
+            }
+    }
 if(isset($_POST['submitbtn']))
 {
 // $Report=$_FILES["img1"]["name"];
@@ -78,7 +96,22 @@ $sq = "INSERT INTO estimate
         if($stmt->execute()){
         // $id= $db->lastInsertId();
         // echo "Send";
-            $msg="Successfully Sent";
+            $msg="Send Succesfully ";
+            $sqq ="SELECT * FROM estimate WHERE LawyerID=$LawyerID ORDER BY id DESC LIMIT 1 ";
+    $qu= $db->prepare($sqq);
+    
+    // $qu->bindParam(":LawyerID", $LayerID);
+    $qu->execute();
+    $resultt=$qu->fetchAll(PDO::FETCH_OBJ);
+    $row = $qu->fetch(PDO::FETCH_ASSOC);
+    if($qu->rowCount() > 0)
+    {
+            foreach($resultt as $resu)
+            {
+                $nolead=htmlentities($resu->noleads);
+                
+            }
+    }
         }else{
             // echo "Send nai hua";
             
@@ -96,14 +129,24 @@ $sq = "INSERT INTO estimate
 
 }
 ?>
-   
-<section class="container bg-white text-center text-black dash pt-2 border-light border-right border-left border-top border-bottom" style="margin-top:10%; padding-bottom:10%;">
-<?php include_once"balance_status.php" ?>   
+<br><br><br>
+<section class="container bg-white text-center text-black dash pt-2 mt-5 mb-5 border-light border-right border-left border-top border-bottom" style="padding-bottom:10%;">
+<?php include_once "balance_status.php" ?>   
     <h4 class="text-left pl-5 font-weight-bold p-3" style="background-color:#d1ecf1; color:#0c5460;">
     	Add estimate of leads per week
     </h4>
     
-    <div class="container" style="width:70%;">
+    <div class="container p-0" style="width:70%;">
+    <?php if ($nolead != ""){?>
+    <div class="alert alert-primary text-left mb-4 xs_texts container font-weight-normal text-secondary">
+        <i class="fas fa-info-circle text-info"> </i>
+        
+       <?php echo "Leads estimation for ".$Weeks." week is ".$nolead;
+    } ?>
+    </div>
+    <!-- <label class="mt-3"><?php if ($nolead != ""){
+        echo "Leads estimation for week is 1 have Selected ".$nolead. " leads ";
+    } ?> </label> -->
     <?php if($error){?>
 				<div class="errorWrap">
 				<strong>ERROR</strong>:
@@ -114,25 +157,25 @@ $sq = "INSERT INTO estimate
 				<?php } 
 				else if($msg){
 					?>
-					<div class="succWrap">
-					<strong>SUCCESS</strong>:
-					<?php echo htmlentities($msg);
-					?> 
-					</div>
+					<!--<div class="succWrap">-->
+				 	<?php 
+				// 	echo htmlentities($msg);
+				 	?> 
+					<!--</div>-->
 				<?php }?>
         <form class="form1"  method="post" >
         
             <div class="form-group text-left">
                 <label class="mt-3">Select Weeks:</label>
                 <select name="weeks" class="form-control" id="weeks">
-                    <option value="one_week" selected="selected">1 week</option>
-                    <option value="two_week">2 week</option>
-                    <option value="three_week">3 week</option>
-                    <option value="four_week">4 week</option>
-                    <option value="five_week">5 week</option>
-                    <option value="six_week">6 week</option>
-                    <option value="seven_week">7 week</option>
-                    <option value="eight_week">8 week</option>
+                    <option value="one" selected="selected">1 week</option>
+                    <option value="two">2 week</option>
+                    <option value="three">3 week</option>
+                    <option value="four">4 week</option>
+                    <option value="five">5 week</option>
+                    <option value="six">6 week</option>
+                    <option value="seven">7 week</option>
+                    <option value="eight">8 week</option>
                 </select>
             </div>
             <div class="form-group text-left">

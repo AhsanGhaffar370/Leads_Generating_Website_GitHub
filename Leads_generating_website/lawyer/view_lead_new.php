@@ -13,7 +13,7 @@ else{
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Leads Info</title>
 </head>
     <?php include "libs.php"; ?>
     
@@ -40,7 +40,7 @@ else{
 	if($query->rowCount() > 0)
 	{
         foreach($results as $result)
-        {		
+        {	$idd=htmlentities($result->ID);	
             $name=htmlentities($result->Name);
             $email=htmlentities($result->Email);
             $phone=htmlentities($result->PhoneNo);
@@ -64,11 +64,11 @@ else{
             	<table class="dashboard_table mt-5  mb-5">
                   <tr class=" bg-white">
                     <td class="table_data xs_texts font-weight-bold border-0">ID:</td>
-                    <td class="table_data xs_texts font-weight-normal border-0"> <?php echo $id; ?> </td>
+                    <td class="table_data xs_texts font-weight-normal border-0"> <?php echo $idd; ?> </td>
                   </tr>
                   <tr class=" bg-white">
                     <td class="table_data xs_texts font-weight-bold border-0">Leads Type:</td>
-                    <td class="table_data xs_texts font-weight-normal border-0">Leads</td>
+                    <td class="table_data xs_texts font-weight-normal border-0">Family Law Leads</td>
                   </tr>
                   <tr class=" bg-white">
                     <td class="table_data xs_texts font-weight-bold border-0">Name:</td>
@@ -95,6 +95,7 @@ else{
                     <td class="table_data xs_texts font-weight-bold border-0">Legal Issue:</td>
                     <td class="table_data xs_texts font-weight-normal border-0"><?php echo $cat; ?></td>
                   </tr>
+                 
                   
                   <tr class=" bg-white">
                     <td class="table_data xs_texts font-weight-bold border-0">Summary:</td>

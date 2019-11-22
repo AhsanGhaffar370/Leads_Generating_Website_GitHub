@@ -28,8 +28,9 @@ RewriteRule ^contact/?$ ContactUs_lawyer.php
 RewriteRule ^privacy/?$ privay_lawyer.php
 RewriteRule ^terms-of-use/?$ Terms_of_use_lawyer.php
 RewriteRule ^report-issue/?$ report.php
-RewriteRule ^add-cities/?$ multiplleCities.php
+RewriteRule ^add-citie/?$ multiplleCities.php
 
+RewriteRule ^add-cities/?$ add_multiple_city.php
 
 RewriteRule ^leadsperday/?$ Leads_estimate.php
 
@@ -37,6 +38,7 @@ RewriteRule ^payment/?$ payment_new.php
 
 
 RewriteRule ^add-feature/?$ add_feature.php
+RewriteRule ^payment-form/?$ paymentForm.php
 
 
 

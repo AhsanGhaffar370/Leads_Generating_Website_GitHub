@@ -100,7 +100,7 @@ $query-> bindParam(':id', $id, PDO::PARAM_STR);
 $totalmoneys=$total_Leads*100;
 ?>
 <section class="container bg-white law_services text-center text-black pt-1 pb-5" style="margin-top:130px;">
-	<?php include_once"balance_status.php" ?>
+	<?php include_once "balance_status.php" ?>
     
 	<h4 class="text-left pl-5 font-weight-bold p-3" style="background-color:#d1ecf1; color:#0c5460;">
     	DASHBOARD 
@@ -182,7 +182,7 @@ $totalmoneys=$total_Leads*100;
             </div>
             
             <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-block mb-3">
-            	<a href="payment" class="nav-link">
+            	<a href="payment-form" class="nav-link">
                 <div class="card set_img">
                     <div class="m-4">
                         <img src="Image/pay3.png" alt="payment img" class="img-fluid rounded-circle" />
@@ -196,7 +196,7 @@ $totalmoneys=$total_Leads*100;
                 <div class="card set_img">
                     <div class="m-4">
                         <img src="Image/feature.jpg" alt="add feature img" class="img-fluid rounded-circle" />
-                        <h6 class="text-dark text-center font-weight-bold m-0">Add Features</h6>
+                        <h6 class="text-dark text-center font-weight-bold m-0">Add Feature</h6>
                     </div>
                 </div>
                 </a>

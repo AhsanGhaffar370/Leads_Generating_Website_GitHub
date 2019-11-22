@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7SbXuSAAyY16RllE1NUZtbWTats6YrJQ&libraries=places"></script>
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyC7SbXuSAAyY16RllE1NUZtbWTats6YrJQ"></script> -->
+
+    <!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script> -->
+
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC7SbXuSAAyY16RllE1NUZtbWTats6YrJQ&language=en"></script> -->
+       <!-- <script>
+    // For convenience, although if you are supporting IE8 and below
+// bind() is not supported
+var pac_input = document.getElementById('searchTextField');
+
+    (function pacSelectFirst(input) {
+        // store the original event binding function
+        var _addEventListener = (input.addEventListener) ? input.addEventListener : input.attachEvent;
+        
+        function addEventListenerWrapper(type, listener) {
+            // Simulate a 'down arrow' keypress on hitting 'return' when no pac suggestion is selected,
+            // and then trigger the original listener.
+            if (type == "keydown") {
+                alert("hello");
+                var orig_listener = listener;
+                listener = function(event) {
+                    var suggestion_selected = $(".pac-item-selected").length > 0;
+                    if (event.which == 13 && !suggestion_selected) {
+                        var simulated_downarrow = $.Event("keydown", {
+                            keyCode: 40,
+                            which: 40
+                        });
+                        orig_listener.apply(input, [simulated_downarrow]);
+                    }
+
+                    orig_listener.apply(input, [event]);
+                };
+            }
+
+            _addEventListener.apply(input, [type, listener]);
+        }
+
+        input.addEventListener = addEventListenerWrapper;
+        input.attachEvent = addEventListenerWrapper;
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+    })(pac_input);
+</script> -->
+</head>
+<body>
+        <input id="searchTextField" type="text" size="50">
+       </body>
+</html>
+<script>
+var pac_input = document.getElementById('searchTextField');
+
+(function pacSelectFirst(input){
+    // store the original event binding function
+    var _addEventListener = (input.addEventListener) ? input.addEventListener : input.attachEvent;
+
+    function addEventListenerWrapper(type, listener) {
+    // Simulate a 'down arrow' keypress on hitting 'return' when no pac suggestion is selected,
+    // and then trigger the original listener.
+
+    if (type == "keydown") {
+      var orig_listener = listener;
+      listener = function (event) {
+        var suggestion_selected = $(".pac-item-selected").length > 0;
+        if (event.which == 13 && !suggestion_selected) {
+          var simulated_downarrow = $.Event("keydown", {keyCode:40, which:40})
+          orig_listener.apply(input, [simulated_downarrow]);
+        }
+
+        orig_listener.apply(input, [event]);
+      };
+    }
+
+    // add the modified listener
+    _addEventListener.apply(input, [type, listener]);
+  }
+
+  if (input.addEventListener)
+    input.addEventListener = addEventListenerWrapper;
+  else if (input.attachEvent)
+    input.attachEvent = addEventListenerWrapper;
+
+})(pac_input);
+
+
+$(function(){
+  var autocomplete = new google.maps.places.Autocomplete(pac_input);
+});
+</script>

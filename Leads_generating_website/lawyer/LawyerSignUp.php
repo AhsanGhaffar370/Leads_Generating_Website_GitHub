@@ -2,6 +2,20 @@
 include_once "config/database.php"; 
 include_once "object/login.php";
 ?>
+<?php
+include_once "object/login.php";
+include "config/database1.php";
+?>
+<?php
+session_start();
+error_reporting(0);
+include('includes/config.php');
+if(strlen($_SESSION['Lawyerlogin'])!=0)
+	{	
+header('location:dashboard');
+}
+else{
+    ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -116,3 +130,6 @@ include_once "object/login.php";
 </center>
 </body>
 </html>
+<?php 
+}
+?>

@@ -59,9 +59,11 @@ $starting_limit = ($page-1)*$limit;
                         <th class="pb-3 pt-3"> #</th>
                         <th class="pb-3 pt-3">ID</th>
                         <th class="pb-3 pt-3">Type</th>
-                        <th class="pb-3 pt-3">Name</th>
+                        <th class="pb-3 pt-3">Full Name</th>
                         <th class="pb-3 pt-3">Email</th>
                         <th class="pb-3 pt-3">PhoneNo</th>
+                        <th class="pb-3 pt-3">Date</th>
+                        
                         <th class="pb-3 pt-3">Status</th>
                         <th class="pb-3 pt-3">Action</th>
                     </tr>
@@ -92,6 +94,8 @@ $starting_limit = ($page-1)*$limit;
                         <td class="table_data"><?php echo htmlentities($result->Name);?></td>
                         <td class="table_data myid"><?php echo htmlentities($result->Email);?></td>
                         <td class="table_data"><?php echo htmlentities($result->Phone);?></td>
+                        <td class="table_data mydate"><?php echo htmlentities($result->Created);?></td>
+                        
                     
                         <td class="table_data">
                         	<select class="status form-control">
@@ -167,6 +171,7 @@ $('select.status').on('change',function () {
 		//  var col3= currow.find('td:eq(2)').text();
 		//  var col4= currow.find('td:eq(3)').html();
 		 var col5= currow.find('td:eq(1)').html();
+         var col6=currow.find('td:eq(6)').html();
 		 
 		//  var result=col1+'\n'+col2+'\n'+col3+'\n'+col4+'\n'+col5;
 		//  alert(result);
@@ -174,12 +179,15 @@ $('select.status').on('change',function () {
 	    var decision = $(this).val();
 
         var id = $('td.myid').html();
+
+        // var date = $('td.mydate').html();
+
 		// alert(result);
 	
         $.ajax({
                  type: "POST",
                  url: "update2.php",
-                 data: {decision: decision, id: col5 },
+                 data: {decision: decision, id: col5},
                  success: function(msg) {
                      $('#autosavenotify').text(msg);
                  }

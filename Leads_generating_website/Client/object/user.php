@@ -31,6 +31,11 @@ class userRequest{
     public $total_Leads;
     public $DummyLeads;
     public $state;
+    public $city2;
+    public $city3;
+    public $city4;
+    
+    
     public function __construct($db){
         $this->conn = $db;
     }
@@ -84,16 +89,24 @@ class userRequest{
                 $sql ="SELECT * FROM
                 ". $this->table_name1 .
                 " WHERE 
-                    state=:state AND Catogory=:Catogory AND PendingBalance >= 10 AND active=1 order by rand() LIMIT 1";
+                    (state=:state || city2=:city2 || city3=:city3 || city4=:city4 ) AND Catogory=:Catogory AND PendingBalance >= 10 AND active=1 order by rand() LIMIT 1";
                 
                 $query= $this->conn->prepare($sql);
 
                 // // posted values
               
                 $this->state=htmlspecialchars(strip_tags($this->state));
+                $this->city2=htmlspecialchars(strip_tags($this->city2));
+                $this->city3=htmlspecialchars(strip_tags($this->city3));
+                $this->city4=htmlspecialchars(strip_tags($this->city4));
+                
                 $this->Catogory=htmlspecialchars(strip_tags($this->Catogory));
                 
                 $query->bindParam(":state", $this->state);
+                $query->bindParam(":city2", $this->city2);
+                $query->bindParam(":city3", $this->city3);
+                $query->bindParam(":city4", $this->city4);
+                
                 $query->bindParam(":Catogory", $this->Catogory);
                 $query->execute();
                 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -174,7 +187,10 @@ class userRequest{
             $this->Email=htmlspecialchars(strip_tags($this->Email));
             $this->Phone=htmlspecialchars(strip_tags($this->Phone));
             $this->Amount=htmlspecialchars(strip_tags($this->Amount));
-            $this->Created = date('Y-m-d H:i:s');
+             $dt = new DateTime('now', new DateTimezone('America/New_York'));
+             $da=$dt->format('F j, Y, g:i a');
+            // echo $ias;
+            $this->Created =$da; 
  
             
             // bind values 

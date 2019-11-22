@@ -25,8 +25,8 @@ require_once 'configs.php';
 <head>
 <!-- jQuery is used only for this example; it isn't required to use Stripe -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Stripe JavaScript library -->
-<script src="https://js.stripe.com/v2/"></script>
+<!-- Stripe JavaScript library
+<script src="https://js.stripe.com/v2/"></script> -->
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,73 +35,30 @@ require_once 'configs.php';
     
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
-
-   
-<script>
-// Set your publishable key
-Stripe.setPublishableKey('<?php echo STRIPE_PUBLISHABLE_KEY; ?>');
-
-// Callback to handle the response from stripe
-function stripeResponseHandler(status, response) {
-    if (response.error) {
-        // Enable the submit button
-        $('#payBtn').removeAttr("disabled");
-        // Display the errors on the form
-        $(".payment-status").html('<p>'+response.error.message+'</p>');
-    } else {
-        var form$ = $("#paymentFrm");
-        // Get token id
-        var token = response.id;
-        // Insert the token into the form
-        form$.append("<input type='hidden' name='stripeToken' value='" + token + "' />");
-        // Submit form to the server
-        form$.get(0).submit();
-    }
-}
-
-$(document).ready(function() {
-    // On form submit
-    $("#paymentFrm").submit(function() {
-        // Disable the submit button to prevent repeated clicks
-        $('#payBtn').attr("disabled", "disabled");
-		
-        // Create single-use token to charge the user
-        Stripe.createToken({
-            number: $('#card_number').val(),
-            exp_month: $('#card_exp_month').val(),
-            exp_year: $('#card_exp_year').val(),
-            cvc: $('#cvc').val()
-        }, stripeResponseHandler);
-		
-        // Submit from callback
-        return false;
-    });
-});
-</script>
-
-
 <script src="client_validate.js"></script> 
 </head>
 <body class="bg-light">
 <?php include_once "dashboard_header.php"; ?>
 <br><br><br>
 <section class="container bg-white text-center text-black dash pt-2 mt-5 mb-5 border-light border-right border-left border-top border-bottom">
-<?php include_once"balance_status.php" ?>      
+<?php include_once "balance_status.php" ?>      
     <h4 class="text-left pl-5 font-weight-bold p-3" style="background-color:#d1ecf1; color:#0c5460;">Payment </h4>
     
     <div class="container">
         <center>
             <div class="col-12 col-lg-7  col-md-10 col-sm-12">
             <div class="payment-status"></div>
-                <form class="payment-form1111" action="payment.php" method="POST" id="paymentFrm">
+          
+                <form class="payment-form1111" action="payments.php" method="POST" id="paymentFrm">
                 
                     <div class="form-group text-left">
+                    
                         <label class="mt-3">Name:</label>
                         <input type="text" name="name" id="name" placeholder="Enter name" value="<?php echo $_SESSION['Name']?>" class="form-control p-4"/>
                     </div>
                     <div class="form-group text-left">
-                        <label class="mt-3">Money:</label>
-                        <input type="text" name="money" id="money" placeholder="Enter Money" class="form-control p-4"/>
+                        <label class="mt-3">Amount:</label>
+                        <input type="text" name="money" id="money" placeholder="Enter Amount" class="form-control p-4"/>
                     </div>
                     
                     <div class="form-group text-left">
@@ -116,7 +73,7 @@ $(document).ready(function() {
                     
                     <div class="form-group text-left">
                         <label class="mt-3">CVC:</label>
-                        <input type="text" class="form-control p-4" name="cvc" id="cvc" placeholder="CVC"/>
+                        <input type="text" class="form-control p-4" name="card_cvc" id="cvc" placeholder="CVC"/>
                     </div>
                     
                     <div class="form-group text-left">

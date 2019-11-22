@@ -70,6 +70,7 @@ class userRequest{
         }
  
     }
+
     function AssignLawyer()
         {
             
@@ -226,4 +227,5 @@ if($query->execute()){
 
          }
 }
+
 ?>

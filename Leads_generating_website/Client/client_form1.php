@@ -52,20 +52,27 @@ include_once "object/user.php";?>
                 $fullname=$fname." ".$lname;
                 $user->Name = $fullname;
                 
+                $_SESSION['fname']=$fname." ".$lname;
+                $_SESSION['emailsss']=$_POST['email'];
+                $_SESSION['pho']=$_POST['mob'];
+                
                 $user->Email = $_POST['email'];
                 $user->PhoneNo  = $_POST['mob'];
                 $user->state= $_SESSION['city'];
+                $user->city2= $_SESSION['city'];
+                $user->city3= $_SESSION['city'];
+                $user->city4= $_SESSION['city'];
+                
                 $_SESSION['userName']=$_POST['fname'];
                 // $user->State= $_POST['state'];
                 $user->Lawyer_category= $_POST['law_cat'];
                 
                 $user->Catogory= $_SESSION['cato'];
-            
                 $user->legal_matter= $_POST['msg'];
                 $user->State=$_SESSION['city'];
                 $u=$_SESSION['city'];
                 $j=$_SESSION['cato'];
-                echo $j;
+                // echo $j;
                 //    $query="INSERT INTO `customer_info`(`Name`, `Email`, `PhoneNo`, `ZipCode`, `State`, `Lawyer_category`, `legal_matter`) VALUES ('$fname','$email','$mob','$zip','$state','$lawyer_cat','$matter')";
 
                     // $run=mysqli_query($db,$query);
@@ -94,11 +101,11 @@ include_once "object/user.php";?>
                         $ii=$_SESSION['ii'];
                         $user->ClientID=$ii;
                         $user->LawyerName=$_SESSION['Namess'];
-                        $user->EntityType="Leads";
+                        $user->EntityType="Family Law Leads";
                         $user->Phone  = $_POST['mob'];
                         $user->Amount=10;
                         $de=$_SESSION['des'];
-                        
+                        $em=$_SESSION['Email1'];
                         $Pending_balance=$_SESSION['pending'];
                         $newPendingBalance=($Pending_balance-10);
                         $sqls="update lawyer_profile set PendingBalance=:newPendingBalance where id=:id1";
@@ -127,6 +134,20 @@ include_once "object/user.php";?>
                                 $user->total_Leads=$total;
                                 $user->DummyLeads=$dum;
                                 if ($user->leadWork()){
+                                        $to=$em;
+                                        $subject="Affordable Leads";
+                                         $cname=$_SESSION['fname'];
+                                        $cemail=$_SESSION['emailsss'];
+                                        $cphone=$_SESSION['pho'];
+                                        $msg="New Leads Arrives \n Name: ".$cname." \n Email: ".$cemail."\n Contact: ".$cphone." ";
+                                        // $msg="New Leads Arrived";
+                                        $header="From: info@legalhelpservice.com";
+                                        if (mail($to,$subject,$msg,$header)){
+                                                // echo "Mail send successfully";
+                                            }
+                                            else{
+                                                // "can not send email";
+                                            }
                                     // echo "$de";
                                     echo "<script type='text/javascript'> document.location = 'request'; </script>";
                          
@@ -165,7 +186,7 @@ include_once "object/user.php";?>
                     
                 $lname=$_POST['lname'];
                 $fname=$_POST['fname'];
-                $fullname=$fname+$lname;
+                $fullname=$fname." ".$lname;
                 $Name = $fullname;
                 $Email = $_POST['email'];
                 $Phone  = $_POST['mob'];
