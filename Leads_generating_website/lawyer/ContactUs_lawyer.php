@@ -17,7 +17,7 @@
 <?php include_once "lawyer_header.php"; ?>
 <div class="contactUs_bg">
 	<h1 class="jl_heading font-weight-bold text-white text-center" style="padding-top:120px;">CONTACT US</h1>
-    <h5 class="heading text-white text-center" style="padding-bottom:120px">We are dedicated to provide the highest <br />level oflegal services in the US</h5>
+    <h5 class="heading text-white text-center" style="padding-bottom:120px">We are dedicated to provide the highest <br />level of legal services in the US</h5>
 </div>
 
 

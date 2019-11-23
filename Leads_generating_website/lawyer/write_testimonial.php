@@ -1,99 +1,56 @@
 <?php 
-include_once "config/database.php"; 
-include_once "object/login.php";
-?>
-<?php
-include_once "object/login.php";
-include "config/database1.php";
-?>
-<?php
+include_once "config/database.php";
 session_start();
 error_reporting(0);
 include('includes/config.php');
-if(strlen($_SESSION['Lawyerlogin'])!=0)
+if (strlen($_SESSION['Catogory'])==0){
+    header('location:login');
+}
+if(strlen($_SESSION['Lawyerlogin'])==0)
 	{	
-header('location:dashboard');
+header('location:login');
 }
 else{
-    ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Lawyer SignUp</title>
+    $id=$_SESSION['id'];
+    if (strlen($_SESSION['Catogory'])==0){
+        header('location:change-images');
+    } 
+?>
 
-<!--#####################################Libraries file##########################################-->
-<?php include "libs.php"; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Write Testimonial</title>
+
+</head>
+<?php include_once "libs.php"; ?>
 
 <script src="client_validate.js"></script>
 
-</head>
 
-<body>
-
-<?php
-    $database=new Database();
-    $db = $database->getConnection();
-    //pass connection to objects
-    $sign_up = new Signup($db);
-
-    if (isset($_POST['submitbtn']))
-    {
-        $sign_up->Name = $_POST['fname'];
-        $sign_up->Organization = $_POST['organ'];
-        $sign_up->Email = $_POST['email'];
-        $sign_up->Password = md5($_POST['pass']);
-        $sign_up->Contact = $_POST['mob'];
-        $sign_up->Zipcode = $_POST['zip'];
-        $sign_up->LawyerName = $_POST['fname'];
-        $sign_up->state=$_POST['state'];
-        // Insert lawyer
-        if($sign_up->lawyerSignup())
-        {
-            echo "<div class='alert alert-success'>Successfully Signup.</div> <script type='text/javascript'> document.location = 'login'; </script>";
-        }
-
-        // if unable to create the product, tell the user
-        else
-        {
-            echo "<div class='alert alert-danger'>Unable.</div>";
-        }
-        //////////////////////////////////////
-
-    }
-?>
-<center>
-<section class="cus-sec1">
-	<div class=" container mt-5 mb-5"><br /><br />
-    <div class=" col-lg-7 m-auto d-block  bg-light p-5">
+<body class="bg-light">
     
-        <div class="col-lg-7 col-md-7 col-sm-7 col-12 ">
-        	<a href="home"><img class="logo images" src="Image/attorney.png" alt="attorney logo" /></a><hr />
-        </div>
-                
-        <h4 class="text-dark text-center font-weight-bold p-3 heading" style="background-color:#d1ecf1;">--SIGNUP--</h4><br />
-        
-        <form class="lawyer-form1 p-4 text-left" method="post" >
-            <div class="form-group ">
-                <label>Full Name:</label>
+<?php include_once "dashboard_header.php"; ?>
+
+<br><br><br>    
+<section class="container bg-white text-center text-black dash pt-2 mt-5 mb-5 border-light border-right border-left border-top border-bottom">
+<?php include_once"balance_status.php" ?>   
+    <h4 class="text-left pl-5 font-weight-bold p-3" style="background-color:#d1ecf1; color:#0c5460;">Write Testimonial </h4>
+    
+    
+    <center>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-12 d-block mt-5">
+        <form class="contact-form12" method="post" >
+            
+           <div class="form-group text-left">
+            	<label class="mt-3">Name:</label>
                 <input type="text" class="form-control p-4" name="fname" id="fname"  placeholder="Full Name"/> 
             </div>
-            <div class="form-group ">
-                <label>Organization</label>
-                <input type="text" class="form-control p-4" name="organ" id="organ"  placeholder="Organization"/> 
-            </div>
             
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="text" class="form-control p-4" name="email" id="email" placeholder="Email Address"/>
-            </div>
-            
-            <div class="form-group">
-                <label>Phone:</label>
-                <input type="tel" class="form-control p-4" name="mob" id="mob" placeholder="Phone"/>
-            </div>
-            
-            <div class="form-group">
+            <div class="form-group text-left">
                 <label>State:</label>
                 <select name="state" class="form-control" id="state">
                 		<option value="-1" selected="selected" disabled="disabled">-Select-</option>
@@ -153,31 +110,24 @@ else{
                  </select>
             </div>
             
-            <div class="form-group">
-                <label>Zip Code:</label>
-                <input type="text" class="form-control p-4" name="zip" id="zip" placeholder="Zip Code"/>
-            </div>
-            <div class="form-group">
-                <label>Password:</label>
-                <input type="password" class="form-control p-4" name="pass" id="pass" placeholder="Password"/>
-            </div>
-            
-            
+            <div class="form-group text-left">
+                <label class="mt-3">Message:</label>
+                <textarea class="form-control p-4" name="msg" id="msg" placeholder="Write testimonial" rows="8" cols="60"></textarea>
+        </div>
            <hr />
-            <div class="form-group text-center">
-            	<input type="submit" name="submitbtn" value="SIGNUP" class="button_size btn p-3 btn-lg mb-3 btn-danger font-weight-bold"/>
+            <div class="form-group">
+                <center>
+                 <input type="submit" name="submitform" id="submitform" class="btn p-2 btn-sm mb-5 buttons font-weight-bold button_size2" value="Submit" />
+                </center>
             </div>
+            <br />
         
         </form>
-        <div class="text-center">
-        <p>Already have an account. Please <a href="login" >Login</a></p>
-        </div>
     </div>
-</div>
+    </center>
 </section>
-</center>
+
+
 </body>
 </html>
-<?php 
-}
-?>
+<?php } ?>

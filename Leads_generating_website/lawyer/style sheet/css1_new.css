@@ -19,6 +19,8 @@
 	border-radius:10px;
 }
 
+
+
 .div1{
 	display:none;
 }
@@ -28,7 +30,9 @@
 .div3{
 	display:none;
 }
-
+.div4{
+	display:none;
+}
 /*it helps in image responsiveness*/
 .images{
 	width:100%;

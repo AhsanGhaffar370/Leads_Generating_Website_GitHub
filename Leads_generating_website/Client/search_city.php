@@ -219,14 +219,14 @@ $o=$_SESSION['cato'];
         <div class="col-lg-4 col-md-6 col-sm-12 col-12 d-block m-auto">
             <div class="d-block text-dark m-auto"><i class="fas fa-heart-broken fa-4x"></i></div>
             <p class="xl_heading font-weight-normal text-dark">Divorce</p>
-            <p class="container xs_texts text-dark">Going through formal proceedings of filing a divorce is extremely frustrating. Our highly skilled unbundled lawyers will ensure that your goals and demands are met without breaking your bank.</p>
+            <p class="container texts text-dark">Going through formal proceedings of filing a divorce is extremely frustrating.Highly skilled unbundled lawyers under Affordable legal Help will ensure that your goals and demands are met without breaking your bank.</p>
             <hr />
      	</div>
                 
         <div class="col-lg-4 col-md-6 col-sm-12 col-12 d-block m-auto">
             <div class="d-block text-dark m-auto"><i class="fas fa-child fa-4x"></i></div>
             <p class="xl_heading font-weight-normal text-dark">Child Support</p>
-            <p class="container xs_texts text-dark">Paying and getting paid child support can be difficult and tiring. Our lawyers are committed to solving any child support issues as quickly as possible so that the future of your family is financially secure.</p>
+            <p class="container texts text-dark">Paying and getting paid child support can be difficult and tiring. Our lawyers are committed to solving any child support issues as quickly as possible so that the future of your family is financially secure.</p>
            
             <hr />
         </div>
@@ -234,7 +234,7 @@ $o=$_SESSION['cato'];
         <div class="col-lg-4 col-md-6 col-sm-12 col-12 d-block m-auto">
             <div class="d-block text-dark m-auto"><i class="fas fa-baby fa-4x"></i></div>
             <p class="xl_heading font-weight-normal text-dark">Child Adoption</p>
-            <p class="container xs_texts text-dark">Taking legal and parental rights over a child is an exciting but stressful process. The attorneys we partner with ensure that the specific legal details are taken care of so you can enjoy becoming a parent.</p>
+            <p class="container texts text-dark">Taking legal and parental rights over a child is an exciting but stressful process. The attorneys we partner with ensure that the specific legal details are taken care of so you can enjoy becoming a parent.</p>
             
             <hr />
         </div>
@@ -244,7 +244,7 @@ $o=$_SESSION['cato'];
         <div class="col-lg-4 col-md-6 col-sm-12 col-12 d-block m-auto">
             <div class="d-block text-dark m-auto"><i class="fas fa-users fa-4x"></i></div>
             <p class="xl_heading font-weight-normal text-dark">Child Custody</p>
-            <p class="container xs_texts text-dark">Although children can choose for themselves but the custody matter is usually decided in courtroom. Our lawyers will help you inform judge of the situation that is best for your child.</p>
+            <p class="container texts text-dark">Although children can choose for themselves but the custody matter is usually decided in courtroom. Our lawyers will help you inform judge of the situation that is best for your child.</p>
             
             <hr />
         </div>
@@ -252,7 +252,7 @@ $o=$_SESSION['cato'];
         <div class="col-lg-4 col-md-6 col-sm-12 col-12 d-block m-auto">
             <div class="d-block text-dark m-auto"><i class="fas fa-fist-raised fa-4x"></i></div>
             <p class="xl_heading font-weight-normal text-dark">GrandParents Rights</p>
-            <p class="container xs_texts text-dark">As grandparents, you have certain rights that should not be taken away from you. With our attorneys, you can make sure you don't lose these rights and live a secure life.</p>
+            <p class="container texts text-dark">As grandparents, you have certain rights that should not be taken away from you. With our attorneys, you can make sure you don't lose these rights and live a secure life.</p>
             
             <hr />
         </div>

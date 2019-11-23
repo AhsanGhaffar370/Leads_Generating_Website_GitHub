@@ -1,4 +1,12 @@
 // JavaScript Document// JavaScript Document
+function showDiv() {
+   document.getElementById('hide_test').style.display = "block";
+   document.getElementById('btn111').style.display= "none";
+}
+
+
+
+
 $(document).ready(function() {
 	if ($("#color1").text()== "Active") {
 	 $("#color1").css("color","red");
@@ -421,7 +429,7 @@ function check_mail(){
     } 
 	else if(!eregex.test(email)){
 		$("#email").css({"border":	"1px solid red" , "padding" : "10px"});
-		$("#email").after('<span style="font-size:13px; color:#900;" class="error">Please provide valid Email i.e:xxx@gmail.com</span>');
+		$("#email").after('<span style="font-size:13px; color:#900;" class="error">Please provide valid email something like that xxx@mail.com</span>');
 		$("#email").focus();
 		return false;
 

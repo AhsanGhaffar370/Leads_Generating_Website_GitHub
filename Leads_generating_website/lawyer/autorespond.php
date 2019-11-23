@@ -25,9 +25,11 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Autorespond</title>
+    <?php include "libs.php"; ?>
     <script src="ckeditor/ckeditor.js"></script>
 </head>
-<body>
+<body class="bg-light">
+<?php include_once "dashboard_header.php"; ?>
     <?php
      $database=new Database();
      $db = $database->getConnection();
@@ -62,36 +64,58 @@ $msg="Page data updated  successfully";
 
 }
 ?>
-    <form class="lawyer-form1 p-4 text-left" method="post" >
-    <?php $sql = "SELECT subject,detail,active from lawyer_profile where id=:id";
-$query = $db -> prepare($sql);
-$query->bindParam(':id',$id,PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{
-$detail = htmlentities($result->detail);
-$sub= htmlentities($result->subject);
-$act= htmlentities($result->active);
 
-}}?>
-    <label>Message status</label><input type="radio" name="active" value="1" >ON
-    <input type="radio" name="active" value="0" >OFF
-    
-    <label>Email Subject</label>
-    
-    <input type="text" name="subject" value="<?php echo $sub?>" >
-      
-     <textarea class="ckeditor" name="editor">
-     <?php echo $detail?>
-     </textarea>
-     <input type="submit" name="submitbtn" value="Update" class="button_size btn p-3 btn-lg mb-3 btn-danger font-weight-bold"/>
-           
-    </form>
+
+<br><br><br>
+<section class="container bg-white text-center text-black dash pt-2 mt-5 mb-5 border-light border-right border-left border-top border-bottom">
+    <?php include_once "balance_status.php" ?>        
+    <h4 class="text-left pl-5 font-weight-bold p-3" style="background-color:#d1ecf1; color:#0c5460;">Auto Responder </h4>
+    <div class="container-fluid p-0">
+            <div class="col-12 col-lg-10  col-md-10 col-sm-12">
+            
+                <form class="payment-form1" method="post">
+					 <?php $sql = "SELECT subject,detail,active from lawyer_profile where id=:id";
+                    $query = $db -> prepare($sql);
+                    $query->bindParam(':id',$id,PDO::PARAM_STR);
+                    $query->execute();
+                    $results=$query->fetchAll(PDO::FETCH_OBJ);
+                    $cnt=1;
+                    if($query->rowCount() > 0)
+                    {
+                    foreach($results as $result)
+                    {
+                    $detail = htmlentities($result->detail);
+                    $sub= htmlentities($result->subject);
+                    $act= htmlentities($result->active);
+                    
+                    }}?>
+                    
+                    <div class="form-group text-left">
+                        <label class="mt-3">Auto Responder Message:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="active" value="1" > ON&nbsp;&nbsp;
+                        <input type="radio" name="active" value="0" > OFF
+                    </div>
+
+                    <div class="form-group text-left">
+                        <label class="mt-3">Email Subject:</label>
+                        <input type="text" name="subject" value="<?php echo $sub?>" >
+                    </div> 
+                      
+                    <div class="form-group text-left">
+                        <textarea class="ckeditor form-control" name="editor"><?php echo $detail?></textarea>
+                    </div>  
+                     <hr />
+                    <div class="form-group text-left">
+                            <input type="submit" name="submitbtn" class="btn pl-5 pr-5 pt-2 pb-2 btn-sm mb-5 buttons font-weight-normal " value="Save" />
+                    </div>
+                </form>
+            </div>
+    </div>
+</section>
+
 </body>
 
 </html>
 <?php }?>
+
+

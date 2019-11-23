@@ -103,7 +103,7 @@ if (isset($_POST['submitbtn1']))
                 
                     <a href="home"><img class="logo images" src="Image/attorney.png" alt="Attorney logo" /></a><hr />
                 </div>
-                <h4 class="text-dark text-center font-weight-bold p-3 heading" style="background-color:#d1ecf1;">--Forgot--</h4><br />
+                <h4 class="text-dark text-center font-weight-bold p-3 heading" style="background-color:#d1ecf1;">Forgot Password</h4><br />
                 <?php if($error){?>
 				<div class="errorWrap">
 				<strong>ERROR</strong>:
@@ -128,7 +128,7 @@ if (isset($_POST['submitbtn1']))
                     
                    <hr />
                     <div class="form-group">
-                    	<input type="submit" name="submitbtn1" value="Send Resend Link" class="button_size btn p-3 btn-lg mb-4 btn-danger font-weight-bold"/>
+                    	<input type="submit" name="submitbtn1" value="Reset " class="button_size btn p-3 btn-lg mb-4 btn-danger font-weight-bold"/>
                     </div>
                 </form>
                 

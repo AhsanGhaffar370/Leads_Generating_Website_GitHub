@@ -136,7 +136,7 @@ $sq = "INSERT INTO report
 <br><br><br>
 <section class="container bg-white text-center text-black dash pt-2 mt-5 mb-5 border-light border-right border-left border-top border-bottom">
     <?php include_once "balance_status.php" ?>        
-    <h4 class="text-left pl-5 font-weight-bold p-3" style="background-color:#d1ecf1; color:#0c5460;">NOTE </h4>
+    <h4 class="text-left pl-5 font-weight-bold p-3" style="background-color:#d1ecf1; color:#0c5460;">REPORT LEAD </h4>
     
     <div class="alert alert-primary text-left mb-4 xs_texts container font-weight-normal text-secondary">
         <i class="fas fa-info-circle text-info"> </i>

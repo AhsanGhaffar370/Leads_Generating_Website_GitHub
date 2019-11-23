@@ -76,6 +76,10 @@ $msg="Updated successfully";
 <section class="container bg-white text-center text-black dash pt-2 mt-5 mb-5 border-light border-right border-left border-top border-bottom">
           
     <h4 class="text-left pl-5 font-weight-bold p-3 mt-5" style="background-color:#d1ecf1; color:#0c5460;">Update Profile </h4>
+    <div class="alert alert-primary text-left mb-4 xs_texts container font-weight-normal text-secondary">
+        <i class="fas fa-info-circle text-info"> </i>
+        Fill your best information these information will be shown to those people who are searching attorney in your local area
+    </div>
     
     <div class="container">
         <center>
@@ -115,7 +119,7 @@ $msg="Updated successfully";
                 
                     <div class="form-group text-left">
                     
-                        <label class="mt-3">Profile Image:</label><br>
+                        <label class="mt-3 font-weight-bold">Profile Image:</label><br>
                         <img src="img/Lawyer/<?php echo htmlentities($result->Picture);?>" width="300" height="200" style="border:solid 1px #000">
                         
                     </div>
@@ -146,13 +150,17 @@ $msg="Updated successfully";
                     <div class="form-group text-left">
                         <input type="file" name="img1" required>
                     </div>
-					<div class="form-group text-left">
-						<label class="mt-3">City: </label>  
-            
-						<label class="mt-3"><?php echo $state .", ".$city2." ".$city3." ".$city4;  ?></label>  
-                    </div>
                     <div class="form-group text-left">
-                        <label class="mt-3 pb-2">Category:</label><br>
+                        <label class="mt-3 pb-2 font-weight-bold">Category:</label><br>
+
+                        <input type="checkbox" name="law1" value="Child Support"> Child Support<br>
+                        <input type="checkbox" name="law2" value="Child Custody "> Child Custody <br>
+                        <input type="checkbox" name="law3" value="Divorce"> Divorce <br>
+                        <input type="checkbox" name="law4" value="Grand parents rights"> Grand parents rights <br>
+                        <input type="checkbox" name="law5" value="Child Adoptions"> Child Adoptions <br>
+                        <input type="checkbox" name="law6" value="Immigration"> Immigration <br>
+                        
+                        <!--
                         <select name="cat" id="cat" class="form-control" placeholder="Choose Category.." >
                             <option value="">
                             	Select category...
@@ -170,12 +178,13 @@ $msg="Updated successfully";
                             	Bankruptcy
                             </option>
                         </select>
+                        -->
                         
                     </div>
                     
                     <div class="form-group text-left">
-                        <label class="mt-3">Description:</label>
-                        <textarea class="form-control" name="desciption" rows="5" ><?php echo htmlentities($result->Description);?></textarea>
+                        <label class="mt-3 font-weight-bold">Description:</label>
+                        <textarea class="form-control" placeholder="This description will appear on your profile page" name="desciption" rows="5" ></textarea>
                     </div>   
                      <hr />
                     <div class="form-group">

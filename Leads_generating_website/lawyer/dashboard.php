@@ -191,7 +191,8 @@ $totalmoneys=$total_Leads*100;
                 </div>
                 </a>
             </div>
-             <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-block mb-3">
+            
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-block mb-3">
             	<a href="add-feature" class="nav-link">
                 <div class="card set_img">
                     <div class="m-4">
@@ -201,6 +202,40 @@ $totalmoneys=$total_Leads*100;
                 </div>
                 </a>
             </div>
+            
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-block mb-3">
+            	<a href="payment-form" class="nav-link">
+                <div class="card set_img">
+                    <div class="m-4">
+                        <img src="Image/autores.png" alt="auto responder img" class="img-fluid rounded-circle" />
+                        <h6 class="text-dark text-center font-weight-bold m-0">Auto Responder</h6>
+                    </div>
+                </div>
+                </a>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-block mb-3">
+            	<a href="payment-form" class="nav-link">
+                <div class="card set_img">
+                    <div class="m-4">
+                        <img src="Image/cont4.png" alt="auto responder img" class="img-fluid rounded-circle" />
+                        <h6 class="text-dark text-center font-weight-bold m-0">Contact Us</h6>
+                    </div>
+                </div>
+                </a>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-block mb-3">
+            	<a href="payment-form" class="nav-link">
+                <div class="card set_img">
+                    <div class="m-4">
+                        <img src="Image/testimonial5.png" alt="testimonial icon img" class="img-fluid rounded-circle" />
+                        <h6 class="text-dark text-center font-weight-bold m-0">Write testimonial</h6>
+                    </div>
+                </div>
+                </a>
+            </div>
+            
             <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-block mb-3">
             	<a href="logout" class="nav-link">
                 <div class="card set_img">
