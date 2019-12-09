@@ -8,24 +8,59 @@
 
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
+<?php
+// include "config/database.php"
+?>
 
 
 </head>
 
 <body class="bg-white">
-<!-- <?php 
-    // $to="muhammadfaraz991@gmail.com";
-    // $subject="Response from website";
-    // $msg="Hello World";
-    // $header="From: info@legalhelpservice.com";
-    // if (mail($to,$subject,$msg,$header)){
-    //     echo "Mail send successfully";
-    // }
-    // else{
-    //     "can not send email";
-    // }
+<?php 
 
-?> -->
+//             $database=new Database();
+//             $db = $database->getConnection();
+//             $detail="";
+// $sqlquery = "SELECT subject,detail,active from lawyer_profile where id=2";
+//                                     $query1 = $db -> prepare($sqlquery);
+//                                     $query1->bindParam(':id',$id,PDO::PARAM_STR);
+//                                     $query1->execute();
+//                                     $re=$query1->fetchAll(PDO::FETCH_OBJ);
+//                                     $cnt=1;
+//                                     if($query1->rowCount() > 0)
+//                                     {
+//                                     foreach($re as $ree)
+//                                     {
+//                                     // $detail = htmlentities($ree->detail);
+//                                     $sub= htmlentities($ree->subject);
+//                                     $act= htmlentities($ree->active);
+                                    
+//     // $to="muhammadfaraz991@gmail.com";
+//     // $subject="Response from website";
+//     // $msg="Hello World";
+//     // $header="From: info@legalhelpservice.com";
+//     // if (mail($to,$subject,$msg,$header)){
+//     //     echo "Mail send successfully";
+//     // }
+//     // else{
+//     //     "can not send email";
+//     // }
+//     $from_name="Muhammad";
+    
+//                                         $from_email="info@legalhelpservice.com";
+                                    
+//                                         $headers  = "MIME-Version: 1.0\r\n";
+//                                         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+//                                         $headers .= "From: {$from_name} <{$from_email}> \n";
+//                                         $body=$ree->detail;
+//                                         // $body.="Please click the following link to reset your password: {$home_url}reset_password/?access_code={$access_code}";
+//                                         $subject="Hello";
+//                                         $send_to_email="muhammadfaraz991@gmail.com";
+                                    
+//                                         mail($send_to_email, $subject, $body, $headers);
+                                        
+//                                     }}
+?>
 
 <!--<nav class="navbar navbar-expand-md" style="background:linear-gradient(180deg,#001b32 0,#234f6c); padding: 10px;"> -->
 <nav class="navbar navbar-expand-md bg-white" style="box-shadow: 4px -2px 4px 4px #CCCCCC; padding:10px">
@@ -57,7 +92,7 @@
                     </p>
                     
                     <form name="sas" method="get" action="search-city">
-                    	<button type="submit" name=submitbtn value="family" class="btn p-3 font-weight-bold button_size buttons">Get <b>Family</b> law help Now</button>
+                    	<button type="submit" name=submitbtn value="Family" class="btn p-3 font-weight-bold button_size buttons">Get <b>Family</b> law help Now</button>
                                         
                         <!-- <input type="submit" name="submitbtn" value="family" class="btn p-3 font-weight-bold btn-lg block text-white"  style="font-size:2.3vw; background-color:#D9534F;"/> -->
                     </form>
@@ -78,7 +113,7 @@
                     </p>
                     
                     <form name="sas" method="get" action="search-city">
-                    <button type="submit" name=submitbtn value="Bankruptcy" class="btn p-3 font-weight-bold btn-lg button_size buttons" style="font-size:1.5vw; background-color:#D9534F;">Get<b> Bankruptcy</b> help Now</button>
+                    <button type="submit" name=submitbtn value="Bankruptcy" class="btn p-3 font-weight-bold button_size buttons">Get<b> Bankruptcy</b> help Now</button>
                     
                         <!-- <input type="submit" name="submitbtn" value="Bankruptcy" class="btn p-3 font-weight-bold btn-lg block text-white"  style="font-size:2.3vw; background-color:#D9534F;"/> -->
                     </form>
@@ -99,7 +134,7 @@
                     </p>
                     
                     <form name="sas" method="get" action="search-city">
-                    <button type="submit" name=submitbtn value="Immigration" class="btn p-3 font-weight-bold btn-lg button_size buttons"  style="font-size:1.5vw; background-color:#D9534F;">Get<b> Immigration</b> help Now</button>
+                    <button type="submit" name=submitbtn value="Immigration" class="btn p-3 font-weight-bold button_size buttons">Get<b> Immigration</b> help Now</button>
                     
                         <!-- <input type="submit" name="submitbtn" value="Immigration" class="btn p-3 font-weight-bold btn-lg block text-white"  style="font-size:2.3vw; background-color:#D9534F;"/> -->
                     </form>
@@ -122,7 +157,7 @@
                     <form name="sas" method="get" action="search-city">
                     <!-- <input type="submit" name="submitbtn" value="Estate" class="btn p-3 font-weight-bold btn-lg block text-white"  style="font-size:2.3vw; background-color:#D9534F;"/> -->
                     
-                    <button type="submit" name=submitbtn value="Estate" class="btn p-3 font-weight-bold btn-lg button_size buttons" style="font-size:1.5vw; background-color:#D9534F;">Get<b> Estate Planning</b> help Now</button>
+                    <button type="submit" name=submitbtn value="Estate" class="btn p-3 font-weight-bold button_size buttons" >Get<b> Estate Planning</b> help Now</button>
                     
                         <!-- <input type="submit" name="submitbtn" value="Estate" class="btn p-3 font-weight-bold btn-lg block text-white"  style="font-size:2.3vw; background-color:#D9534F;"/> -->
                     </form>
@@ -142,17 +177,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

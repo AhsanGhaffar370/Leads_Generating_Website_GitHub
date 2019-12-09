@@ -12,7 +12,7 @@ include_once "object/login.php";
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />   -->
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Affordable Legal Help</title>
+<title>Affordable Legal Help | Find Affordable Legal Help with us </title>
 
 <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
 <!--#####################################Libraries file##########################################-->
@@ -77,7 +77,7 @@ $o=$_SESSION['cato'];
     <div class="container-fluid "><!--div 0 -->
     	<br />
         <h1 class="pt-5 mb-3 search_heading_settings font-weight-normal jl1_heading" style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif;">Affordable Legal Help Without Paying Thousands Up Front</h1>
-        <h1 class="mt-2 mb-3 search_heading_settings text-dark xl_heading font-weight-normal" style="width:80%;">With Affordable Legal Help, You Can Hire A Lawyer to Help You With Your Case For As Low As $500‑1500.</h1>
+        <h1 class="mt-2 mb-3 search_heading_settings text-dark xl_heading font-weight-normal" style="width:80%;">With Affordable Legal Help, You Can Hire a Lawyer to Help You With Your Case For As Low As Between $500‑1500.</h1>
         <h1 class="mt-5 mb-3 search_heading_settings text-dark xl_heading font-weight-normal">Where Do You Need an Attorney?</h1>
         <h1 class="mb-3 search_heading_settings text-dark heading font-weight-normal"><em>We will instantly connect you with a lawyer for free consultation.</em></h1>
         <?php 
@@ -91,7 +91,7 @@ $o=$_SESSION['cato'];
                 	<div class="row ser_border">
                     
                         <div class="col-12 col-lg-7 col-md-7 col-sm-12  pr-0 pl-0">
-                            <input type="text" name="country" id="country" class="form-control heading ser_box"  placeholder="Enter City Or Zipcode" autocomplete="off"/>
+                            <input type="text" name="country" id="country" class="form-control heading ser_box"  placeholder="Enter Your City Or Zipcode" autocomplete="off"/>
                         </div>
                         
                         <div class="col-12 col-lg-5 col-md-5 col-sm-12 pr-0 pl-0 ">
@@ -112,7 +112,8 @@ $o=$_SESSION['cato'];
                              if (isset($_POST['submitbtn'])){
                                 $_SESSION['city']=$_POST['country'];
                                 $i=$_SESSION['city'];
-                                echo "<script type='text/javascript'> document.location = 'fill-form'; </script>";
+                                
+                                echo "<script type='text/javascript'> document.location = 'Complete-your-request'; </script>";
                               }
                              ?>
                         </div>
@@ -219,14 +220,14 @@ $o=$_SESSION['cato'];
         <div class="col-lg-4 col-md-6 col-sm-12 col-12 d-block m-auto">
             <div class="d-block text-dark m-auto"><i class="fas fa-heart-broken fa-4x"></i></div>
             <p class="xl_heading font-weight-normal text-dark">Divorce</p>
-            <p class="container texts text-dark">Going through formal proceedings of filing a divorce is extremely frustrating.Highly skilled unbundled lawyers under Affordable legal Help will ensure that your goals and demands are met without breaking your bank.</p>
+            <p class="container texts text-dark">Going through formal proceedings of filing a divorce is extremely frustrating. Highly skilled unbundled lawyers under Affordable legal Help will ensure that your goals and demands are met without breaking your bank.</p>
             <hr />
      	</div>
                 
         <div class="col-lg-4 col-md-6 col-sm-12 col-12 d-block m-auto">
             <div class="d-block text-dark m-auto"><i class="fas fa-child fa-4x"></i></div>
             <p class="xl_heading font-weight-normal text-dark">Child Support</p>
-            <p class="container texts text-dark">Paying and getting paid child support can be difficult and tiring. Our lawyers are committed to solving any child support issues as quickly as possible so that the future of your family is financially secure.</p>
+            <p class="container texts text-dark">Paying and getting paid child support can be difficult and tiring. Our lawyers are committed to solving any child support issues as quickly as possible so that the financial future of your family is secured.</p>
            
             <hr />
         </div>
@@ -244,15 +245,15 @@ $o=$_SESSION['cato'];
         <div class="col-lg-4 col-md-6 col-sm-12 col-12 d-block m-auto">
             <div class="d-block text-dark m-auto"><i class="fas fa-users fa-4x"></i></div>
             <p class="xl_heading font-weight-normal text-dark">Child Custody</p>
-            <p class="container texts text-dark">Although children can choose for themselves but the custody matter is usually decided in courtroom. Our lawyers will help you inform judge of the situation that is best for your child.</p>
+            <p class="container texts text-dark">Although children can choose for themselves, but the custody matter is usually decided in the courtroom. Our lawyers will help you inform the judge about the situation and determine the option that is best for your child.</p>
             
             <hr />
         </div>
         
         <div class="col-lg-4 col-md-6 col-sm-12 col-12 d-block m-auto">
             <div class="d-block text-dark m-auto"><i class="fas fa-fist-raised fa-4x"></i></div>
-            <p class="xl_heading font-weight-normal text-dark">GrandParents Rights</p>
-            <p class="container texts text-dark">As grandparents, you have certain rights that should not be taken away from you. With our attorneys, you can make sure you don't lose these rights and live a secure life.</p>
+            <p class="xl_heading font-weight-normal text-dark">Grand Parent's Rights</p>
+            <p class="container texts text-dark">As grandparents, you have certain rights that should not be taken away from you. With our attorneys, you can be sure that you won't lose these rights and that you will live a secure life.</p>
             
             <hr />
         </div>
@@ -275,22 +276,22 @@ $o=$_SESSION['cato'];
     	<h1 class="pt-2 mb-3 home_heading_settings xl_heading">Why Choose Our Lawyers?</h1>
         
         <h3 class="mt-2 home_heading_settings text-dark heading">Experienced</h3>
-        <p class="text-dark texts" >Each of the attorneys and firms in our proven network has decades of experience serving other individuals in your area. They can serve a variety of needs and even address the most unique cases. </p>
+        <p class="text-dark texts" >Each of the attorneys and firms in our proven network has decades of experience serving other individuals in your area. They can serve a variety of needs and even address the most unique cases.</p>
         
         <h3 class="mt-2 home_heading_settings text-dark heading">Friendly</h3>
-        <p class="text-dark texts" >The lawyers in our network really care about getting you the help that you need and will treat you with dignity, respect, and communication every step of the way. If you want an attorney that you like to work with, choose one in our network. </p>
+        <p class="text-dark texts" >The lawyers in our network really care about getting you the help that you need while treating you with dignity, respect, and communication every step of the way. If you want an attorney that you’ll like to work with, choose one in our network.</p>
         
         <h3 class="mt-2 home_heading_settings text-dark heading">Affordable</h3>
-        <p class="text-dark texts" >The attorneys in the Affordable Legal Help network live up to their title and are happy to provide legal assistance that can be used by anyone--even those on a tight budget. </p>
+        <p class="text-dark texts" >The attorneys in the Affordable Legal Help network live up to their title and are happy to provide legal assistance that can be used by anyone--including those on a tight budget.</p>
       
         <h3 class="mt-2 home_heading_settings text-dark heading">Local</h3>
         <p class="text-dark texts" >Our network features thousands of attorneys and firms, and you’ll be able to easily connect with one in your area to make communication much easier and faster. </p>
         
         <h3 class="mt-2 home_heading_settings text-dark heading">Accessible</h3>
-        <p class="text-dark texts" >You’ll always be able to get in touch with our attorneys. Our lawyers don’t believe in leaving clients in the dark and they’ll be there to answer your questions and address your concerns when you have them. </p>
+        <p class="text-dark texts" >You’ll always be able to get in touch with our attorneys. Our lawyers don’t believe in leaving clients in the dark and they’ll be there to answer your questions and address your concerns whenever the need arises.</p>
         
         <h3 class="mt-2 home_heading_settings text-dark heading">Hard-Working</h3>
-        <p class="text-dark texts" >Our in-network attorneys care about results more than anything. They will fight hard to achieve your desired result and won’t rest until every avenue of legal recourse has been exhausted. </p>
+        <p class="text-dark texts" >Our in-network attorneys care about results more than anything. They will fight hard to achieve your desired result and won’t rest until every avenue of legal recourse has been exhausted.</p>
         
         
     </div>
@@ -315,7 +316,7 @@ Then do more with insights from Webify team.</p>
             <div class="carousel-item active">
         		<!--<img src="Image/t1.PNG" alt="testimonial1 img" class="img-fluid" /> -->
                 <p class="xs_texts text-black-50 font-weight-normal font-italic" style="width:60%;">
-                	"This company rocks. Before them I was quoted over $3000.00 to take my case."Affordable Legal Help" offered me a couple different programs where I ended up saving about $1000. Thank you for your help in my divorce."
+                	"This company rocks. Before them I was quoted over $3000.00 to take my case. "Affordable Legal Help" offered me a couple different programs where I ended up saving about $1000. Thank you for your help in finalizing my divorce."
                 </p>
                 <h4 class="font-weight-light texts mt-3">SEAN WALKER</h4>
        		</div>
@@ -345,7 +346,7 @@ Then do more with insights from Webify team.</p>
        		</div>
             <div class="carousel-item">
                 <p class="xs_texts text-black-50 font-weight-normal font-italic" style="width:60%;">
-                	"Affordable legal Help" did outstanding work on my case. They, was very prompt, responding to my emails and phone calls. If I ever have another problem where I need legal service I will be contacting your office for representation. Thanks for your help with everything."
+                	Affordable legal Help" did an outstanding work on my case. They were very prompt in responding to my emails and phone calls. If I ever have another problem where I need legal service, I will be contacting your office for representation. Thanks for your help with everything."
                 </p>
                 <h4 class="font-weight-light texts mt-3">MICHAEL SMITH</h4>
        		</div>

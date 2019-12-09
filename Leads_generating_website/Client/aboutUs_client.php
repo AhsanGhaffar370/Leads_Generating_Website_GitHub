@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
 <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
-    <title>Document</title>
+    <title>Affordable Legal Help</title>
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
 

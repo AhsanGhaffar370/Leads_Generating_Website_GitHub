@@ -1,4 +1,10 @@
 <?php
+// Required if your environment does not handle autoloading
+require __DIR__ . '/vendor/autoload.php';
+
+// Use the REST API Client to make requests to the Twilio REST API
+use Twilio\Rest\Client;
+
 session_start();
 error_reporting(0);
  include_once "config/database.php"; 
@@ -9,7 +15,7 @@ include_once "object/user.php";?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
-<title>Fill Form</title>
+<title>Complete your Request | Affordable Legal Help </title>
 
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
@@ -20,7 +26,7 @@ include_once "object/user.php";?>
 
 <body>
 
-<?php include_once "header.php"; ?> 
+ <?php include_once "header.php"; ?>  
 
 <?php
 // if(isset($_REQUEST['submitbtn']))
@@ -43,6 +49,9 @@ include_once "object/user.php";?>
     //pass connection to objects
             $user = new userRequest($db);
             $msg="";
+            
+            $t=$_SESSION['city'];
+                // echo "city is".$t;
             // $db = $database->connect();
             if (isset($_POST['submitbtn']))
             {
@@ -58,8 +67,9 @@ include_once "object/user.php";?>
                 
                 $user->Email = $_POST['email'];
                 $user->PhoneNo  = $_POST['mob'];
+                
                 $user->state= $_SESSION['city'];
-                $user->city2= $_SESSION['city'];
+                $user->city= $_SESSION['city'];
                 $user->city3= $_SESSION['city'];
                 $user->city4= $_SESSION['city'];
                 
@@ -68,6 +78,10 @@ include_once "object/user.php";?>
                 $user->Lawyer_category= $_POST['law_cat'];
                 
                 $user->Catogory= $_SESSION['cato'];
+                $user->Catogory2= $_SESSION['cato'];
+                $user->Catogory3= $_SESSION['cato'];
+                $user->Catogory4= $_SESSION['cato'];
+                
                 $user->legal_matter= $_POST['msg'];
                 $user->State=$_SESSION['city'];
                 $u=$_SESSION['city'];
@@ -121,7 +135,7 @@ include_once "object/user.php";?>
                             
                             $user->id=$id;
                             if ($user->leadsWork()){
-        
+                                // $id=$_SESSION['ID1'];
                                 $lea=$_SESSION['leads'];
                                 $dummy=$_SESSION['dummy'];
                                 $lea=$lea+1;
@@ -134,6 +148,72 @@ include_once "object/user.php";?>
                                 $user->total_Leads=$total;
                                 $user->DummyLeads=$dum;
                                 if ($user->leadWork()){
+
+                                    $sqlquery = "SELECT subject,detail,active,smsstatus from lawyer_profile where id=:id";
+                                    $query1 = $db -> prepare($sqlquery);
+                                    $query1->bindParam(':id',$id,PDO::PARAM_STR);
+                                    $query1->execute();
+                                    $re=$query1->fetchAll(PDO::FETCH_OBJ);
+                                    $cnt=1;
+                                    if($query1->rowCount() > 0)
+                                    {
+                                    foreach($re as $ree)
+                                    {
+                                    // $detail = htmlentities($ree->detail);
+                                    $sub= htmlentities($ree->subject);
+                                    $act= htmlentities($ree->active);
+                                    $sms=htmlentities($ree->smsstatus);
+                                    
+                                    
+                                    if ($act=="1"){
+                                        $from_name=$_SESSION['fname'];
+                                        $from_email="info@legalhelpservice.com";
+                                    
+                                        $headers  = "MIME-Version: 1.0\r\n";
+                                        $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+                                        $headers .= "From: {$from_name} <{$from_email}> \n";
+                                        $body=$ree->detail;
+                                        // $body.="Please click the following link to reset your password: {$home_url}reset_password/?access_code={$access_code}";
+                                        $subject=$sub;
+                                        $send_to_email=$_POST['email'];
+                                    
+                                        mail($send_to_email, $subject, $body, $headers);
+                                            // return true;
+                                        
+                                    }
+                                   
+                                    if($sms=="1"){
+                                        
+
+                                        // Your Account SID and Auth Token from twilio.com/console
+                                        $sid = 'ACddc3b947e7fe603112de083a42e1eb43';
+                                        $token = '985626b65e5beb727aae5529197e5cf5';
+                                        $client = new Client($sid, $token);
+                                        $num='+';
+                                        $num.=$_SESSION['PhoneNo1'];
+                                        // Use the client to do fun stuff like send text messages!
+                                        
+                                        try{$client->messages->create(
+                                            // the number you'd like to send the message to
+                                            $num,
+                                            array(
+                                                // A Twilio phone number you purchased at twilio.com/console
+                                                'from' => '+12054489445',
+                                                // the body of the text message you'd like to send
+                                                'body' => 'Leads Arrived!!'
+                                            )
+                                        );
+                                        // echo "Message send ";
+                                            
+                                        }
+                                        catch(Exception $e) {
+                                            // echo "not send";
+                                            // echo 'Error: ' . $e->getMessage();
+                                        }
+
+                                    }
+                                    }}
+                                    
                                         $to=$em;
                                         $subject="Affordable Leads";
                                          $cname=$_SESSION['fname'];
@@ -148,6 +228,7 @@ include_once "object/user.php";?>
                                             else{
                                                 // "can not send email";
                                             }
+                                        
                                     // echo "$de";
                                     echo "<script type='text/javascript'> document.location = 'request'; </script>";
                          
@@ -317,7 +398,7 @@ include_once "object/user.php";?>
             
            <hr />
             <div class="form-group">
-                <center><input type="submit" name="submitbtn" value="Submit Request" class="btn p-4 btn-md mb-4 col-8 font-weight-bold buttons" /></center>
+                <center><input type="submit" name="submitbtn" value="Submit Request" class="btn p-3 mb-4 col-8 font-weight-bold buttons" /></center>
             </div>
             <br />
         

@@ -5,7 +5,7 @@
         </div>	
         <div class="text-right text-white">
             
-            <h5 class="home_heading_settings font-weight-bold" style="font-size:1.8vw;">Making Legal Help Affordable For All</h5>
+            <h5 class="home_heading_settings font-weight-bold" style="font-size:1.8vw;">Find Affordable Legal Help With Us </h5>
         </div>
     </div>
 </nav>

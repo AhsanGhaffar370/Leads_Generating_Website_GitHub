@@ -10,7 +10,7 @@ include_once "config/database.php";
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Assigned lawyer</title>
+<title>Assigned lawyer | Affordable legal Help </title>
 
 <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
 <base href="http://legalhelpservice.com/lawyer_democopy.php">
