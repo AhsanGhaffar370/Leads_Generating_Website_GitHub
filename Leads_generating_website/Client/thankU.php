@@ -4,25 +4,41 @@ error_reporting(0);
  include_once "config/database.php"; 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>LawyerSignUp</title>
+<meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
+<title>Requesting</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
-
+   
+    <meta name="description" content="At Affordable Legal Help, we believe that your privacy is important to accessing quality legal care and comprehensive services at low cost.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
 
 <?php $id=md5($_SESSION['ID1']);
 ?>
 
-<script src="client_validate.js"></script>
+<script async src="client_validate.js"></script>
 <script type="text/javascript">
 	function redirect(){
 		window.location="assigned_lawyer/<?php echo $id;?>";         //////////////////yha link dedo kha jana he
 	}
 </script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142213622-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142213622-3');
+</script>
+
+
 </head>
 
 <body  onload="setTimeout('redirect()',5000)">

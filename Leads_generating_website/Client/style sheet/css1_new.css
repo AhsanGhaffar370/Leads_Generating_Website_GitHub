@@ -1,6 +1,17 @@
 @charset "utf-8";
 /* CSS Document */
 
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
+  font-display: swap;
+}
+
+
+
+
 /*it helps in image responsiveness*/
 .images{
 	width:100%;
@@ -10,9 +21,9 @@
 
 
 /*it helps in scrolling page smoothly        it used in lawyer_home page*/
-html{
-	scroll-behavior:smooth;
-}
+/*html{*/
+/*	scroll-behavior:smooth;*/
+/*}*/
 /*it helps in scrolling page smoothly        it used in lawyer_home page*/
 
 
@@ -58,7 +69,7 @@ html{
 
 /*used to handle background image of search_city section*/
 .ser_top{
-	background-image: linear-gradient(rgba(255,255,255,1),rgba(255,255,255,0.7)),url(../Image/serbg.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(255, 255, 255, 0.5)),url(../Image/serbg.jpg);
 	background-size:100% 100%;
 	background-attachment:fixed;
 	width:100%;
@@ -371,7 +382,7 @@ html{
 */
 
 .ser_top{
-	background-image: linear-gradient(rgba(255,255,255,1),rgba(255,255,255,0.7)),url(../Image/serbg.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(255, 255, 255, 0.5)),url(../Image/serbg.jpg);
 	background-size:100% 100%;
 	background-attachment:fixed;
 	width:100%;
@@ -445,7 +456,7 @@ html{
 @media(min-width: 576px) and (max-width: 767px){
 
 .ser_top{
-	background-image: linear-gradient(rgba(255,255,255,1),rgba(255,255,255,0.7)),url(../Image/serbg.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(255, 255, 255, 0.5)),url(../Image/serbg.jpg);
 	background-size:100% 100%;
 	background-attachment:fixed;
 	width:100%;
@@ -549,7 +560,7 @@ html{
 
 */
 .ser_top{
-	background-image: linear-gradient(rgba(255,255,255,1),rgba(255,255,255,0.7)),url(../Image/serbg.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(255, 255, 255, 0.5)),url(../Image/serbg.jpg);
 	background-size:100% 100%;
 	background-attachment:fixed;
 	width:100%;
@@ -647,7 +658,7 @@ html{
 
 */
 .ser_top{
-	background-image: linear-gradient(rgba(255,255,255,1),rgba(255,255,255,0.7)),url(../Image/serbg.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(255, 255, 255, 0.5)),url(../Image/serbg.jpg);
 	background-size:100% 100%;
 	background-attachment:fixed;
 	width:100%;
@@ -739,7 +750,7 @@ html{
 
 */
 .ser_top{
-	background-image: linear-gradient(rgba(255,255,255,1),rgba(255,255,255,0.7)),url(../Image/serbg.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(255, 255, 255, 0.5)),url(../Image/serbg.jpg);
 	background-size:100% 100%;
 	background-attachment:fixed;
 	width:100%;

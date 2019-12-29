@@ -1,12 +1,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
 <title>Affordable Legal Help</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+
+   
+    <meta name="description" content="Our team is standing by and ready to hear about the ways we can support you with our legal services. Affordable lawyers ARE out there! Reach out today.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142213622-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142213622-3');
+</script>
 
 
 </head>

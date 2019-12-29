@@ -9,17 +9,30 @@ include_once "config/database.php";
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
 
 <title>Assigned lawyer | Affordable legal Help </title>
 
 <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
-<base href="http://legalhelpservice.com/lawyer_democopy.php">
+<base href="https://affordablelegalhelp.com/lawyer_democopy.php">
 
-  
+
+<meta name="viewport" content="width=device-wdth, initial-scale=1.0" />
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
 
-<script src="client_validate.js"></script>
+<script async src="client_validate.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142213622-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142213622-3');
+</script>
+
 
 </head>
 
@@ -31,7 +44,7 @@ include_once "config/database.php";
 	<br />
     <div class="alert alert-success mb-5 xs_texts container-fluid">
     
-        Great news, we have successfully connected you with a family Law attorney that serves your local area. For immediate assistance with your case, contact the provider listed below.
+        Great news, we have successfully connected you with National Legal Help. For immediate assistance with your case, contact the provider listed below.
     </div>
     
     <div class="col-12 pb-5">

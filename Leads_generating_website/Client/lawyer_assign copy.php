@@ -6,17 +6,32 @@ error_reporting(0);
 include_once "config/database.php"; 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
 <title>Assigned lawyer | Affordable legal Help r</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
-<base href="http://localhost/final/Leads_generating_website/lawyer_assign.php">
+<base href="https://affordablelegalhelp.com/lawyer_assign.php">
 
+   
+    <meta name="description" content="Our team is standing by and ready to hear about the ways we can support you with our legal services. Affordable lawyers ARE out there! Reach out today.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
-<script src="client_validate.js"></script>
+<script async src="client_validate.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142213622-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142213622-3');
+</script>
+
 
 </head>
 
@@ -29,7 +44,7 @@ include_once "config/database.php";
 <section class="container bg-light  law_services text-center text-dark">
     
     <div class="row rowsetting1">
-    <div class="alert alert-success mt-4 xs_texts">Great news, we have successfully connected you with a family Law attorney that serves your local area. For immediate assistance with your case, contact the provider listed below.
+    <div class="alert alert-success mt-4 xs_texts">Great news, we have successfully connected you with National Legal Help. For immediate assistance with your case, contact the provider listed below.
   </div>
         <div class="col-lg-5 col-md-5 col-sm-5 col-12 d-block mb-3">	
             <div class="card  bg-light set_img">

@@ -90,7 +90,7 @@ class userRequest{
             
                 // $email=$_POST['username'];
                 // $password=md5($_POST['password']);
-                $sql ="SELECT lawyer_profile.* ,lawyer_city.city from lawyer_profile,lawyer_city WHERE lawyer_profile.id=lawyer_city.id_fk AND (lawyer_profile.Catogory=:Catogory || lawyer_profile.Catogory2=:Catogory2 || lawyer_profile.Catogory3=:Catogory3 || lawyer_profile.Catogory4=:Catogory4) AND lawyer_profile.PendingBalance >= 10 AND lawyer_city.city=:city";
+                $sql ="SELECT lawyer_profile.* ,lawyer_city.city from lawyer_profile,lawyer_city WHERE lawyer_profile.id=lawyer_city.id_fk AND lawyer_profile.PendingBalance >= 40 AND lawyer_city.city=:city order by rand() LIMIT 1";
                 
                 $query= $this->conn->prepare($sql);
 
@@ -101,21 +101,10 @@ class userRequest{
                 // $this->city3=htmlspecialchars(strip_tags($this->city3));
                 // $this->city4=htmlspecialchars(strip_tags($this->city4));
                 
-                $this->Catogory=htmlspecialchars(strip_tags($this->Catogory));
-                
-                $this->Catogory2=htmlspecialchars(strip_tags($this->Catogory2));
-                $this->Catogory3=htmlspecialchars(strip_tags($this->Catogory3));
-                $this->Catogory4=htmlspecialchars(strip_tags($this->Catogory4));
-                
                 $query->bindParam(":city", $this->city);
                 // $query->bindParam(":city2", $this->city2);
                 // $query->bindParam(":city3", $this->city3);
                 // $query->bindParam(":city4", $this->city4);
-                
-                $query->bindParam(":Catogory", $this->Catogory);
-                $query->bindParam(":Catogory2", $this->Catogory2);
-                $query->bindParam(":Catogory3", $this->Catogory3);
-                $query->bindParam(":Catogory4", $this->Catogory4);
                 
                 $query->execute();
                 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -132,6 +121,10 @@ class userRequest{
                         $_SESSION['ZipCode1']=htmlentities($result->Zipcode);
                         $_SESSION['des']=htmlentities($result->Description);
                         $_SESSION['pending']=htmlentities($result->PendingBalance);
+                        $_SESSION['time']=htmlentities($result->timezone);
+                        $_SESSION['sms']=htmlentities($result->smsPhoneNumber);
+                        
+                        
                     }
                     return true;
                 }
@@ -196,10 +189,11 @@ class userRequest{
             $this->Email=htmlspecialchars(strip_tags($this->Email));
             $this->Phone=htmlspecialchars(strip_tags($this->Phone));
             $this->Amount=htmlspecialchars(strip_tags($this->Amount));
-             $dt = new DateTime('now', new DateTimezone('America/New_York'));
-             $da=$dt->format('F j, Y, g:i a');
-            // echo $ias;
-            $this->Created =$da; 
+            
+            //  $dt = new DateTime('now', new DateTimezone('America/New_York'));
+            //  $da=$dt->format('F j, Y, g:i a');
+            // // echo $ias;
+            // $this->Created =$da; 
  
             
             // bind values 

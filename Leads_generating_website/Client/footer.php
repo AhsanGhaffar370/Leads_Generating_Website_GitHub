@@ -1,5 +1,4 @@
-<footer class="text-light text-center container-fluid xxs_texts" style="background-color: #1c1c1c;" >
-<script src="//code.tidio.co/ovzedednhjqt4dhp1ht5ewo21eep1wny.js" async></script>
+<footer class="text-light text-center container-fluid xs_texts" style="background-color: #1c1c1c;" >
     <div class="pt-4 pb-4">
         <a href="about-us" class="pr-4 text-white font-weight-bold" >About Us</a>
         <a href="privacy-policy" class="pr-4 text-white font-weight-bold" >Privacy-Policy</a>

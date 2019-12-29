@@ -26,6 +26,7 @@ else{
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
@@ -34,7 +35,7 @@ else{
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
 
-<script src="client_validate.js"></script>
+<script async src="client_validate.js"></script>
 <style>
 		.errorWrap {
     padding: 10px;
@@ -54,6 +55,19 @@ else{
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
 		</style>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142213622-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142213622-3');
+</script>
+
+
 </head>
 <body>
 

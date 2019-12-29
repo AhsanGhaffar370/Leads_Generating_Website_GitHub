@@ -1,3 +1,4 @@
+ErrorDocument 404 https://affordablelegalhelp.com/
 RewriteEngine On
 RewriteCond %{REQUES_FILENAME} !-d
 RewriteCond %{REQUES_FILENAME} !-f

@@ -1,25 +1,53 @@
+<?php
+session_start();
+error_reporting(0);
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
 <title>Assigned lawyer | Affordable legal Help </title>
-<base href="http://legalhelpservice.com/lawyer_demo.php">
+<base href="https://affordablelegalhelp.com/lawyer_demo.php">
 
+<meta name="viewport" content="width=device-wdth, initial-scale=1.0" />
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
 
-<script src="client_validate.js"></script>
+<script async src="client_validate.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142213622-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142213622-3');
+</script>
+
 
 </head>
 
 <body class=" bg-light">
 
 <?php include_once "header.php"; ?>
+<?php $_SESSION = array();
+if (ini_get("session.use_cookies"))
+{
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 60*60,
+    $params["path"], $params["domain"],
+    $params["secure"], $params["httponly"]
+    );
+}
+    unset($_SESSION['city']);
+    ?>
 
 <section class="bg-white container text-center mb-5 mt-5">
 	<br />
     <div class="alert alert-success mb-5 xs_texts container-fluid">
-        Great news, we have successfully connected you with a family Law attorney that serves your local area. For immediate assistance with your case, contact the provider listed below.
+        Great news, we have successfully connected you with National Legal Help. For immediate assistance with your case, contact the provider listed below.
     </div>
     
     <div class="col-12 pb-5">
@@ -30,7 +58,7 @@
                 <h1 class="font-weight-bold card-title home_heading_settings xl_heading" >Michael Parker</h1>
                 <p class="xxs_texts">800.577.4626 ext 110 </p>
                 <p class="xxs_texts">support@legalhelpservices.net </p>
-                <p class="texts font-weight-bold">Practice Areas: </p>
+                <p class="texts font-weight-bold">Servicing Areas: </p>
                 <p class="xxs_texts">Family Law, Divorce, Child Custody, Child Support</p>
                 <p class="xxs_texts">Grandparents Rights and Adoptions.</p>
             </div>
@@ -60,6 +88,7 @@
     </div>
     </div>
 </section>
+
 
 <?php include_once "footer.php"; ?>
 </body>
