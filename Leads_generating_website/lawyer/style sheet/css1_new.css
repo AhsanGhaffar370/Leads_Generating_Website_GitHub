@@ -1,10 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-.header_hover:hover{
-	background-color:#e6eff7;
-	border-radius:10px;
-}
+
 
 .header_button_hover:hover{
 	background-color:#54aef9;
@@ -98,7 +95,7 @@ html{
 	width:100%;
 	height:700px;
 	background-repeat:no-repeat;
-}
+}/*
 ul.pagination li.details{
 	color:#17a2b8;
  
@@ -127,7 +124,7 @@ ul.pagination li.details{
 	 background:#E7F2C7;
  }
  
- 
+ */
  .contactUs_bg{
 	padding-top: 25px !important;
 	padding-bottom: 45px !important;

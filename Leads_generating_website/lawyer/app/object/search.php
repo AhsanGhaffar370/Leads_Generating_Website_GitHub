@@ -1,6 +1,6 @@
 <?php
 //fetch.php
-$connect = mysqli_connect("localhost", "u728873214_lead", "123456", "u728873214_leads_generate");
+$connect = mysqli_connect("localhost", "root", "", "leads_generate_db");
 $request = mysqli_real_escape_string($connect, $_POST["query"]);
 if (isset($_POST["query"]))
 {

@@ -19,7 +19,7 @@
 
 <!--#######################################################################################-->
 <base href="https://affordableattorneyleads.com/">
-<link rel="stylesheet" href="style sheet/css1_new.css?v=13">
+<link rel="stylesheet" href="style sheet/css1_new.css">
 <!--to make it responsive for mobile-->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-wdth, initial-scale=1.0" />

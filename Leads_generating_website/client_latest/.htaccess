@@ -1,0 +1,69 @@
+ErrorDocument 404 https://affordablelegalhelp.com/
+RewriteEngine On
+RewriteCond %{REQUES_FILENAME} !-d
+RewriteCond %{REQUES_FILENAME} !-f
+
+RewriteRule ^home?$ index.php
+
+RewriteRule ^home/?$ home_pg.php
+RewriteRule ^bankruptcy/?$ adoption.php
+RewriteRule ^change-images/?$ change-images.php
+RewriteRule ^immigiration/?$ child_support.php
+RewriteRule ^Complete-your-request/?$ client_form1.php
+RewriteRule ^contact-us/?$ ContactUs_client.php
+RewriteRule ^estate-planning/?$ custody.php
+RewriteRule ^dashboard/?$ dashboard.php
+RewriteRule ^display-leads/?$ display_leads_lawyer.php
+RewriteRule ^family-law/?$ divorce.php
+
+RewriteRule ^assigned_lawyer/([0-9a-zA-Z]+)$ lawyer_democopy.php?idhash=$1 [NC,L]
+
+RewriteRule ^assigned-lawyer/([0-9a-zA-Z]+)$ lawyer_demo.php?idhash=$1 [NC,L]
+
+RewriteRule ^login/?$ lawyer_login2.php
+RewriteRule ^signup/?$ LawyerSignUp.php
+
+RewriteRule ^search-city?$ search_city.php
+
+RewriteRule ^logout/?$ logout.php
+RewriteRule ^request/?$ thankU.php
+RewriteRule ^update-profile/?$ update-profiles.php
+RewriteRule ^services/?$ Services.php
+RewriteRule ^about-us/?$ aboutUs_client_new.php
+RewriteRule ^leads/?$ leads_lawyer.php
+RewriteRule ^purpose/?$ purpose_lawyer.php
+RewriteRule ^lawyer/?$ lawyer_home.php
+RewriteRule ^privacy-policy/?$ privay_client.php
+
+RewriteRule ^about-leads/?$ about_our_leads_lawyer.php
+RewriteRule ^about-Us/?$ aboutUs_lawyer.php
+
+RewriteRule ^terms-of-use/?$ Terms_of_use_client.php
+
+RewriteRule ^thank-you/?$ thankUcopy.php
+RewriteRule ^press-release/?$ press_release.php
+
+
+RewriteRule ^our-blog/?$ blog_index.php
+
+
+RewriteRule ^child-support/?$ child_support.php
+RewriteRule ^child-custody/?$ child_addoption.php
+RewriteRule ^child-addoption/?$ child_custody.php
+RewriteRule ^divorce/?$ divorce.php
+RewriteRule ^grand-parent-rights/?$ grand_parent_rights.php
+
+
+RewriteRule ^Frequently-Ask-Questions/?$ faq.php
+RewriteRule ^success-stories/?$ stories.php
+
+RewriteRule ^view-blog/([0-9a-zA-Z]+)$ blog_pages.php?id=$1 [NC,L]
+# RewriteRule ^view-blog/?$ blog_pages.php
+RewriteRule ^blog-search-result/?$ blog_search.php
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW SSL_REDIRECT:affordablelegalhelp.com
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^affordablelegalhelp.com$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE SSL_REDIRECT:affordablelegalhelp.com

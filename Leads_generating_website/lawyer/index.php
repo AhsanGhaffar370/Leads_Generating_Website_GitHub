@@ -9,6 +9,15 @@
 <!--#####################################Libraries file##########################################-->
 <?php include_once "libs.php"; ?>
 
+<style>
+
+
+.header_hover:hover{
+	color:#999;
+	/*border-radius:10px;*/
+}
+</style>
+
 <script src="client_validate.js?v=3"></script>
 
 

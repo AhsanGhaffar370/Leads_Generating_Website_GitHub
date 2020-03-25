@@ -1,10 +1,16 @@
 <?php
 class Database1{
 
-  private $host = "localhost";
-    private $db_name = "u728873214_leads_generate";
-    private $username = "u728873214_lead";
-    private $password = "123456";
+  
+    // specify your own database credentials
+    private $host = "localhost";
+    // private $db_name = "u728873214_leads_generate";
+    // private $username = "u728873214_lead";
+    // private $password = "123456";
+    
+    private $db_name = "leads_generate_db";
+    private $username = "root";
+    private $password = "";
     public $conn;
 
 
