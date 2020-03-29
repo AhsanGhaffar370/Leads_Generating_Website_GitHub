@@ -1,0 +1,340 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*these font style and colors are used in most of the pages*/
+.fontb{
+	font-family: 'Open Sans';
+	color:#005298;
+}
+
+.search_heading_settings{
+	font-family:san "MS Serif", "New York", serif;
+	color:#104e82;
+}
+
+.font1{
+	font-family:Open Sans, Arial, Helvetica;
+}
+
+.font2{
+	font-family:'Trebuchet MS', Helvetica, sans-serif;
+}
+
+.font3{
+	font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	
+}
+
+.font4{
+	font-family:'Times New Roman', Times, serif;
+}
+/*these font style and colors are used in most of the pages*/
+
+
+.bg_color{
+	background-color:#F9F9F9;
+}
+
+
+/*used to handle background image of search_city section*/
+
+
+.contactUs_bg1{
+	padding: 100px 5px 100px 20px !important;
+	background-image: linear-gradient(rgba(23, 26, 28, 0.7),rgba(20, 21, 21, 0.7)),url("../Image/agent.png");
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	border-radius:20px;
+	margin-bottom:2px;
+}
+
+
+.home_bg{
+	background-image: linear-gradient(rgba(23, 26, 28, 0.7),rgba(20, 21, 21, 0.7)),url("../Image/serbg.jpg");
+}
+
+.stories_bg{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../Image/contactus1.jpg");  
+}
+
+.contact_bg{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../Image/contactus.jpg");  
+}
+
+.about_bg{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../Image/f1.jpg");  
+}
+
+.blog_bg{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../Image/blog.png");  
+}
+
+.faq_bg{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../Image/agent.png");  
+}
+
+.press_bg{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../Image/imig.png");  
+}
+
+.bg1{
+    background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width:100%;
+	height:300px;
+}
+
+.bg2{
+	background-size:100% 100%;
+	background-attachment:fixed;
+	width:100%;
+	height:550px;
+	background-repeat:no-repeat;
+}
+
+
+/* to handle Iframe videos */
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video1 {
+    position: relative;
+    width: 100%;
+    height: 0;
+	padding-bottom: 56.25%;
+}
+/* to handle Iframe videos */
+
+.ser_border{
+	border: 12px solid rgba(0,78,103,.2); 
+	border-radius: 6px;
+}
+
+
+/* I don't know the use of it */
+.dropdown:hover .dropdown-content {background-color:#333; display: block;}
+
+
+.jl_heading{
+	font-size:50px; 
+}
+
+.jl1_heading{
+	font-size:46px; 
+}
+
+.xl_heading{
+	font-size:38px; 
+}
+
+.heading{
+	font-size:26px; 
+}
+
+.texts{
+	font-size:18px; 
+}
+
+
+.ser_box{
+	padding: 34px 0px 34px 25px;
+	border-radius:0;
+}
+
+
+
+
+
+
+
+.size46{
+    font-size:46px;
+}
+
+.size42{
+    font-size:42px;
+}
+
+.size31{
+    font-size:31px;
+}
+
+.size15{
+    font-size:15px;
+}
+
+.size13{
+    font-size:13px;
+}
+
+.size16{
+    font-size:16px;
+}
+
+.size20{
+    font-size:20px;
+}
+
+  
+/* Medium devices (landscape tablets, between 768px and 992px) */
+@media(min-width: 768px) and (max-width: 992px) {
+	
+	.size46{font-size:44px;}
+
+	.size31{font-size:30px;}
+
+	.size42{font-size:41px;}
+
+	.bg1{
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		width:100%;
+		height:300px;
+	}
+
+	.bg2{
+		background-size:100% 100%;
+		background-attachment:fixed;
+		width:100%;
+		height:520px;
+		background-repeat:no-repeat;
+	}
+
+	.ser_box{
+		padding: 34px 0px 34px 25px;
+		border-radius:0;
+	}
+	
+
+	.xl_heading,.jl_heading,.jl1_heading{
+		font-size:36px; 
+	}
+	
+	.heading{
+		font-size:24px; 
+		
+	}
+	
+	.texts{
+		font-size:18px; 
+	}
+
+	#hide_text{
+		display:none;
+	}
+} 
+
+/* Small devices (portrait tablets and large phones,  between 600px and 767px 600px) */
+@media(min-width: 600px) and (max-width: 767px) {
+
+	.size46{font-size:42px;}
+
+	.size31{font-size:29px;}
+
+	.size42{font-size:40px;}
+
+	.size20{font-size:19px;}
+
+	.bg1{
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		width:100%;
+		height:280px;
+	}
+
+	.bg2{
+		background-size:100% 100%;
+		background-attachment:fixed;
+		width:100%;
+		height:500px;
+		background-repeat:no-repeat;
+	}
+
+	.ser_box{
+		padding: 34px 0px 30px 34px;
+		border-radius:0;
+	}
+
+	.xl_heading,.jl_heading,.jl1_heading{
+		font-size:32px; 
+	}
+	
+	.heading{
+		font-size:22px; 
+		
+	}
+	.texts{
+		font-size:16px; 
+	}
+
+	#hide_text{
+		display:none;
+	}
+}
+
+
+/* Extra small devices (phones, 599px and down) */
+@media only screen and (max-width: 599px) {
+
+  .size46{font-size:40px;}
+
+  .size31{font-size:28px;}
+
+  .size42{font-size:39px;}
+
+  .size20{font-size:19px;}
+
+  .bg1{
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		width:100%;
+		height:260px;
+	}
+	
+	.bg2{
+		background-size:100% 100%;
+		background-attachment:fixed;
+		width:100%;
+		height:500px;
+		background-repeat:no-repeat;
+	}
+
+	.ser_box{
+		padding: 30px 0px 30px 31px;
+		border-radius:0;
+	}
+
+	.xl_heading,.jl_heading,.jl1_heading{
+		font-size:26px; 
+	}
+	
+	
+	.heading{
+		font-size:20px; 
+		
+	}
+	
+	.texts{
+		font-size:14px; 
+	}
+
+	#hide_text{
+		display:none;
+	}
+}
+
+
+
+/* @media(min-width: 768px) and (max-width: 1045px){}
+@media(min-width: 576px) and (max-width: 767px){}
+@media(min-width: 480px) and (max-width: 575px){}
+@media(min-width: 400px) and (max-width: 479px){}
+@media (max-width: 400px){} */
+
