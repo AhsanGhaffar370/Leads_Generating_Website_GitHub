@@ -5,26 +5,17 @@
 <meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
 <title>Affordable Legal Help| Press Release</title>
 
-<link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
 
-   
-    <meta name="description" content="Our team is standing by and ready to hear about the ways we can support you with our legal services. Affordable lawyers ARE out there! Reach out today.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--yandex-->
-    <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
+
+<meta name="description" content="Our team is standing by and ready to hear about the ways we can support you with our legal services. Affordable lawyers ARE out there! Reach out today.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--yandex-->
+<meta name="yandex-verification" content="0beccc11dc0dc9cb" />
 <!--#####################################Libraries file##########################################-->
 <?php include "libs.php"; ?>
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142213622-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-142213622-3');
-</script>
 
 
 </head>
@@ -32,16 +23,15 @@
 <body class="bg-white">
 <?php include_once "header.php" ?>
 
-<div class="jumbotron jumbotron-fluid bg1 stories_bg d-flex align-items-center border-0">
-    <div class="container">
-        <h1 class="size46 font-weight-normal text-white text-left font1">PRESS RELEASE</h1>
-        <hr align="left" class="m-0 col-5 col-lg-3 col-md-4 col-sm-4" style="border: 3px solid rgba(0, 81, 152); border-radius: 2px;" />
+<div class="jumbotron jumbotron-fluid bg1 press_bg border-0">
+    <div class="paddings">
+        <h1 class="size46 text-white text-center ">PRESS RELEASE</h1>
     </div>
 </div>
 
 <div class="container-fluid pt-5 pb-5">
-	<h1 class=" font-weight-bold text-dark" style="padding-left:30px;"><em>Press Release</em></h1>
-    <p class="text-dark p-4 text-black-50" style="font-size:16px; font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">
+	<p class=" font-weight-bold text-dark size46" style="padding-left:30px;"><em>Press Release</em></p>
+    <p class="text-secondary font-weight-normal size16 decor p-4">
     	Although legal assistance solves one problem, it creates another, i.e. the financial issues. Legal assistance has always been one of the most expensive services in America to the extent that many people would rather forego a family matter rather than invest in hiring a good lawyer.<br />
 
 <b class="font-weight-bold">Affordable legal help</b> is one of the most innovative <b class="font-weight-bold">affordable legal services</b> in America who have gained a lot of good name for their financially efficient legal services. The type of legal services that they provide is called <b class="font-weight-bold">bundled legal services</b>.’ Here, the law firm charges the client only for certain services provided by their attorney. Therefore, the client does not have to get all their help from the attorney. They can handle parts such as representing themselves in the court of law.<br />
@@ -66,6 +56,21 @@ Affordable Legal Help since then has been able to legally assist a number of peo
 
 
 <?php include_once "footer.php" ?>
+
+<?php include "libs2.php"; ?>
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142213622-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142213622-3');
+</script>
 
 </body>
 </html>

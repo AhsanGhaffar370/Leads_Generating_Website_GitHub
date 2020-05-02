@@ -372,7 +372,7 @@ require_once "configs.php";
                     $LawyerID=13;
                     // echo $LawyerID;
                         // $LawyerName=$_SESSION['Namess'];
-                        $EntityType="Leads";
+                        $EntityType=$_SESSION['from_page'];
                         // echo $EntityType;
                         $Phone  = $_POST['mob'];
                         // echo $Phone;

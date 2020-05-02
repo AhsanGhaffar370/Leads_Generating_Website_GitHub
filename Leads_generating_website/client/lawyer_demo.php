@@ -8,7 +8,9 @@ error_reporting(0);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
 <title>Assigned lawyer | Affordable legal Help </title>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
 <base href="https://affordablelegalhelp.com/lawyer_demo.php">
+    <meta name="robots" content="noindex,nofollow" />
 
 <meta name="viewport" content="width=device-wdth, initial-scale=1.0" />
     <!--yandex-->
@@ -16,22 +18,11 @@ error_reporting(0);
 <!--#Libraries file#-->
 <?php include "libs.php"; ?>
 
-<script async src="client_validate.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142213622-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-142213622-3');
-</script>
 
 
 </head>
 
-<body class=" bg-light">
+<body class=" bg-light fontb">
 
 <?php include_once "header.php"; ?>
 <?php $_SESSION = array();
@@ -46,30 +37,19 @@ if (ini_get("session.use_cookies"))
     unset($_SESSION['city']);
     ?>
 
-<section class="bg-white container text-center mb-5 mt-5">
+<section class="bg-white container text-center mb-5 mt-5 p-2">
 	<br />
-    <div class="alert text-dark alert-success mb-5 texts container-fluid font-weight-normal size15">
+    <div class="alert text-secondary alert-success mb-5 texts container-fluid font-weight-normal size15">
         Great news, we have successfully connected you with National Legal Help. For immediate assistance with your case, contact the provider listed below.
     </div>
     
     <div class="col-12 pb-5">
     <div class="row">
-        <div class="card col-12 col-lg-4 col-md-4 col-sm-12 border-0">
-            <img src="Image/default.PNG" alt="family law img" class="img-fluid images" />
-            <div class="card-body text-left">
-                <h2 class="font-weight-normal card-title fontb text-dark size42">Michael Parker</h2>
-                <p class="text-dark font-weight-normal size15">800.577.4626 ext 110 </p>
-                <p class="text-dark font-weight-normal size15">support@legalhelpservices.net </p>
-                <p class="font-weight-normal text-dark heading">Servicing Areas </p>
-                <p class="text-dark font-weight-normal size15">Family Law, Divorce, Child Custody, Child Support</p>
-                <p class="text-dark font-weight-normal size15">Grandparents Rights and Adoptions.</p>
-            </div>
-        </div>
         
-        <div class="mb-5 col-12 col-lg-8 col-md-8 col-sm-12">
+        <div class="mb-5 col-12 col-lg-7 col-md-6 col-sm-12  order-2 order-lg-1 order-md-1">
             <div class="text-left m-1 mt-2">
                 <h1 class="font-weight-normal fontb text-dark size46">National Legal Help</h1><hr />
-                <p style="text-align:justify;" class="text-dark font-weight-normal size15">
+                <p class="text-secondary font-weight-normal size15 decor ">
                 
                     We thank you for taking the first step in rectifying your legal issue. We here at National Legal Help understand the hardship of coming up with expensive retainers. Therefore, we have a solution for just about anyone’s budget.<br /><br />
                     
@@ -81,10 +61,24 @@ if (ini_get("session.use_cookies"))
                     
                     Thank you for reaching out to National Legal Help.<br />
                     
-                    800.577.4626 ext 110
+                    <b>800.577.4626 ext. 100</b>
 
                 </p>
             </div>
+        </div>
+        
+        <div class="col-12 col-lg-4 col-md-5 col-sm-12 p-3 ml-lg-5 order-1 order-lg-2 order-md-2 ">
+        <div class="card   bg-mute ">
+            <img src="/Image/law33.jpg" alt="family law img" class="img-fluid images" />
+            <div class="card-body text-left">
+                <h2 class="font-weight-normal card-title fontb text-dark size31">National Legal Help</h2>
+                <p class="text-secondary font-weight-bold size15">800.577.4626 ext. 100</p>
+                <p class="text-secondary font-weight-normal size15">support@legalhelpservices.net </p>
+                <p class="font-weight-normal text-dark size25">Servicing Areas </p>
+                <p class="text-secondary font-weight-normal size15">Family Law, Divorce, Child Custody, Child Support, Grandparents Rights and Adoptions.</p>
+                <p class="text-secondary font-weight-normal size15"></p>
+            </div>
+        </div>
         </div>
         
     </div>
@@ -93,5 +87,10 @@ if (ini_get("session.use_cookies"))
 
 
 <?php include_once "footer.php"; ?>
+
+
+
+<?php include "libs2.php"; ?>
+
 </body>
 </html>

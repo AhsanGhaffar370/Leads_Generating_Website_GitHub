@@ -15,25 +15,17 @@ include_once "config/database.php";
 
 <title>Assigned lawyer | Affordable legal Help </title>
 
-<link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
 <base href="https://affordablelegalhelp.com/lawyer_democopy.php">
 
 
+    <meta name="robots" content="noindex,nofollow" />
+    <!--<meta name="googlebot" content="noindex" />-->
+    
+    
 <meta name="viewport" content="width=device-wdth, initial-scale=1.0" />
 <!--#Libraries file#-->
 <?php include "libs.php"; ?>
-
-<script async src="client_validate.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142213622-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-142213622-3');
-</script>
 
 
 </head>
@@ -44,7 +36,7 @@ include_once "config/database.php";
 
 <section class="bg-white container text-center mb-5 mt-5">
 	<br />
-    <div class="alert text-dark alert-success mb-5 texts container-fluid font-weight-normal size15">
+    <div class="alert text-secondary alert-success mb-5 texts container-fluid font-weight-normal size15">
     
         Great news, we have successfully connected you with National Legal Help. For immediate assistance with your case, contact the provider listed below.
     </div>
@@ -68,8 +60,8 @@ include_once "config/database.php";
                 foreach($results as $result)
                 {	
             ?>
-        <div class="card col-12 col-lg-4 col-md-4 col-sm-12 border-0">
-            <img src="https://affordableattorneyleads.com/img/Lawyer/<?php echo htmlentities($result->Picture);?>" alt="Family Law img" class="img-fluid images" width="50px" height="100px" />
+        <div class="card col-11 col-lg-4 col-md-4 col-sm-12 p-0 m-3">
+            <img src="https://affordableattorneyleads.com/img/Lawyer/<?php echo htmlentities($result->Picture);?>" alt="Family Law img" class="img-fluid images" />
             <?php 
 					$Name=htmlentities($result->Name);
 					$or=htmlentities($result->Organization);
@@ -84,20 +76,20 @@ include_once "config/database.php";
 				}?>
             <div class="card-body text-left">
                 <h2 class="font-weight-normal card-title fontb text-dark size42"><?php echo "$Name";?></h2>
-                <p class="text-dark font-weight-normal size15"> <?php echo "$or";?></p>
-                <p class="text-dark font-weight-normal size15"><?php echo "$Emai";?></p>
-                <p class="text-dark font-weight-normal size15"><?php echo "$Contac";?> </p>
-                <p class="text-dark font-weight-normal size15"><?php echo "$Zipcod";?></p>
+                <p class="text-secondary font-weight-normal size15"> <?php echo "$or";?></p>
+                <p class="text-secondary font-weight-normal size15"><?php echo "$Emai";?></p>
+                <p class="text-secondary font-weight-normal size15"><?php echo "$Contac";?> </p>
+                <p class="text-secondary font-weight-normal size15"><?php echo "$Zipcod";?></p>
                 <p class="font-weight-normal text-dark heading">Servicing Areas </p>
-                <p class="text-dark font-weight-normal size15"><?php echo $Cat ." ";?></p>
+                <p class="text-secondary font-weight-normal size15"><?php echo $Cat ." ";?></p>
                 
             </div>
         </div>
         
-        <div class="mb-5 col-12 col-lg-8 col-md-8 col-sm-12">
+        <div class="mb-5 col-12 col-lg-7 col-md-7 col-sm-12">
             <div class="text-left m-1 mt-2">
                 <h1 class="font-weight-normal fontb text-dark" style="font-size:42px;"><?php echo $Cat ." ";?> Legal Help</h1><hr />
-                <p style="text-align:justify;" class=" size15 text-dark font-weight-normal">
+                <p class="text-secondary font-weight-normal size15 decor">
                 <?php echo $Descrip?>
                 </p>
             </div>
@@ -131,5 +123,11 @@ if (ini_get("session.use_cookies"))
 ?>
 
 <?php include_once "footer.php"; ?>
+
+
+
+<?php include "libs2.php"; ?>
+
+
 </body>
 </html>

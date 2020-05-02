@@ -13,7 +13,7 @@ else {
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Dashboard | Affordable Attorney leads </title>
+<title>View Post | Affordable Attorney leads </title>
 <link rel="shortcut icon" type="site_icon.png" />
 
 <!--#####################################Libraries file##########################################-->

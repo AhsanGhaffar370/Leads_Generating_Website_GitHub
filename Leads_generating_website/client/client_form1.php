@@ -27,17 +27,17 @@ require_once "configs.php";
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
     <title>Complete your Request | Affordable Legal Help </title>
         <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
     <meta name="description" content="Enjoy Fast Access To Top Family Lawyers Across The US. Connect Now With An Attorney In Your Local Area And Get Your Questions Answered Now.">
+        <meta name="robots" content="noindex,nofollow" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--yandex-->
     <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
 <!--#Libraries file#-->
 <?php include "libs.php"; ?>
-
-<script async src="client_validate.js?v=3"></script>
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -49,9 +49,6 @@ require_once "configs.php";
 
   gtag('config', 'UA-142213622-3');
 </script>
-
-  
-
 
 </head>
 
@@ -117,7 +114,7 @@ require_once "configs.php";
             <div class="form-group">
                 <!--<button disabled class="btn btn-primary" type=button id="btnverzenden2" style="display: none"><span class="glyphicon glyphicon-refresh"></span> Sending mail</button>   -->
 <!--<button class="btn btn-primary" type=submit name=verzenden id="btnverzenden">Send</button>-->
-                <center><input type="submit"  id="submit12" name="submitbtn" value="Submit Request" class="btn p-3 mb-4 col-8 font-weight-bold buttons "   /></center>
+                <center><input type="submit"  id="submit12" name="submitbtn" value="Submit Request" class="btn btn-lg p-3 mb-4 col-8  btn-danger"   /></center>
             </div>
             <br />
         
@@ -126,36 +123,18 @@ require_once "configs.php";
 </section>
 
 <?php include_once "footer.php"; ?>
+
+
+<?php include_once "libs2.php"; ?>
+
+<script async src="client_validate.js?v=10"></script>
+
+
+
+
+
+
+
+
 </body>
 </html>
-
-
-<script>
-// $(document).ready(function() {
-//     // console.log("hello");
-//     $('input[type="submit"]').attr('disabled', true);
-//     $('input[type="text"]').on('keyup',function() {
-//         // console.log("hello wordl");
-//         if($(this).val() != '') {
-//             $('input[type="submit"]').attr('disabled' , false);
-//         }else{
-//             $('input[type="submit"]').attr('disabled' , true);
-//         }
-//     });
-// });
-// $(document).ready(function(){
-//   $('#submit12').click(function(){
-//       $(this).prop("disabled",true);
-//       $(this).css("cursor","not allowed");
-//   });
-// });
-
-// $(document).ready(function () {
-//     $("#client-form1").submit(function () {
-//         $(".submitb").attr("disabled", true);
-//         return true;
-//     });
-// });
-</script>
-
-

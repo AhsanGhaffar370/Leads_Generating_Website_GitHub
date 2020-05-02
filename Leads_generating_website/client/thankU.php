@@ -8,9 +8,11 @@ error_reporting(0);
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
-<link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
 <title>Requesting</title>
 
+    <meta name="robots" content="noindex,nofollow" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
+   
     <meta name="description" content="At Affordable Legal Help, we believe that your privacy is important to accessing quality legal care and comprehensive services at low cost.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--yandex-->
@@ -21,23 +23,6 @@ error_reporting(0);
 <?php $id=md5($_SESSION['ID1']);
 ?>
 
-<script async src="client_validate.js"></script>
-<script type="text/javascript">
-	function redirect(){
-		window.location="assigned_lawyer/<?php echo $id;?>";         //////////////////yha link dedo kha jana he
-	}
-</script>
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142213622-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-142213622-3');
-</script>
 
 
 </head>
@@ -49,7 +34,7 @@ error_reporting(0);
 <div class="d-flex align-items-center justify-content-center"  style="width:100%; height:600px;">
 <div class="col-xl-4 col-lg-4  col-md-6 col-sm-12 col-12  p-3 ">
     <div class="card bg-light border-0 " style="border-radius:0;" >
-        <a href="https://affordablelegalhelp.com/"><img class="logo img-fluid pt-3" src="Image/legalHelp.png" alt="Affordable Legal Help" ></a>
+        <a href="https://affordablelegalhelp.com/"><img class="logo img-fluid pt-3" src="/Image/legalHelp.png" alt="Affordable Legal Help" ></a>
         <center><hr class=" col-6 col-lg-4 col-md-4 col-sm-4" style="border: 2px solid rgba(0, 81, 152); border-radius: 2px;" /></center>
         <div class="card-body">
             
@@ -61,6 +46,18 @@ error_reporting(0);
 </div>
 </div>
 </center>
+
+
+<?php include "libs2.php"; ?>
+
+
+<script type="text/javascript">
+	function redirect(){
+		window.location="assigned_lawyer/<?php echo $id;?>";         //////////////////yha link dedo kha jana he
+	}
+</script>
+
+
 
 </body>
 </html>

@@ -9,32 +9,57 @@
 
 <url>
   <loc>https://affordablelegalhelp.com/</loc>
-  <lastmod>2019-12-16T14:18:52+00:00</lastmod>
+  <lastmod>2020-05-01T03:40:48+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://affordablelegalhelp.com/home</loc>
-  <lastmod>2019-12-16T14:18:52+00:00</lastmod>
+  <loc>https://affordablelegalhelp.com/divorce</loc>
+  <lastmod>2020-05-01T03:40:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://affordablelegalhelp.com/child-support</loc>
+  <lastmod>2020-05-01T03:40:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://affordablelegalhelp.com/child-addoption</loc>
+  <lastmod>2020-05-01T03:40:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://affordablelegalhelp.com/child-custody</loc>
+  <lastmod>2020-05-01T03:40:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://affordablelegalhelp.com/grand-parent-rights</loc>
+  <lastmod>2020-05-01T03:40:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://affordablelegalhelp.com/about-us</loc>
-  <lastmod>2019-12-16T14:18:52+00:00</lastmod>
+  <lastmod>2020-05-01T03:40:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://affordablelegalhelp.com/privacy-policy</loc>
-  <lastmod>2019-12-16T14:18:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://affordablelegalhelp.com/terms-of-use</loc>
-  <lastmod>2019-12-16T14:18:52+00:00</lastmod>
+  <loc>https://affordablelegalhelp.com/our-blog</loc>
+  <lastmod>2020-05-01T03:40:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://affordablelegalhelp.com/contact-us</loc>
-  <lastmod>2019-12-16T14:18:52+00:00</lastmod>
+  <lastmod>2020-05-01T03:40:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://affordablelegalhelp.com/privacy-policy</loc>
+  <lastmod>2020-05-01T03:40:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://affordablelegalhelp.com/terms-of-use</loc>
+  <lastmod>2020-05-01T03:40:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 

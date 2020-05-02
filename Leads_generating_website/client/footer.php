@@ -1,23 +1,150 @@
-<footer class="text-light text-center container-fluid texts" style="background-color: #1c1c1c;" >
-    <div class="pt-4 pb-4">
-        <a href="about-us" class="pr-4 text-white font-weight-bold" >About Us</a>
-        <a href="our-blog" class="pr-4 text-white font-weight-bold" >Our Blog</a>
-        <a href="contact-us" class="pr-4 text-white font-weight-bold" >Contact Us</a>
-        <a href="Frequently-Ask-Questions" class="pr-4 text-white font-weight-bold" >FAQs</a>
-        <a href="success-stories" class="pr-4 text-white font-weight-bold" >Success Stories</a>
-        <hr style="background-color:#FFF;" />
+<footer class="decor text-left footer_gray_color" >
+
+    <div class="footer_black p-3">
+    <div class="container text-center text-lg-right">
+        <a href="https://www.facebook.com/RethinkingLegal/" class="btn btn-lg p-2"><i class="fab fa-facebook-f fa-2x foot1"></i></a>
+                
+        <a href="https://www.facebook.com/RethinkingLegal/" class="btn btn-lg p-2 "><i class="fab fa-twitter fa-2x foot1"></i></a>
+        
+        <a href="https://www.facebook.com/RethinkingLegal/" class="btn btn-lg  p-2"><i class="fab fa-instagram fa-2x foot1"></i></a>
+        
+        <a href="https://www.youtube.com/channel/UCcfi8y3cb3Ja9YfuNZbNLKA" class="btn btn-lg  p-2"><i class="fab fa-youtube fa-2x foot1"></i></a>
     </div>
-    
-    
-    
-    
-	<div class="col-lg-12 col-md-12 col-sm-12 col-12">
-        <div  style=" padding:10px 10px 20px 10px;">
-        	<a href="home"><img class="images col-lg-3 col-md-4 col-sm-6 col-6"  src="Image/legalHelp_footer.png" alt="Affordable Legal Help" /></a>
-            <p class="container  mt-2 text-justified font-weight-light " style="font-size:10px;">
-                    This website serves as an advertisement for Affordable Legal Help and the coalition of legal firms that fall under its umbrella. You may only gain legal advice from attorneys participating in Affordable Legal Help’s network. Affordable Legal Help is not a referral service for lawyers. Affordable Legal Help is a group advertisement that represents the efforts of dozens of experienced lawyers and attorneys. No contact or information that you share or give to Affordable Legal Help should be considered protected under the attorney-client privilege relationship. No attorney-client relationship exists or will be formed between you and Affordable Legal Help. Do not send sensitive or privileged information to Affordable Legal Help, as your information is not protected under any such relationship. Affordable Legal Help does not claim responsibility for any negative legal outcome you might experience or guarantee positive results. Affordable Legal Help does not make recommendations based on merit of attorneys, but rather, their paid participation in our network that grants them advertising positioning on this website. All photos on this website are of paid models and do not represent real clients.<br /><br /><b>© 2020 Affordable Legal Help</b>
-                    <br /><a href="privacy-policy" class="text-white font-weight-normal" >PRIVACY POLICY</a>, <a href="terms-of-use" class="text-white font-weight-normal" >TERMS OF SERVICES</a>
+    </div>
+
+
+    <div class="footer_gray">
+    <div class="container pt-5 pb-4">
+
+        <div class="row pt-3 pb-2">
+
+
+        
+
+            <div class="col-12 col-lg-3 col-md-6 col-sm-12 mt-4 mt-lg-0">
+
+                <p class="size15 font-weight-bold text-white">CONTACT US</p>
+
+                <p class="size14 font-weight-light">
+                    <span class="font-weight-bold">Address:</span> 2182 Hewitt Ave Kettering, Ohio 45440
+                </p>
+                <p class="size14 font-weight-bold">
+                    Email:<a href="mailto: info@affordablelegalhelp.com" class="foot1 pl-2">info@affordablelegalhelp.com</a> 
+                </p>
+                <p class="size14 font-weight-bold">
+                    Phone: 844 944 5342
+                </p>
+
+            </div>
+
+
+
+
+            <div class="col-12 col-lg-3 col-md-6 col-sm-12 pl-2 pl-lg-4 pl-md-4 mt-4 mt-lg-0">
+
+                <p class="size15 font-weight-bold pl-2 text-white">OUR SERVICES</p>
+
+                <ul class="list-group list-group-flush m-0 p-0">
+
+                    <li class="list-group-item footer_gray border-0 pt-0 pl-3 pb-2"> 
+                        <a href="divorce" class="size15 foot1 footer_gray_color">Divorce</a>
+                    </li>
+                    <li class="list-group-item footer_gray border-secondary pl-3 pt-3 pb-2"> 
+                        <a href="child-support" class="size15 foot1 footer_gray_color">Child Support</a>
+                    </li>
+                    <li class="list-group-item footer_gray border-secondary pl-3 pt-3 pb-2"> 
+                        <a href="child-addoption" class="size15 foot1 footer_gray_color">Child Adoption</a>
+                    </li>
+                    <li class="list-group-item footer_gray border-secondary pl-3 pt-3 pb-2"> 
+                        <a href="child-custody" class="size15 foot1 footer_gray_color">Child Custody</a>
+                    </li>
+                    <li class="list-group-item footer_gray border-secondary border-bottom pl-3 pt-3 pb-2"> 
+                        <a href="grand-parent-rights" class="size15 foot1 footer_gray_color">Grand Parent Right's</a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+
+
+            <div class="col-12 col-lg-3 col-md-6 col-sm-12 mt-5 mt-lg-0">
+
+                <p class="size15 font-weight-bold text-white">FOLLOW US</p>
+                
+                <a href="https://www.facebook.com/RethinkingLegal/" class="btn btn-lg p-2"><i class="fab fa-facebook-f fa-2x foot1"></i></a>
+                
+                <a href="https://www.facebook.com/RethinkingLegal/" class="btn btn-lg p-2 "><i class="fab fa-twitter fa-2x foot1"></i></a>
+                
+                <a href="https://www.facebook.com/RethinkingLegal/" class="btn btn-lg  p-2"><i class="fab fa-instagram fa-2x foot1"></i></a>
+                
+                <a href="https://www.youtube.com/channel/UCcfi8y3cb3Ja9YfuNZbNLKA" class="btn btn-lg  p-2"><i class="fab fa-youtube fa-2x foot1"></i></a>
+                <!-- <ul class="list-group list-group-flush m-0 p-0">
+
+                    <li class="list-group-item footer_gray border-0 pl-3 pt-3 pb-2"> 
+                        <a href="about" class="foot1">Facebook</a>
+                    </li>
+                    <li class="list-group-item footer_gray border-secondary pl-3 pt-3 pb-2"> 
+                        <a href="about" class="foot1">Twitter</a>
+                    </li>
+                    <li class="list-group-item footer_gray border-secondary pl-3 pt-3 pb-2"> 
+                        <a href="about" class="foot1">Instagram</a>
+                    </li>
+                    <li class="list-group-item footer_gray border-secondary pl-3 pt-3 pb-2"> 
+                        <a href="about" class="foot1">Youtube</a>
+                    </li>
+                </ul> -->
+
+                
+
+            </div>
+
+
+
+
+            <div class="col-12 col-lg-3 col-md-6 col-sm-12 mt-5 mt-lg-0">
+
+                <p class="size15 font-weight-bold text-white">BUSINESS HOURS</p>
+
+                <p class="size14 font-weight-light">
+                Monday-Friday: 9am to 9pm <br>
+                Saturday: 10am to 4pm <br>
+                Sunday: Closed
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <div class="footer_black ">
+    <div class="container">
+    <div class="row  font-weight-light pt-2 pb-2">
+        
+        <div class="col-12 col-lg-7 col-md-12 col-sm-12 text-center text-lg-left d-lg-flex align-items-center">
+
+            <a href="about-us" class="size14 foot1 pr-3">ABOUT US</a>
+            <a href="our-blog" class="size14 foot1 pr-3"  >OUR BLOG</a>
+            <a href="contact-us" class="size14 foot1 pr-3" >CONTACT US</a>
+
+        </div>
+
+        <div class="col-12 col-lg-5 col-md-12 col-sm-12 text-center text-lg-left mt-3 mt-lg-2">
+            <p class="size14 font-weight-light">
+                COPYRIGHT©2006-2019, ALL RIGHTS RESERVED. <br>
+                <a href="privacy-policy" class="foot1 font-weight-normal" >PRIVACY POLICY</a> , 
+                <a href="terms-of-use" class="foot1 font-weight-normal" >TERMS OF SERVICES</a>
+
             </p>
         </div>
     </div>
+    </div>
+    </div>
+
+    
+
+
 </footer>
