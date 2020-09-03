@@ -1,8 +1,45 @@
+<?php
+// require_once("maintenance.php");
+// maintenance(TRUE);
+?>
 <?php 
+
 session_start();
 error_reporting(0);
 include_once "config/database.php"; 
 include_once "object/login.php";
+$database=new Database();
+$db = $database->getConnection();
+
+$title="as";
+$meta_desc="";
+
+
+// $data = "SELECT * FROM `meta_data` WHERE page_name like 'home'";
+// $run = mysqli_query($con,$data);
+// while($row=mysqli_fetch_array($run)){
+//     $title = $row['title']; 
+//     $meta_desc = $row['meta_desc'];
+// } 
+$sqq ="SELECT * FROM meta_data WHERE page_name = 'home' ";
+                
+                $quey= $db->prepare($sqq);
+
+                // // posted values
+              
+                // $query->bindParam(":id", $this->state);
+                // $query->bindParam(":Catogory", $this->Catogory);
+                $quey->execute();
+                $resu=$quey->fetchAll(PDO::FETCH_OBJ);
+                $row = $quey->fetch(PDO::FETCH_ASSOC);
+                if($quey->rowCount() > 0)
+                {
+                    foreach($resu as $resul){
+                       $title =htmlentities($resul->title);
+                       $meta_desc = htmlentities($resul->meta_desc);
+                       
+                    }
+                }
 ?>
 
 <html lang="en-US">
@@ -10,11 +47,21 @@ include_once "object/login.php";
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
+<!--<meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />-->
 
-<title>Affordable Legal Help | Find Affordable Legal Help with us </title>
+
+
+
+
+<?php echo "<meta name='description' content='$meta_desc'>"?>
+<title><?php echo $title; ?></title>
+<!--<meta name="description" content="<?php //$meta_desc ?>">-->
+
+
+
+<!--<title>Affordable Legal Help | Find Affordable Legal Help with us </title>-->
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
-<meta name="description" content="Enjoy Fast Access To Top Family Lawyers Across The US. Connect Now With An Attorney In Your Local Area And Get Your Questions Answered Now.">
+<!--<meta name="description" content="njoy Fast Access To Top Family Lawyers Across The US. Connect Now With An Attorney In Your Local Area And Get Your Questions Answered Now.">-->
 
 <!--yandex-->
 <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
@@ -118,7 +165,7 @@ li:hover {
 
 <body id="fill" class="fontb">
 
-
+    
 <div class="sticky-top mb-1">
 <div class="alert bg-info alert-dismissible  rounded-0 border-0 m-0 p-0">
     <button type="button" class="close text-white mt-0 pt-1" data-dismiss="alert">&times;</button>
@@ -126,7 +173,7 @@ li:hover {
 </div>
 </div>
 
-    
+
 <?php include_once "header.php"; ?>
 
 
@@ -175,8 +222,7 @@ li:hover {
     
     $_SESSION['from_page']="Family law";
     
-    $database=new Database();
-    $db = $database->getConnection();
+    
     
     //$city1=$_POST['city'];
     $city_state = explode(",", $i);
@@ -220,7 +266,22 @@ li:hover {
 
 <section class="pr-3 pl-3 text-center  bg-white paddings">
 
-    <p class="fontb text-center font-weight-normal size46 font5 blue1">HOW IT WORKS</p>
+    <!--<p class="fontb text-center font-weight-normal size46 font5 blue1">HOW IT WORKS</p>-->
+    <?php 
+        $title="";
+        $meta_desc="";
+        
+        
+        $data = "SELECT title,meta_desc FROM `meta_data` WHERE page_name='home'";
+        $run = mysqli_query($con,$data);
+        while($row=mysqli_fetch_array($run)){
+            $title = $row['title']; 
+            $meta_desc = $row['meta_desc'];
+        ?>
+        
+            <p class="fontb text-center font-weight-normal size46 font5 blue1"><?php echo $title ?></p>
+
+    <?php } ?>
 
     <div class="container">
         <div class="row">
@@ -491,7 +552,6 @@ li:hover {
 <hr class="m-0" />
 
 
-
 <section class="container-fluid paddings centre">
 
     <h2 class="pt-4 fontb text-center font-weight-normal font5 size46 blue1" >What people are saying</h2>
@@ -503,11 +563,11 @@ li:hover {
             <div class="card  rounded-0 pt-4 flex-fill story-hov">
 
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/success-story-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="Image/nicole-rodriguez-119x119.jpg" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
 
                 <div class="card-body">
-                    <p class="card-title font-weight-normal blue1 texts">SEAN WALKER</p>
+                    <p class="card-title font-weight-normal blue1 texts">Carla Houston, Georgia</p>
                     <hr>
                     <p class="card-text text-black-50 size15" >"This company rocks. Before them I was quoted over $3000.00 to take my case. "Affordable Legal Help" offered me a couple different programs where I ended up saving about $1000. Thank you for your help in finalizing my divorce."</p>
                 </div>
@@ -517,10 +577,10 @@ li:hover {
         <div class="col-xl-4 col-lg-4 p-4 col-md-6 col-sm-12 col-12 p-3 d-flex">
             <div class="card  rounded-0 pt-4 flex-fill story-hov">
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Success-Stories-1-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="Image/D18_345_100_0004_600-119x119.jpg" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
                 <div class="card-body">
-                    <p class="card-title font-weight-normal blue1 texts">Emy Claura</p>
+                    <p class="card-title font-weight-normal blue1 texts">Jack Martin,Texas</p>
                     <hr>
                     <p class="card-text text-black-50 size15">"This experience with Affordable Legal Help Experts was great. They truly care about your needs. They know how to get you the proper help you need. They really helped put me at ease. Thank you so much for everything!!!!"</p>
                 </div>
@@ -530,10 +590,10 @@ li:hover {
         <div class="col-xl-4 col-lg-4 p-4 col-md-6 col-sm-12 col-12 p-3 d-flex">
             <div class="card  rounded-0  pt-4  flex-fill story-hov">
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Client-testiminial-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="Image/testimonial-woman-119x119.jpg" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
                 <div class="card-body">
-                    <p class="card-title font-weight-normal blue1 texts">Mike Wilson</p>
+                    <p class="card-title font-weight-normal blue1 texts">Jennifer Slate, North Dakota</p>
                     <hr>
                     <p class="card-text text-black-50 size15" >"I have been a client of Affordable legal Help for some time. I found this Family law firm to be most professional and efficient. I would highly recommend them to my family, friends or anyone seeking legal services."</p>
                 </div>
@@ -545,7 +605,6 @@ li:hover {
     <input type="button" value="Read All Stories" class="btn btn-lg btn-outline-danger rounded-0 mt-3" onclick="window.location.href='success-stories'" />
 
 </section>
-
 
 
 <hr class="m-0" />
@@ -582,38 +641,9 @@ li:hover {
     <div class="container">
 
         <div class="row">
-
-            <div class="col-lg-4  col-md-6 col-sm-12 col-12 d-flex">
-                <div class="card shadow-sm bg-white  flex-fill mt-4">
-
-                    <div class="card-body p-3">
-
-                        <div class="card-title">
-
-                            <a href="view-blog/<?php echo 30; ?>" class="nav-link text-dark pl-0 ml-0">
-                                <p class="font-weight-normal size20 mb-0 hov">
-                                How Unbundled Legal Services Benefit Divorce Cases
-                                </p>
-                            </a>
-
-                        </div>
-
-                        <p class="card-text text-black-50 size14 decor">
-                            Going through a divorce is a challenging, painful, transforming, and expensive experience.  It is not something that anyone wants to go through but there are times when it becomes necessary in order to end a failed, sometimes even abusive, marriage and move on.  Depending on factors like the money and property involved, disputes over custody of children, and the attitude of the parties, it can be a long, messy process...
-                            <br/>
-                            <a href="view-blog/<?php echo 30; ?>" class="font-weight-bold">read more</a>
-                        </p>
-
-                        
-                    </div>
-                </div>
-            </div>
-
-
-
             <?php 
             include("config/connect.php");
-            $select_posts = "select * from posts order by rand() LIMIT 0,4";
+            $select_posts = "select * from posts order by post_id desc";
             $run_posts = mysqli_query($con,$select_posts);
             while($row=mysqli_fetch_array($run_posts)){
                 $post_id = $row['post_id']; 
@@ -623,6 +653,8 @@ li:hover {
                 $post_image = $row['post_image'];
                 $post_content = $row['post_content'];
                 $post_content = substr($post_content,0,400);
+                
+                if($post_id == 30 || $post_id == 38 || $post_id == 40 ){
             ?>
 
             
@@ -646,10 +678,10 @@ li:hover {
                             <?php  
                                 if ($post_id == 30 ) {
                                     echo "<p class='card-text text-black-50 size14 decor' >Going through a divorce is a challenging, painful, transforming, and expensive experience.  It is not something that anyone wants to go through but there are times when it becomes necessary in order to end a failed, sometimes even abusive, marriage and move on.  Depending on factors like the money and property involved, disputes over custody of children, and the attitude of the parties, it can be a long, messy process...</p>"; 
-                                } elseif ($post_id == 29) {
-                                    echo "<p class='card-text text-black-50 size14 decor' >Finding the right lawyer can seem like a daunting task.  At Affordable Legal Help we understand that, when you are faced with a legal issue and need help, you want to find an experienced, professional attorney who can handle your specific case.  Much like finding the right doctor to treat you when you are ill, finding the right lawyer to take your case means placing your trust in the wisdom and knowledge of a professional in a difficult time...</p>"; 
-                                } else {
-                                    echo "<p class='card-text text-black-50 size14 decor'>Finding the right lawyer can seem like a daunting task.  At Affordable Legal Help we understand that, when you are faced with a legal issue and need help, you want to find an experienced, professional attorney who can handle your specific case.  Much like finding the right doctor to treat you when you are ill, finding the right lawyer to take your case means placing your trust in the wisdom and knowledge of a professional in a difficult time...</p>"; 
+                                } elseif ($post_id == 38) {
+                                    echo "<p class='card-text text-black-50 size14 decor' >The guidelines are set forth in child support calculator Texas to be used in courts when calculating the amount of child support owed. The guidelines are a reasonable set of laws and their aim is in the best interest of the child. As biological parentage is obvious, mothers of children are granted parental rights automatically. But for fathers the rules are different. If a child is born out of...</p>"; 
+                                } elseif ($post_id == 40) {
+                                    echo "<p class='card-text text-black-50 size14 decor'>There is an old adage which states that good help is hard to find.  As we go about our daily business that can certainly seem to be the case.  It is inevitable that, in the daily grind of activities like doing business, travel, entertainment, dining out, shopping, maintaining a home, and dealing with serious legal and medical issues, we require a lot of help.  Most often that help is given to us by people who work hard to...</p>"; 
                                 }
                             ?>
 
@@ -663,7 +695,7 @@ li:hover {
                 </div>
             </div>
 
-            <?php } ?>
+            <?php }} ?>
         </div>
 
     </div>

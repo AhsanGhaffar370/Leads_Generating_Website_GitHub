@@ -1,6 +1,6 @@
 <?php
 //fetch.php
-$connect = mysqli_connect("localhost", "root", "", "leads_generate_db");
+$connect = mysqli_connect("localhost", "u728873214_lead", "123456", "u728873214_leads_generate");
 $request = mysqli_real_escape_string($connect, $_POST["query"]);
 if (isset($_POST["query"]))
 {
@@ -16,7 +16,7 @@ if (isset($_POST["query"]))
     }
 
 else{
-    $output .="<span style= class='error ml-5'>Please Enter Valid City</span>";
+    // $output .="<span style= class='error ml-5'>Please Enter Valid City</span>";
 }
 $output .='</ul>';
 echo $output;

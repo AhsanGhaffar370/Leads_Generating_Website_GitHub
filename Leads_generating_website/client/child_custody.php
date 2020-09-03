@@ -1,8 +1,43 @@
+<?php
+// require_once("maintenance.php");
+// maintenance(TRUE);
+?>
 <?php 
 session_start();
 error_reporting(0);
 include_once "config/database.php"; 
 include_once "object/login.php";
+$database=new Database();
+ $db = $database->getConnection();
+$title="";
+$meta_desc="";
+
+
+// $data = "SELECT * FROM `meta_data` WHERE page_name like 'home'";
+// $run = mysqli_query($con,$data);
+// while($row=mysqli_fetch_array($run)){
+//     $title = $row['title']; 
+//     $meta_desc = $row['meta_desc'];
+// } 
+$sqq ="SELECT * FROM meta_data WHERE page_name = 'childcustody' ";
+                
+                $quey= $db->prepare($sqq);
+
+                // // posted values
+              
+                // $query->bindParam(":id", $this->state);
+                // $query->bindParam(":Catogory", $this->Catogory);
+                $quey->execute();
+                $resu=$quey->fetchAll(PDO::FETCH_OBJ);
+                $row = $quey->fetch(PDO::FETCH_ASSOC);
+                if($quey->rowCount() > 0)
+                {
+                    foreach($resu as $resul){
+                       $title =htmlentities($resul->title);
+                       $meta_desc = htmlentities($resul->meta_desc);
+                       
+                    }
+                }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US">
@@ -11,9 +46,9 @@ include_once "object/login.php";
 <meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
     <!--yandex-->
     <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
-<title>Child Custody | Find Affordable Legal Help with us </title>
+<title><?php echo $title; ?></title>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
-<meta name="description" content="Enjoy Fast Access To Top Family Lawyers Across The US. Connect Now With An Attorney In Your Local Area And Get Your Questions Answered Now.">
+<?php echo "<meta name='description' content='$meta_desc'>"?>
 
 <!--yandex-->
 <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
@@ -125,6 +160,14 @@ li:hover {
 
 
 <body id="fill">
+    
+<div class="sticky-top mb-1">
+<div class="alert bg-info alert-dismissible  rounded-0 border-0 m-0 p-0">
+    <button type="button" class="close text-white mt-0 pt-1" data-dismiss="alert">&times;</button>
+    <p class="size14 text-white text-center pt-2 pb-2 pr-5 pl-2 mb-0">COVID-19 UPDATE: Law firms are still available to help. Set up a consultation from home today.</p>
+</div>
+</div>
+
 
 <?php include_once "header.php"; ?>
 
@@ -136,9 +179,9 @@ li:hover {
 <section class="custody_bg bg2">
     <div class="container-fluid home_padding"><!--div 0 -->
     	<br />
-        <h1 class="text-white  text-center jl_heading  font5">Find the right Child Custody lawyers in your zip code</h1>
+        <h1 class="text-white  text-center jl_heading  font5">Find The Right Child Custody Lawyer In Your Zip Code</h1>
         
-        <p class=" texts text-white text-center">Rectify your child adoption issues for as low as  750$ to 950$ and receive a free consultation!</p>
+        <p class=" texts text-white text-center">Rectify your child adoption issues for as low as  750$-950$,Receive a free consultation immediately and payment plans are also availaible.</p>
         
         <?php 
         	if (isset($_POST['submitbtn'])){}
@@ -174,8 +217,6 @@ li:hover {
     
     $_SESSION['from_page']="Child custody";
     
-    $database=new Database();
-    $db = $database->getConnection();
     
     //$city1=$_POST['city'];
     $city_state = explode(",", $i);
@@ -188,7 +229,7 @@ li:hover {
     //$check=mysqli_num_rows($result);
     
     // if($qu->rowCount() > 0){
-    echo "<script type='text/javascript'> document.location = 'Complete-your-request'; </script>";	
+    echo "<script type='text/javascript'> document.location = '/Complete-your-request'; </script>";	
     // }
     // else{
         
@@ -231,7 +272,7 @@ li:hover {
         favorable settlement is reached.
     </p>
 
-    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Webp.net-resizeimage-800x567.png" class="bg3 img-fluid mt-4 mb-4" alt="divorce image">
+    <img src="/Image/Webp.net-resizeimage-800x567.png" class="bg3 img-fluid mt-4 mb-4" alt="divorce image">
     
     <p class=" text-secondary  decor size15" >
     Affordable legal help  provides realistic legal guidance or council based on the facts and circumstances 
@@ -247,7 +288,7 @@ li:hover {
 
         <h4 class="text-dark pt-4 font-weight-normal mb-4 size25">Legal Custody and Physical Custody</h4>
         
-        <p class=" text-secondary  decor size15"><span class="size20 font-weight-bold">Physical custody:</span> This is the right to have actual physical custody of your child. This right is almost always shared by parents, although shared here doesn’t necessarily mean 50/50. Shared custody schedules are varied and usually depend on the peculiarity of a child custody case. The lawyers at (Business Name) are more than qualified to work with you to arrive at a schedule that works best for you and your child.  </p>
+        <p class=" text-secondary  decor size15"><span class="size20 font-weight-bold">Physical custody:</span> This is the right to have actual physical custody of your child. This right is almost always shared by parents, although shared here doesn’t necessarily mean 50/50. Shared custody schedules are varied and usually depend on the peculiarity of a child custody case. The lawyers at Affordable Legal Help are more than qualified to work with you to arrive at a schedule that works best for you and your child.  </p>
         <p class=" text-secondary  decor size15"><span class="size20 font-weight-bold">Legal custody:</span> The right to make decisions concerning the welfare and health of your child. Like physical custody, this right is usually shared by parents. Legal custody gives parents access to medical and school records and stipulates that each stay up to date on important child related decisions or matters. </p>
         <p class=" text-secondary  decor size15">In most parts of the world, custody agreements and orders are subject to modification at any time to suit the child’s best interests. Until a child reaches the age of eighteen, he or she remains subject to an order. </p>
 
@@ -291,13 +332,13 @@ li:hover {
             <div class="card  rounded-0 pt-4 flex-fill story-hov">
 
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Testimonial-Image-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="/Image/Testimonial-Image-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
 
                 <div class="card-body">
                     <p class="card-title font-weight-normal blue1 texts">Michael Smith,Hawaii</p>
                     <hr>
-                    <p class="card-text text-black-50 size15" >"Wow! I can’t believe it. I won the child custody case. I would love to use this opportunity to say thanks to the team of professional attorneys at (Business Name). I never imagined that it was possible to get top-rated legal services at affordable rates. Once again, thanks!"</p>
+                    <p class="card-text text-black-50 size15" >"Wow! I can’t believe it. I won the child custody case. I would love to use this opportunity to say thanks to the team of professional attorneys at Affordable Legal Help. I never imagined that it was possible to get top-rated legal services at affordable rates. Once again, thanks!"</p>
                 </div>
             </div>
         </div>
@@ -305,12 +346,12 @@ li:hover {
         <div class="col-xl-4 col-lg-4 p-4 col-md-6 col-sm-12 col-12 p-3 d-flex">
             <div class="card  rounded-0 pt-4 flex-fill story-hov">
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Women-Testimonail-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="/Image/Women-Testimonail-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
                 <div class="card-body">
                     <p class="card-title font-weight-normal blue1 texts">Gina Teague, Arizona</p>
                     <hr>
-                    <p class="card-text text-black-50 size15">"One of the best decisions I have made in my life is hiring (Business Name) to handle my child custody case. I have never seen lawyers work with so much compassion, dedication and professionalism. You guys are the best!"</p>
+                    <p class="card-text text-black-50 size15">"One of the best decisions I have made in my life is hiring Affordable Legal Help to handle my child custody case. I have never seen lawyers work with so much compassion, dedication and professionalism. You guys are the best!"</p>
                 </div>
             </div>
         </div>
@@ -318,7 +359,7 @@ li:hover {
         <div class="col-xl-4 col-lg-4 p-4 col-md-6 col-sm-12 col-12 p-3 d-flex">
             <div class="card  rounded-0  pt-4  flex-fill story-hov">
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Client-testiminial-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="/Image/IMG-Patient-5-119x119.jpg" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
                 <div class="card-body">
                     <p class="card-title font-weight-normal blue1 texts">David Pledra,New York</p>
@@ -331,6 +372,8 @@ li:hover {
     </div>
 
 </section>
+
+
 
 
 
@@ -348,7 +391,7 @@ li:hover {
 </script>
 
 
-<script async src="client_validate.js?v=10"></script>
+<script async src="/client_validate.js?v=11"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <?php include "libs2.php"; ?>

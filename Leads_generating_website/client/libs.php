@@ -8,6 +8,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
 
 
-<link  href="style sheet/css1_new.css?v=8" type="text/css" rel="stylesheet" media="screen">
+<link  href="/style sheet/css1_new.css?v=14" type="text/css" rel="stylesheet" media="screen">
 
 <link href='https://fonts.googleapis.com/css?family=Open Sans&display=swap' rel='stylesheet'>

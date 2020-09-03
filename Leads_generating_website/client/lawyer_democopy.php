@@ -1,9 +1,44 @@
 <?php
+// require_once("maintenance.php");
+// maintenance(TRUE);
+?>
+<?php
 
 session_start();
 error_reporting(0);
 
 include_once "config/database.php"; 
+$database=new Database();
+ $db = $database->getConnection();
+$title="";
+$meta_desc="";
+
+
+// $data = "SELECT * FROM `meta_data` WHERE page_name like 'home'";
+// $run = mysqli_query($con,$data);
+// while($row=mysqli_fetch_array($run)){
+//     $title = $row['title']; 
+//     $meta_desc = $row['meta_desc'];
+// } 
+$sqq ="SELECT * FROM meta_data WHERE page_name = 'lawyerdemo' ";
+                
+                $quey= $db->prepare($sqq);
+
+                // // posted values
+              
+                // $query->bindParam(":id", $this->state);
+                // $query->bindParam(":Catogory", $this->Catogory);
+                $quey->execute();
+                $resu=$quey->fetchAll(PDO::FETCH_OBJ);
+                $row = $quey->fetch(PDO::FETCH_ASSOC);
+                if($quey->rowCount() > 0)
+                {
+                    foreach($resu as $resul){
+                       $title =htmlentities($resul->title);
+                       $meta_desc = htmlentities($resul->meta_desc);
+                       
+                    }
+                }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,7 +48,7 @@ include_once "config/database.php";
     <!--yandex-->
     <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
 
-<title>Assigned lawyer | Affordable legal Help </title>
+<title><?php echo $title; ?> </title>
 
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
 <base href="https://affordablelegalhelp.com/lawyer_democopy.php">

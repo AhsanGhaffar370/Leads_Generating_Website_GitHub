@@ -1,12 +1,30 @@
 User-agent: *
 
+Disallow: /admin/
+Disallow: /config/
+Disallow: /object/
+Disallow: /src/
+Disallow: /vendor/
+Disallow: /vendors/
+Disallow: /client.php
+Disallow: /client_form1.php
+Disallow: /configs.php
+Disallow: /favicon.png
+Disallow: /footer.php
+Disallow: /header.php
 Disallow: /lawyer_democopy.php
 Disallow: /lawyer_demo.php
+Disallow: /libs.php
+Disallow: /libs2.php
 Disallow: /header.php
 Disallow: /footer.php
 Disallow: /thankU.php
 Disallow: /thankUcopy.php
-Disallow: /blog_pages.php
-Disallow: /client_form1.php
+
+Allow: /admin/ckeditor/
+Allow: /admin/admin_style.css
+Allow: /blog_pages.php
+Allow: /index.php
 
 Sitemap: https://affordablelegalhelp.com/sitemap.xml
+Sitemap: https://affordablelegalhelp.com/sitemap1.xml

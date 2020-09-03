@@ -1,3 +1,7 @@
+<?php
+// require_once("maintenance.php");
+// maintenance(TRUE);
+?>
 <?php 
 session_start();
 error_reporting(0);

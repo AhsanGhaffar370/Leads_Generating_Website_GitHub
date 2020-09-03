@@ -38,23 +38,25 @@ RewriteRule ^child-custody/?$ child_custody.php
 RewriteRule ^divorce/?$ divorce.php
 RewriteRule ^grand-parent-rights/?$ grand_parent_rights.php
 
-
-
 RewriteRule ^our-blog/?$ blog_index.php
-RewriteRule ^view-blog/([0-9a-zA-Z]+)$ blog_pages.php?id=$1 [NC,L]
+RewriteRule ^([0-9a-zA-Z_-]+)$ blog_pages.php?id=$1 [NC,L]
 # RewriteRule ^view-blog/?$ blog_pages.php
-RewriteRule ^blog-search-result/?$ blog_search.php
+
+# RewriteRule ^assigned-lawyer/([0-9a-zA-Z]+)$ lawyer_demo.php?idhash=$1 [NC,L]
+RewriteRule ^blog-search-result/([0-9a-zA-Z]+)$ blog_search.php?id=$1 [NC,L]
+
+# RewriteRule ^blog-search-result?value=([0-9a-zA-Z]+)&search=([0-9a-zA-Z]+)$ blog_search.php?value=$1&search=$2 [NC,L]
 
 
-
-# DO NOT REMOVE THIS LINE AND THE LINES BELOW SSL_REDIRECT:affordablelegalhelp.com
-RewriteEngine on
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} ^affordablelegalhelp.com$
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-# DO NOT REMOVE THIS LINE AND THE LINES ABOVE SSL_REDIRECT:affordablelegalhelp.com
 
 Header append Vary User-Agent
 
 
 
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:affordablelegalhelp.com
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} (www\.)?affordablelegalhelp.com
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:affordablelegalhelp.com

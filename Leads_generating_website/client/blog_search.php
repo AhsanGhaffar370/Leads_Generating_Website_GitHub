@@ -1,3 +1,36 @@
+<?php include_once "config/database.php";  
+$database=new Database();
+ $db = $database->getConnection();
+$title="";
+$meta_desc="";
+
+
+// $data = "SELECT * FROM `meta_data` WHERE page_name like 'home'";
+// $run = mysqli_query($con,$data);
+// while($row=mysqli_fetch_array($run)){
+//     $title = $row['title']; 
+//     $meta_desc = $row['meta_desc'];
+// } 
+$sqq ="SELECT * FROM meta_data WHERE page_name = 'blogsearch' ";
+                
+                $quey= $db->prepare($sqq);
+
+                // // posted values
+              
+                // $query->bindParam(":id", $this->state);
+                // $query->bindParam(":Catogory", $this->Catogory);
+                $quey->execute();
+                $resu=$quey->fetchAll(PDO::FETCH_OBJ);
+                $row = $quey->fetch(PDO::FETCH_ASSOC);
+                if($quey->rowCount() > 0)
+                {
+                    foreach($resu as $resul){
+                       $title =htmlentities($resul->title);
+                       $meta_desc = htmlentities($resul->meta_desc);
+                       
+                    }
+                }
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US">
 <head>
@@ -5,10 +38,11 @@
 <meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
     <!--yandex-->
     <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
-<title>Our Blogs | Find Affordable Legal Help with us </title>
+<title><?php echo $title ?> </title>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
 
-<meta name="description" content="Enjoy Fast Access To Top Family Lawyers Across The US. Connect Now With An Attorney In Your Local Area And Get Your Questions Answered Now.">
+<base href="https://affordablelegalhelp.com/blog_search.php">
+<?php echo "<meta name='description' content='$meta_desc'>"?>
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
 
 <?php include "libs.php"; ?>
@@ -68,8 +102,10 @@
 </head>
 		
     
-<body class="fontb">
-<?php include"header.php"; ?>
+<body class="fontb bg33">
+<?php
+include"header.php";
+?>
 
 <div class="jumbotron jumbotron-fluid bg1 blog_bg border-0">
     <div class="paddings">
@@ -77,131 +113,160 @@
     </div>
 </div>
 
-<div id="searchbox" class="container border-light border-top border-bottom border-right border-left mt-4 p-3" style="box-shadow:0px 0px 11px 0px #CCCCCC;">
-    
-    <form action="blog-search-result" method="get" enctype="multipart/form-data">
-        <p class="font-weight-bold text-left texts">Search Post</p>
-        <div class="row">
-            <input type="text" class="form-control col-9 mt-0 pt-0 mr-1 ml-2" name="value" placeholder="Search this site" size="25">
-            <input type="submit" name="search" class="btn btn-primary col-2" value="Search">
-        </div>
-    </form>
-</div>
 
-
-<section class="container text-left text-dark mt-2">
-    <div class="row">
+<section class="container text-left text-dark mt-5">
+<div class="row">
     		
-        <div class="col-lg-8 col-md-12 col-sm-12 col-12 d-block">
+  <div class="col-lg-8 col-md-12 col-sm-12 col-12 mb-3">
 
-            <div id="main_content" class="mb-5" >
-                <?php 
-                
-                include("config/connect.php");
-                
-                $select_posts = "select * from posts order by rand() LIMIT 0,4";
-                
-                $run_posts = mysqli_query($con,$select_posts);
-                
-                while($row=mysqli_fetch_array($run_posts)){
-                
-                    $post_id = $row['post_id']; 
-                    $post_title = $row['post_title'];
-                    $post_date = $row['post_date'];
-                    $post_author = $row['post_author'];
-                    $post_image = $row['post_image'];
-                    $post_content = $row['post_content'];
-                    $post_content=strip_tags($post_content);
-                
-                
-                ?>
-                <div class="border-light border-top border-bottom border-right border-left mt-4 p-4" style="border-radius:20px; box-shadow:0px 0px 12px -4px #CCCCCC;">
-                    
-                    <a href="pages.php?id=<?php echo $post_id; ?>" class="nav-link text-dark pl-0 ml-0">
-                    <h2 onmouseover="this.style.color='#959595';" onmouseout="this.style.color='black';">
-                    <?php echo $post_title; ?>
-                    </h2>
-                    </a>
-                    
-                    
-                    
-                    <p class="text-black-50 text-left" style="font-size:15px; font-weight:500;"><?php
-                    // echo $post_date;
-                    ?></p>
-                    
-                    <!--<p align="right">Posted by:&nbsp;&nbsp;<b><?php
-                     //echo $post_author; 
-                     ?></b></p>-->
-                    
-                    <img src="/images/<?php echo $post_image; ?>" class="img-fluid display-block"  width="650" height="500" />
-                    <?php
-                    $post_content=strip_tags($post_content);
-                    $post_content=substr($post_content,0,300);
-                    ?>
-                    <p  class="text-dark fontb text-left pt-3 ">
-                    <?php 
-                    // echo implode(' ', array_slice(explode(' ', $gg), 0, 90));
-                    // echo $post_content;
-                        echo "<p class='card-text text-secondary text-left size15 decor' >$post_content...</p>";
-                    ?>
-                    </p>
-                    
-                    <p align="right"><a href="view-blog/<?php echo $post_id; ?>" class="btn btn-md font-weight-normal btn-outline-danger mt-2 mr-2" >
-                        Continue Reading <i class="fas fa-chevron-right "></i>
-                    </a></p>
-                </div>
-                <?php } ?>
-            </div>
-		</div>
+    <div id="main_content" class="mb-5" >
+      <?php 
+      	if (isset($_POST['submitbtn'])){
+        	$id = $_POST['searchingValue'];
+        // 	echo $id;
+        // 	echo 'blog-search-result/'.$id;
+        // header("Location: http://www.google.com");
+       echo "<script type='text/javascript'>
+       var bool = '$id' ;
+       document.location = 'blog-search-result/'+bool; 
+       </script>";
+                         
+        	
+        	 }
+      include("config/connect.php");
+      $sea = $_GET['id'];
+    //   echo $_GET['value'];
+    //   echo "hello";
+      $select_posts = "select * from posts where post_keywords like '%".$sea."%' LIMIT 0,4";
+      
+      $run_posts = mysqli_query($con,$select_posts);
+      
+      while($row=mysqli_fetch_array($run_posts)){
+      
+          $post_id = $row['post_id']; 
+          $post_url = $row['post_url']; 
+          
+          $post_title = $row['post_title'];
+          $post_date = $row['post_date'];
+          $post_author = $row['post_author'];
+          $post_image = $row['post_image'];
+          $post_content = $row['post_content'];
+          $post_content=strip_tags($post_content);
+      
+      
+      ?>
+      <div class="card bg-white set_img card h-100 mb-5 shadow-sm rounded-0">
 
+        <img src="images/<?php echo $post_image; ?>" class="img-fluid images"/>
 
-		<div class="col-lg-4 col-md-12 col-sm-12 col-12 d-block text-left mb-5">
-
-            <div id="sidebar">
-                
-                
-                <div class="border-light border-top border-bottom border-right border-left mt-4 p-3" style="box-shadow:0px 0px 20px 0px #CCCCCC;">
-                    <h2 align="left">Recently Uploaded</h2><hr>
-                    <?php 
-                    include("config/connect.php");
-                    
-                    $query = "select * from posts order by 1 DESC LIMIT 0,6";
-                    
-                        $run = mysqli_query($con,$query); 
-                        
-                        while ($row=mysqli_fetch_array($run)){
-                        
-                        $post_id = $row['post_id'];
-                        $title = $row['post_title'];
-                        $image = $row['post_image'];
-                        $post_date = $row['post_date'];
-                    
-                    ?>
-                        <div class="row mt-2 p-2">
-                            <a href="view-blog/<?php echo $post_id; ?>" class="col-5 d-block mr-0 pr-0">
-                            <img src='/images/<?php echo $image; ?>' width='100' height='100'></a>
-                            
-                            <a href="view-blog/<?php echo $post_id; ?>" class="col-7 d-block ml-0 pl-0 pr-0 text-dark nav-link" >
-                            <h5 class="font-weight-normal" onmouseover="this.style.color='#959595';" onmouseout="this.style.color='black';">
-                            <?php echo $title; ?></h5>
-                            <p class="text-left text-black-50">&nbsp;&nbsp;<b><?php 
-                            // echo $post_date;
-                            ?></b></p>
-                            </a>
-                        
-                        </div>
-                        
-                        
-                    <?php } ?>
-                
-                </div>
+        <div class="card-body p-5 text-dark">
+          
+          <!--<p align="right">Posted by:&nbsp;&nbsp;<b>-->
+          <?php
+            //echo $post_author; 
             
-            </div>
-    	</div>
-        
-        
+            ?>
+            <!--</b></p>-->
+          
+          <p class="text-black-50 text-left font-weight-bold mb-2">
+              <span class="text-primary">Published Date:</span>  <?php echo $post_date;?>
+          </p>
+
+          <a href="/<?php echo $post_url; ?>" class="blog_hov1 nav-link p-0">
+          <h2 class=" font-weight-bold">
+          <?php echo $post_title; ?>
+          </h2>
+          </a>
+
+          <?php
+          // for ($i=0;$i<300;$i++){
+          //     echo $post_content[$i];
+          // }
+          $post_content=strip_tags($post_content);
+          $post_content=substr($post_content,0,300);
+          ?>
+          <p  class="text-dark fontb text-left pt-3 ">
+          <?php 
+          
+          // echo implode(' ', array_slice(explode(' ', $gg), 0, 90));
+          // echo $post_content;
+              echo "<p class='card-text text-secondary text-justify size16 decor' >$post_content...</p>";
+          ?>
+          </p>
+          
+          <a href="/<?php echo $post_url; ?>" class="btn btn-md font-weight-normal btn-outline-danger mt-2 mr-2" >
+              Continue Reading <i class="fas fa-chevron-right "></i>
+          </a>
+        </div>
+      </div>
+      <?php } ?>
     </div>
+  </div>
+
+  
+  <div class="col-xl-4 col-lg-4 col-md-4 mb-5 col-sm-12 col-12">
+
+    <div id="searchbox" class="card shadow rounded-0 mb-5">
+        <div class="card-body pt-4 pb-4">
+        <h6 class="font-weight-bold pl-1">Search Article</h6>
+            
+                <form method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <input type="text" class="form-control col-7  ml-3  rounded-0" name="searchingValue" placeholder="Search" size="25">
+                    <input type="submit" name="submitbtn" class="btn btn-danger col-3 size13 font-weight-bold  rounded-0" value="Search">
+                </div>
+                </form>
+        </div>
+    </div>
+
+    <div class="card  bg-white set_img  card h-100  shadow rounded-0 pb-5" style="display: table-cell;">
+      <div class="card-body text-dark">
+        
+        <h6 class="font-weight-bold mb-5 mt-3">Recently Uploaded</h6>
+        <?php 
+        
+        $query = "select * from posts order by 1 DESC LIMIT 0,5";
+        
+            $run = mysqli_query($con,$query); 
+            
+            while ($row=mysqli_fetch_array($run)){
+            
+            $post_id = $row['post_id'];
+            
+            $post_url = $row['post_url'];
+            $title = $row['post_title'];
+            $post_date = $row['post_date'];
+        
+        ?>
+
+        <div class="">
+          <!-- <a href="/<?php echo $post_url; ?>" class="col-5 d-block mr-0 pr-0">
+          <img src='images/<?php //echo $image; ?>' width='100' height='100'></a> -->
+          
+          <a href="/<?php echo $post_url; ?>" class="blog_hov1 d-block nav-link p-0 " >
+              <h5 class="font-weight-bold m-0" >
+                  <?php echo $title; ?>
+              </h5>
+          </a>
+
+          <p class="text-black-50 text-left font-weight-bold pt-1">
+              <?php echo $post_date;?>
+          </p>
+          
+        </div>
+              
+        <?php } ?>
+        
+      </div>
+    </div>
+  </div>
+
+
+        
+        
+</div>
 </section>
+
 
 <?php include("footer.php"); ?>
 

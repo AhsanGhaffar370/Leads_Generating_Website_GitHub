@@ -55,10 +55,18 @@ else {
                         <label>Post Keywords:</label>
                         <input type="text" class="form-control p-4" name="keywords" id="keywords" placeholder="Post Keywords"/>
                     </div>
+                     <div class="form-group text-left">
+                        <label>Permalink:</label>
+                        <input type="text" class="form-control p-4" name="url" id="url" placeholder="Permalink"/>
+                    </div>
                     
                     <div class="form-group text-left">
                         <label>Post Image:</label>
                         <input type="file" name="image" class="form-control p-4" > 
+                    </div>
+                    <div class="form-group text-left">
+                        <label>Meta Description</label>
+                        <input type="text" class="form-control p-4" name="meta" id="meta" placeholder="Meta Description"/>
                     </div>
                     
                     <div class="form-group text-left">
@@ -99,24 +107,31 @@ include("includes/connect.php");
 if(isset($_POST['submit'])){
 
 	  $post_title = $_POST['title'];
+	  $post_url = $_POST['url'];
 	  $post_date = date('m-d-y');
 	  $post_author = $_POST['author'];
 	  $post_keywords = $_POST['keywords'];
 	  $post_content = $_POST['content'];
 	  $post_image= $_FILES['image']['name'];
 	  $image_tmp= $_FILES['image']['tmp_name'];
+	  $meta_desc = $_POST['meta'];
+	  
+	  
 	
-	if($post_title=='' or $post_author=='' or $post_keywords=='' or $post_content=='' or $post_image==''){
+	if($post_title=='' or $post_author=='' or $post_keywords=='' or $post_content=='' or $post_image=='' or $post_url == '' or $meta_desc==''){
 	
 	echo "<script>alert('Any of the fields is empty')</script>";
 	exit();
+	}
+	else if (ctype_space($string)){
+	    echo "<script>alert('Post URL should be without space)</script>";
 	}
 
 	else {
 	
 	 move_uploaded_file($image_tmp,"../images/$post_image");
 	
-	  $insert_query = "insert into posts (post_title,post_date,post_author,post_image,post_keywords,post_content) values ('$post_title','$post_date','$post_author','$post_image','$post_keywords','$post_content')";
+	  $insert_query = "insert into posts (post_title,post_date,post_author,post_image,post_keywords,post_content,post_url,meta_desc) values ('$post_title','$post_date','$post_author','$post_image','$post_keywords','$post_content','$post_url','$meta_desc')";
 	
 	if(mysqli_query($con,$insert_query)){
 	

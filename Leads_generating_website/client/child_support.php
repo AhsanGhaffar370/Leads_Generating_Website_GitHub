@@ -1,8 +1,43 @@
+<?php
+// require_once("maintenance.php");
+// maintenance(TRUE);
+?>
 <?php 
 session_start();
 error_reporting(0);
 include_once "config/database.php"; 
 include_once "object/login.php";
+$database=new Database();
+ $db = $database->getConnection();
+$title="";
+$meta_desc="";
+
+
+// $data = "SELECT * FROM `meta_data` WHERE page_name like 'home'";
+// $run = mysqli_query($con,$data);
+// while($row=mysqli_fetch_array($run)){
+//     $title = $row['title']; 
+//     $meta_desc = $row['meta_desc'];
+// } 
+$sqq ="SELECT * FROM meta_data WHERE page_name = 'childsupport' ";
+                
+                $quey= $db->prepare($sqq);
+
+                // // posted values
+              
+                // $query->bindParam(":id", $this->state);
+                // $query->bindParam(":Catogory", $this->Catogory);
+                $quey->execute();
+                $resu=$quey->fetchAll(PDO::FETCH_OBJ);
+                $row = $quey->fetch(PDO::FETCH_ASSOC);
+                if($quey->rowCount() > 0)
+                {
+                    foreach($resu as $resul){
+                       $title =htmlentities($resul->title);
+                       $meta_desc = htmlentities($resul->meta_desc);
+                       
+                    }
+                }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US">
@@ -11,9 +46,9 @@ include_once "object/login.php";
 <meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
     <!--yandex-->
     <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
-<title>Child Support | Find Affordable Legal Help with us </title>
+<title><?php echo $title;?></title>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
-<meta name="description" content="Enjoy Fast Access To Top Family Lawyers Across The US. Connect Now With An Attorney In Your Local Area And Get Your Questions Answered Now.">
+<?php echo "<meta name='description' content='$meta_desc'>"?>
 
 <!--yandex-->
 <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
@@ -125,6 +160,14 @@ li:hover {
 
 
 <body id="fill" class="fontb">
+    
+<div class="sticky-top mb-1">
+<div class="alert bg-info alert-dismissible  rounded-0 border-0 m-0 p-0">
+    <button type="button" class="close text-white mt-0 pt-1" data-dismiss="alert">&times;</button>
+    <p class="size14 text-white text-center pt-2 pb-2 pr-5 pl-2 mb-0">COVID-19 UPDATE: Law firms are still available to help. Set up a consultation from home today.</p>
+</div>
+</div>
+
 
 <?php include_once "header.php"; ?>
 
@@ -136,9 +179,9 @@ li:hover {
 <section class="support_bg bg2">
     <div class="container-fluid home_padding"><!--div 0 -->
     	<br />
-        <h1 class="text-white  text-center jl_heading  font5">Find the right Child Support lawyers in your zip code</h1>
+        <h1 class="text-white  text-center jl_heading  font5">Find the Right Child Support Lawyer In Your Zip Code</h1>
         
-        <p class=" texts text-white text-center">Rectify your child adoption issues for as low as  500$ to 850$ and receive a free consultation!</p>
+        <p class=" texts text-white text-center">Rectify Your child support issues for as low as  500$-850$,Receive a free consultation! and payments plans are also availaible.</p>
         
         <?php 
         	if (isset($_POST['submitbtn'])){}
@@ -174,8 +217,6 @@ li:hover {
     
     $_SESSION['from_page']="Child support";
     
-    $database=new Database();
-    $db = $database->getConnection();
     
     //$city1=$_POST['city'];
     $city_state = explode(",", $i);
@@ -188,7 +229,7 @@ li:hover {
     //$check=mysqli_num_rows($result);
     
     // if($qu->rowCount() > 0){
-    echo "<script type='text/javascript'> document.location = 'Complete-your-request'; </script>";	
+    echo "<script type='text/javascript'> document.location = '/Complete-your-request'; </script>";	
     // }
     // else{
         
@@ -231,7 +272,7 @@ li:hover {
         this is where  Affordable legal Help comes in. 
     </p>
 
-    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Child-support-1-800x667.png" class="bg3 img-fluid mt-4 mb-4" alt="divorce image">
+    <img src="/Image/Child-support-1-800x667.png" class="bg3 img-fluid mt-4 mb-4" alt="divorce image">
     
     <p class=" text-secondary  decor size15" >
         As a family legal service that is passionate about providing clients with the needed child support 
@@ -262,7 +303,7 @@ li:hover {
     <p class="text-secondary decor size15"> 	People paid in non-conventional ways such as through stock option</p>
 
 
-    <p class=" text-secondary  decor size15"> <br>The amount of income that a parent earns is such a big deal because it plays an important role in deciding how much should be paid in child support. The attorneys at (Business Name) will professionally handle all these details in court while guiding you through the entire process. </p>
+    <p class=" text-secondary  decor size15"> <br>The amount of income that a parent earns is such a big deal because it plays an important role in deciding how much should be paid in child support. The attorneys at Affordable Legal Help will professionally handle all these details in court while guiding you through the entire process. </p>
 
     
 
@@ -311,13 +352,13 @@ li:hover {
             <div class="card  rounded-0 pt-4 flex-fill story-hov">
 
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Testimonial-Client-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="/Image/Testimonial-Client-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
 
                 <div class="card-body">
                     <p class="card-title font-weight-normal blue1 texts">Joshua Fuller,California</p>
                     <hr>
-                    <p class="card-text text-black-50 size15">"I am so happy I can give my child the life she deserves now. Thanks to (Business Name)."</p>
+                    <p class="card-text text-black-50 size15">"I am so happy I can give my child the life she deserves now. Thanks to Affordable legal Help."</p>
                 </div>
             </div>
         </div>
@@ -325,7 +366,7 @@ li:hover {
         <div class="col-xl-4 col-lg-4 p-4 col-md-6 col-sm-12 col-12 p-3 d-flex">
             <div class="card  rounded-0 pt-4 flex-fill story-hov">
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Clinet-Testimonial-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="/Image/Clinet-Testimonial-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
                 <div class="card-body">
                     <p class="card-title font-weight-normal blue1 texts">Jennifer Slate,Pennsylvania</p>
@@ -339,7 +380,7 @@ li:hover {
         <div class="col-xl-4 col-lg-4 p-4 col-md-6 col-sm-12 col-12 p-3 d-flex">
             <div class="card  rounded-0  pt-4  flex-fill story-hov">
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Success-Stories-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="/Image/Success-Stories-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
                 <div class="card-body">
                     <p class="card-title font-weight-normal blue1 texts">Jared Rawley,North Dakota</p>
@@ -352,7 +393,6 @@ li:hover {
     </div>
 
 </section>
-
 
 
 <?php include_once"footer.php"; ?>
@@ -369,7 +409,7 @@ li:hover {
 </script>
 
 
-<script async src="client_validate.js?v=10"></script>
+<script async src="/client_validate.js?v=11"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <?php include "libs2.php"; ?>

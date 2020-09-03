@@ -1,4 +1,8 @@
 <?php
+// require_once("maintenance.php");
+// maintenance(TRUE);
+?>
+<?php
 // Required if your environment does not handle autoloading
 require __DIR__ . '/vendor/autoload.php';
 
@@ -17,7 +21,37 @@ include_once "object/user.php";
 require_once "configs.php"; 
   include "vendors/autoload.php";
 //   error_reporting(E_ALL); ini_set('display_errors', 1);
+ $database=new Database();
+ $db = $database->getConnection();
+$title="";
+$meta_desc="";
 
+
+// $data = "SELECT * FROM `meta_data` WHERE page_name like 'home'";
+// $run = mysqli_query($con,$data);
+// while($row=mysqli_fetch_array($run)){
+//     $title = $row['title']; 
+//     $meta_desc = $row['meta_desc'];
+// } 
+$sqqq ="SELECT * FROM meta_data WHERE page_name = 'clientform' ";
+                
+                $queys= $db->prepare($sqqq);
+
+                // // posted values
+              
+                // $query->bindParam(":id", $this->state);
+                // $query->bindParam(":Catogory", $this->Catogory);
+                $queys->execute();
+                $resut=$queys->fetchAll(PDO::FETCH_OBJ);
+                $row = $queys->fetch(PDO::FETCH_ASSOC);
+                if($queys->rowCount() > 0)
+                {
+                    foreach($resut as $resul){
+                       $title =htmlentities($resul->title);
+                       $meta_desc = htmlentities($resul->meta_desc);
+                       
+                    }
+                }
 
 
   ?>
@@ -28,9 +62,10 @@ require_once "configs.php";
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
-    <title>Complete your Request | Affordable Legal Help </title>
+    <title><?php echo $title; ?></title>
         <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
-    <meta name="description" content="Enjoy Fast Access To Top Family Lawyers Across The US. Connect Now With An Attorney In Your Local Area And Get Your Questions Answered Now.">
+    <?php echo "<meta name='description' content='$meta_desc'>"?>
+
         <meta name="robots" content="noindex,nofollow" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

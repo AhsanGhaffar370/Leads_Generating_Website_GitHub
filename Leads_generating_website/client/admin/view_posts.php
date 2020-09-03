@@ -48,14 +48,14 @@ else {
                     <table id="zctb" class="dashboard_table mt-5 border-bottom mb-5 table-hover">
                         <thead>
                             <tr style="background-color:#5ba5f5;">
-                                <th class="pb-3 pt-3 font-weight-bold xs_texts">#</th>
-                                <th class="pb-3 pt-3 font-weight-bold xs_texts">Date</th>
-                                <th class="pb-3 pt-3 font-weight-bold xs_texts">Author</th>
-                                <th class="pb-3 pt-3 font-weight-bold xs_texts">Title</th>
-                                <th class="pb-3 pt-3 font-weight-bold xs_texts">Image</th>
-                                <th class="pb-3 pt-3 font-weight-bold xs_texts">Content</th>
-                                <th class="pb-3 pt-3 font-weight-bold xs_texts">Delete</th>
-                                <th class="pb-3 pt-3 font-weight-bold xs_texts">Edit</th>
+                                <th class="p-3 font-weight-bold xs_texts">#</th>
+                                <!--<th class="p-3  font-weight-bold xs_texts">Date</th>-->
+                                <th class="p-3 font-weight-bold xs_texts">Author</th>
+                                <th class="p-3 font-weight-bold xs_texts">Title</th>
+                                <th class="p-3 font-weight-bold xs_texts">Image</th>
+                                <th class="p-3 font-weight-bold xs_texts">Content</th>
+                                <th class="p-3 font-weight-bold xs_texts">Delete</th>
+                                <th class="p-3 font-weight-bold xs_texts">Edit</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,19 +70,23 @@ else {
                                 while($row=mysqli_fetch_array($run))
                                 {
                                     $post_id = $row['post_id'];
-                                    $post_date = $row['post_date'];
+                                    // $post_date = $row['post_date'];
                                     $post_author = $row['post_author'];
                                     $post_title = $row['post_title'];
                                     $post_image = $row['post_image'];
-                                    $post_content= substr($row['post_content'],0,100);
+                                    // $post_content= substr($row['post_content'],0,100);
+                                    $post_content= $row['post_content'];
+
+                                    $post_content=strip_tags($post_content);
+                                    $post_content=substr($post_content,0,120);
                             ?>
                             <tr>              
-                                <td class="table_data xs_texts"><?php echo $post_id; ?></td>
-                                <td class="table_data xs_texts"><?php echo $post_date; ?></td>
-                                <td class="table_data xs_texts"><?php echo $post_author; ?></td>
-                                <td class="table_data xs_texts"><?php echo $post_title; ?></td>
-                                <td class="table_data xs_texts"><img src="../images/<?php echo $post_image; ?>" width="100" height="100"></td>
-                                <td class="table_data mydate xs_texts"><?php echo $post_content; ?></td>
+                                <td class="table_data xs_texts p-2"><?php echo $post_id; ?></td>
+                                <!--<td class="table_data xs_texts"><?php //echo $post_date; ?></td>-->
+                                <td class="table_data xs_texts p-2"><?php echo $post_author; ?></td>
+                                <td class="table_data xs_texts p-2"><?php echo $post_title; ?></td>
+                                <td class="table_data xs_texts p-2"><img src="../images/<?php echo $post_image; ?>" width="100" height="100"></td>
+                                <td class="table_data mydate xs_texts p-2"><?php echo $post_content; ?>. . .</td>
                                 <td>
                                 	<a href="delete.php?del=<?php echo $post_id; ?>" class="page-link">Delete</a>
                                 </td>

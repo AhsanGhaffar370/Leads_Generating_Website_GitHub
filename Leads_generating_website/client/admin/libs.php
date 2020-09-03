@@ -22,7 +22,7 @@
 -->
 <link rel="stylesheet" href="../style sheet/css1_new.css?v=2">
 
-<link rel="stylesheet" href="admin_style.css" />
+<link rel="stylesheet" href="admin_style.css?v=2" />
 <!--to make it responsive for mobile-->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-wdth, initial-scale=1.0" />

@@ -1,8 +1,43 @@
+<?php
+// require_once("maintenance.php");
+// maintenance(TRUE);
+?>
 <?php 
 session_start();
 error_reporting(0);
 include_once "config/database.php"; 
 include_once "object/login.php";
+$database=new Database();
+ $db = $database->getConnection();
+$title="";
+$meta_desc="";
+
+
+// $data = "SELECT * FROM `meta_data` WHERE page_name like 'home'";
+// $run = mysqli_query($con,$data);
+// while($row=mysqli_fetch_array($run)){
+//     $title = $row['title']; 
+//     $meta_desc = $row['meta_desc'];
+// } 
+$sqq ="SELECT * FROM meta_data WHERE page_name = 'parents' ";
+                
+                $quey= $db->prepare($sqq);
+
+                // // posted values
+              
+                // $query->bindParam(":id", $this->state);
+                // $query->bindParam(":Catogory", $this->Catogory);
+                $quey->execute();
+                $resu=$quey->fetchAll(PDO::FETCH_OBJ);
+                $row = $quey->fetch(PDO::FETCH_ASSOC);
+                if($quey->rowCount() > 0)
+                {
+                    foreach($resu as $resul){
+                       $title =htmlentities($resul->title);
+                       $meta_desc = htmlentities($resul->meta_desc);
+                       
+                    }
+                }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US">
@@ -11,9 +46,9 @@ include_once "object/login.php";
 <meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
     <!--yandex-->
     <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
-<title>Grand Parents Rights | Find Affordable Legal Help with us </title>
+<title><?php echo $title; ?></title>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
-<meta name="description" content="Enjoy Fast Access To Top Family Lawyers Across The US. Connect Now With An Attorney In Your Local Area And Get Your Questions Answered Now.">
+<?php echo "<meta name='description' content='$meta_desc'>"?>
 
 <!--yandex-->
 <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
@@ -124,7 +159,15 @@ li:hover {
 
 
 
-<body id="fill" class="fontb">
+<body id="fill">
+    
+<div class="sticky-top mb-1">
+<div class="alert bg-info alert-dismissible  rounded-0 border-0 m-0 p-0">
+    <button type="button" class="close text-white mt-0 pt-1" data-dismiss="alert">&times;</button>
+    <p class="size14 text-white text-center pt-2 pb-2 pr-5 pl-2 mb-0">COVID-19 UPDATE: Law firms are still available to help. Set up a consultation from home today.</p>
+</div>
+</div>
+
 
 <?php include_once "header.php"; ?>
 
@@ -136,9 +179,9 @@ li:hover {
 <section class="grand_parent_bg bg2">
     <div class="container-fluid home_padding"><!--div 0 -->
     	<br />
-        <h1 class="text-white  text-center jl_heading  font5">Find the right Grand Parents Rights lawyers in your zip code</h1>
+        <h1 class="text-white  text-center jl_heading  font5">Find the Right Grandparents Rights Lawyer In Your Zip Code</h1>
         
-        <p class=" texts text-white text-center">Rectify your child adoption issues for as low as  750$ to 950$ and receive a free consultation!</p>
+        <p class=" texts text-white text-center">Rectify your Grandparents right issues for as low as 750$-950$, Receive a free consultation Immediately,And payment palns are also availaible.</p>
         
         <?php 
         	if (isset($_POST['submitbtn'])){}
@@ -174,8 +217,7 @@ li:hover {
     
     $_SESSION['from_page']="Grand Parent Rights";
     
-    $database=new Database();
-    $db = $database->getConnection();
+    
     
     //$city1=$_POST['city'];
     $city_state = explode(",", $i);
@@ -188,7 +230,7 @@ li:hover {
     //$check=mysqli_num_rows($result);
     
     // if($qu->rowCount() > 0){
-    echo "<script type='text/javascript'> document.location = 'Complete-your-request'; </script>";	
+    echo "<script type='text/javascript'> document.location = '/Complete-your-request'; </script>";	
     // }
     // else{
         
@@ -231,7 +273,7 @@ li:hover {
 
     </p>
 
-    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Grandparents-Rights-800x667-1.jpg" class="bg3 img-fluid mt-4 mb-4" alt="divorce image">
+    <img src="/Image/Grandparents-Rights-800x667-1.jpg" class="bg3 img-fluid mt-4 mb-4" alt="divorce image">
     
     <p class=" text-secondary  decor size15" >
         Grandparents to children whose parents have separated or are on the verge of separation usually 
@@ -244,9 +286,9 @@ li:hover {
         As a matter of fact, in a times like this, the best course of action to take as a grandparent is 
         to seek professional legal council and representation. You’ll need to work with a family law firm 
         with an exceptionally brilliant track record.  <br><br>
-        Acknowledging this need, we at (Business Name) are committed to providing you with both professional 
+        Acknowledging this need, we at Affordable legal Help are committed to providing you with both professional 
         and unbundled legal services at enticing rates.  <br><br>
-        At (Business Name), we understand the dilemmas that most grandparents go through when their children 
+        At Affordable Legal Help, we understand the dilemmas that most grandparents go through when their children 
         part ways. Our brilliant and experienced attorneys are passionate about assisting grandparents in 
         claiming their legal rights, including child custody, guardianship, child visitation 
         and more.
@@ -310,7 +352,7 @@ li:hover {
             <div class="card  rounded-0 pt-4 flex-fill story-hov">
 
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/minified-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="/Image/minified-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
 
                 <div class="card-body">
@@ -324,7 +366,7 @@ li:hover {
         <div class="col-xl-4 col-lg-4 p-4 col-md-6 col-sm-12 col-12 p-3 d-flex">
             <div class="card  rounded-0 pt-4 flex-fill story-hov">
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Affordable-legal-Help-Testimonial-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="/Image/Affordable-legal-Help-Testimonial-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
                 <div class="card-body">
                     <p class="card-title font-weight-normal blue1 texts">Sharon Huth,Michigan</p>
@@ -337,7 +379,7 @@ li:hover {
         <div class="col-xl-4 col-lg-4 p-4 col-md-6 col-sm-12 col-12 p-3 d-flex">
             <div class="card  rounded-0  pt-4  flex-fill story-hov">
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Grand-parents-Rights-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="/Image/Grand-parents-Rights-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
                 <div class="card-body">
                     <p class="card-title font-weight-normal blue1 texts">Ridge Walder,Washington DC</p>
@@ -367,7 +409,7 @@ li:hover {
 </script>
 
 
-<script async src="client_validate.js?v=10"></script>
+<script async src="/client_validate.js?v=11"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <?php include "libs2.php"; ?>

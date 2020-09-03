@@ -6,11 +6,17 @@ session_start();
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Dashboard | Affordable Attorney leads </title>
+<title>Dashboard | Affordable Legal Help </title>
 <link rel="shortcut icon" type="site_icon.png" />
 
 <!--#####################################Libraries file##########################################-->
+<style>
+.images {
+    width: 100%;
+    height: auto;
+}
 
+</style>
 <?php include "libs.php"; ?>
 <!--<script src="client_validate.js"></script>
 -->
@@ -21,9 +27,9 @@ session_start();
 <section class="pl-3 pr-3" style="margin-top:8%;">
 	<div class="col-lg-4 col-md-6 col-sm-8 pt-2 pb-4 pl-4 pr-4 bg-light">
         
-        <div class="col-lg-12 col-md-9 col-sm-9 col-12">
-            <a href="https://affordableattorneyleads.com/home">
-            	<img class="logo images" src="https://affordableattorneyleads.com/Image/attorney.png" alt="Affordable Attorney leads " />
+        <div class="col-lg-12 col-md-9 col-sm-9 col-12 p-3">
+            <a href="https://affordablelegalhelp.com/">
+            	<img class="images" src="../Image/legalHelp.png" alt="Affordable Legal help " />
             </a>
         </div>
         <hr />
@@ -44,7 +50,7 @@ session_start();
             </div>
             
             <div class="form-group">
-                <input type="submit" name="login" value="Login" class="button_size btn p-3 btn-lg mb-2 btn-danger font-weight-bold"/>
+                <input type="submit" name="login" value="Login" class="btn btn-lg mb-2 btn-danger"/>
             </div>
         </form>
 

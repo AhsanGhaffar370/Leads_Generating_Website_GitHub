@@ -61,6 +61,7 @@ else {
                         
                         
                             $post_id = $edit_row['post_id'];
+                            $post_url = $edit_row['post_url'];
                             $post_title = $edit_row['post_title'];
                             $post_author = $edit_row['post_author'];
                             $post_keywords = $edit_row['post_keywords'];
@@ -84,6 +85,10 @@ else {
                         <div class="form-group text-left">
                             <label>Post Keywords:</label>
                             <input type="text" class="form-control p-4" name="keywords" id="keywords" value="<?php echo $post_keywords; ?>" placeholder="Post Keywords"/>
+                        </div>
+                        <div class="form-group text-left">
+                            <label>Permalink:</label>
+                            <input type="text" class="form-control p-4" name="url" id="url" value="<?php echo $post_url; ?>" placeholder="Permalink"/>
                         </div>
                         
                         <div class="form-group text-left">
@@ -137,12 +142,14 @@ else {
 	$post_title1 = $_POST['title'];
 	  $post_date1 = date('m-d-y');
 	  $post_author1 = $_POST['author'];
+	  $post_url = $_POST['url'];
+	  
 	  $post_keywords1 = $_POST['keywords'];
 	  $post_content1 = $_POST['content'];
 	  $post_image1= $_FILES['image']['name'];
 	  $image_tmp= $_FILES['image']['tmp_name'];
 	
-	if($post_title1=='' or $post_author1=='' or $post_keywords1=='' or $post_content1=='' or $post_image1==''){
+	if($post_title1=='' or $post_author1=='' or $post_keywords1=='' or $post_content1=='' or $post_image1=='' or $post_url =='' ){
 	
 	echo "<script>alert('Any of the fields is empty')</script>";
 	exit();
@@ -152,7 +159,7 @@ else {
 	
 	 move_uploaded_file($image_tmp,"../images/$post_image1");
 		
-		$update_query = "update posts set post_title='$post_title1',post_date='$post_date1',post_author='$post_author1',post_image='$post_image1',post_keywords='$post_keywords1',post_content='$post_content1' where post_id='$update_id'";
+		$update_query = "update posts set post_title='$post_title1',post_date='$post_date1',post_author='$post_author1',post_image='$post_image1',post_keywords='$post_keywords1',post_content='$post_content1',post_url='$post_url' where post_id='$update_id'";
 		
 		if(mysqli_query($con,$update_query)){
 		

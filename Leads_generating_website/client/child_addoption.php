@@ -1,8 +1,44 @@
 <?php 
+// require_once("maintenance.php");
+// maintenance(TRUE);
+
+
 session_start();
 error_reporting(0);
 include_once "config/database.php"; 
 include_once "object/login.php";
+
+ $database=new Database();
+ $db = $database->getConnection();
+$title="";
+$meta_desc="";
+
+
+// $data = "SELECT * FROM `meta_data` WHERE page_name like 'home'";
+// $run = mysqli_query($con,$data);
+// while($row=mysqli_fetch_array($run)){
+//     $title = $row['title']; 
+//     $meta_desc = $row['meta_desc'];
+// } 
+$sqq ="SELECT * FROM meta_data WHERE page_name = 'childadoption' ";
+                
+                $quey= $db->prepare($sqq);
+
+                // // posted values
+              
+                // $query->bindParam(":id", $this->state);
+                // $query->bindParam(":Catogory", $this->Catogory);
+                $quey->execute();
+                $resu=$quey->fetchAll(PDO::FETCH_OBJ);
+                $row = $quey->fetch(PDO::FETCH_ASSOC);
+                if($quey->rowCount() > 0)
+                {
+                    foreach($resu as $resul){
+                       $title =htmlentities($resul->title);
+                       $meta_desc = htmlentities($resul->meta_desc);
+                       
+                    }
+                }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en-US">
@@ -11,9 +47,9 @@ include_once "object/login.php";
 <meta name="msvalidate.01" content="8B265896C88DF7D5ADC560D97D5B8052" />
     <!--yandex-->
     <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
-<title>Child Addoption | Find Affordable Legal Help with us </title>
+<title><?php echo $title ?></title>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
-<meta name="description" content="Enjoy Fast Access To Top Family Lawyers Across The US. Connect Now With An Attorney In Your Local Area And Get Your Questions Answered Now.">
+<?php echo "<meta name='description' content='$meta_desc'>"?>
 
 <!--yandex-->
 <meta name="yandex-verification" content="0beccc11dc0dc9cb" />
@@ -125,6 +161,14 @@ li:hover {
 
 
 <body id="fill" class="fontb">
+    
+<div class="sticky-top mb-1">
+<div class="alert bg-info alert-dismissible  rounded-0 border-0 m-0 p-0">
+    <button type="button" class="close text-white mt-0 pt-1" data-dismiss="alert">&times;</button>
+    <p class="size14 text-white text-center pt-2 pb-2 pr-5 pl-2 mb-0">COVID-19 UPDATE: Law firms are still available to help. Set up a consultation from home today.</p>
+</div>
+</div>
+
 
 <?php include_once "header.php"; ?>
 
@@ -136,9 +180,9 @@ li:hover {
 <section class="adoption_bg bg2">
     <div class="container-fluid home_padding"><!--div 0 -->
     	<br />
-        <h1 class="text-white  text-center jl_heading  font5">Find the right Child Adoption lawyers in your zip code</h1>
+        <h1 class="text-white  text-center jl_heading  font5">Find The Right Child Adoption Lawyer In Your Zip Code</h1>
         
-        <p class=" texts text-white text-center">Rectify your child adoption issues for as low as  1000$ to 1250$ and receive a free consultation!</p>
+        <p class=" texts text-white text-center">Rectify your child adoption issues for as low as  1000$ to 1250$,Receive an Immediate free consultation and Payment plans are also availaible.</p>
         
         <?php 
         	if (isset($_POST['submitbtn'])){}
@@ -174,8 +218,6 @@ li:hover {
     
     $_SESSION['from_page']="Child adoption";
     
-    $database=new Database();
-    $db = $database->getConnection();
     
     //$city1=$_POST['city'];
     $city_state = explode(",", $i);
@@ -188,7 +230,7 @@ li:hover {
     //$check=mysqli_num_rows($result);
     
     // if($qu->rowCount() > 0){
-    echo "<script type='text/javascript'> document.location = 'Complete-your-request'; </script>";	
+    echo "<script type='text/javascript'> document.location = '/Complete-your-request'; </script>";	
     // }
     // else{
         
@@ -231,12 +273,12 @@ li:hover {
         critical component of every adoption is acquiescence with applicable state laws and drafting out 
         a safe and secure adoption plan upon which every involved party can depend. These systems are 
         there to protect the best interests of any child facing adoption. However, the details and 
-        complications involved can be a lot for the parties involved to deal with. (Business Name) can 
+        complications involved can be a lot for the parties involved to deal with.Affordable Legal Help can 
         provide you with the needed legal assistance throughout the adoption process. 
 
     </p>
 
-    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Webp.net-resizeimage-2.png" class="bg3 img-fluid mt-4 mb-4" alt="divorce image">
+    <img src="/Image/Webp.net-resizeimage-2.png" class="bg3 img-fluid mt-4 mb-4" alt="child adoption image">
     
     <p class=" text-secondary  decor size15" >
         We are a family law firm with years of experience and qualified attorneys. With our professional 
@@ -247,7 +289,7 @@ li:hover {
         Our highly competent attorneys will duly handle every other important aspect of your case. All 
         you will be required to do is present yourself before the family court to prove your eligibility 
         for adopting a child.  <br>
-        (Business Name) will also handle details such as:
+        Affordable Legal Help will also handle details such as:
 
         <h4 class="text-dark pt-2 font-weight-normal mb-3 size25">Prospective Adoption Case Management</h4>
         <p class=" text-secondary  decor size15">With our team of adoption attorneys and social workers, we manage all the details and aspects of the adoption from the match until the baby is born and put up for adoption. </p>
@@ -290,13 +332,13 @@ li:hover {
             <div class="card  rounded-0 pt-4 flex-fill story-hov">
 
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Affordable-Legal-Help-Testimonail-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="/Image/Affordable-Legal-Help-Testimonail-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
 
                 <div class="card-body">
                     <p class="card-title font-weight-normal blue1 texts">William Davis,Alaska</p>
                     <hr>
-                    <p class="card-text text-black-50 size15" >"It’s already six months since I successfully adopted this beautiful baby. I have experienced only joy and a genuine sense of fulfillment ever since. Thanks to (Business Name) for making the entire process seamless."</p>
+                    <p class="card-text text-black-50 size15" >"It’s already six months since I successfully adopted this beautiful baby. I have experienced only joy and a genuine sense of fulfillment ever since. Thanks to Affordable legal help  for making the entire process seamless."</p>
                 </div>
             </div>
         </div>
@@ -304,7 +346,7 @@ li:hover {
         <div class="col-xl-4 col-lg-4 p-4 col-md-6 col-sm-12 col-12 p-3 d-flex">
             <div class="card  rounded-0 pt-4 flex-fill story-hov">
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/Ideal-Testimonail-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="/Image/Ideal-Testimonail-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
                 <div class="card-body">
                     <p class="card-title font-weight-normal blue1 texts">Lena Charles,Maryland</p>
@@ -317,7 +359,7 @@ li:hover {
         <div class="col-xl-4 col-lg-4 p-4 col-md-6 col-sm-12 col-12 p-3 d-flex">
             <div class="card  rounded-0  pt-4  flex-fill story-hov">
                 <div class="pl-lg-3 pr-lg-3 pl-md-4 pr-md-4 pl-sm-5 pr-sm-5 img_section2">
-                    <img src="https://legalhelpservice.com/wp-content/uploads/2019/07/circle-cropped-1-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
+                    <img src="/Image/circle-cropped-1-120x120.png" class="img-fluid border-0 rounded-circle"  alt="Responsive image">
                 </div>
                 <div class="card-body">
                     <p class="card-title font-weight-normal blue1 texts">Carla Houston,Georgia</p>
@@ -330,6 +372,7 @@ li:hover {
     </div>
 
 </section>
+
 
 
 
@@ -347,7 +390,7 @@ li:hover {
 </script>
 
 
-<script async src="client_validate.js?v=10"></script>
+<script async src="/client_validate.js?v=11"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <?php include "libs2.php"; ?>
